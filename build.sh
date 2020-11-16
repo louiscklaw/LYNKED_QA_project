@@ -14,6 +14,7 @@ trap shutdown SIGTERM SIGINT EXIT
 
 rm -rf reports/* || true
 mkdir -p reports/functional/test_viewport
+touch reports/functional/test_viewport/.gitkeep
 
 sh docs/flows/test_site_flows/build.sh
 
@@ -24,6 +25,6 @@ sleep 30
 
 pipenv sync
 
-pipenv run pytest --html=reports/regression/report.html tests/UI_test/regression
+# pipenv run pytest --html=reports/regression/report.html tests/UI_test/regression
 pipenv run pytest --html=reports/functional/report.html tests/UI_test/functional
-pipenv run pytest --html=reports/new_feature/report.html tests/UI_test/new_feature
+# pipenv run pytest --html=reports/new_feature/report.html tests/UI_test/new_feature
