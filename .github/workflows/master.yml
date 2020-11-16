@@ -25,7 +25,7 @@ jobs:
           export LC_ALL=C.UTF-8
           export LANG=C.UTF-8
           pipenv install pytest pytest-html
-          pipenv run pytest tests/UI_test/regression/test_helloworld.py
+          pipenv run pytest --html=reports/regression/report.html tests/UI_test/regression
 
   UI_test_new_feature:
     runs-on: ubuntu-20.04
@@ -49,7 +49,7 @@ jobs:
           export LC_ALL=C.UTF-8
           export LANG=C.UTF-8
           pipenv install pytest pytest-html
-          pipenv run pytest tests/UI_test/new_feature/test_helloworld.py
+          pipenv run pytest --html=reports/new_feature/report.html tests/UI_test/new_feature
 
 
   UI_test_functional:
@@ -74,4 +74,4 @@ jobs:
           export LC_ALL=C.UTF-8
           export LANG=C.UTF-8
           pipenv install pytest pytest-html
-          pipenv run pytest tests/UI_test/functional/test_helloworld.py
+          pipenv run pytest --html=reports/functional/report.html tests/UI_test/functional

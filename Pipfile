@@ -8,3 +8,5 @@ verify_ssl = true
 [packages]
 pytest = "*"
 pytest-html = "*"
+selenium = "*"
+pytest-watch = "*"

@@ -4,6 +4,7 @@ flows/*.svg
 docs/functional
 docs/new_feature
 docs/regression
+reports/UI_test/functional/test_viewport/*.png
 
 # NODE SPECIFIC
 .env
