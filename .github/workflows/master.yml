@@ -30,7 +30,7 @@ jobs:
       - name: action-upload-artifact-tryout
         uses: actions/upload-artifact@v2
         with:
-          name: 'upload-artifact'
+          name: 'reports_regression'
           path: reports/regression
 
   UI_test_new_feature:
@@ -60,7 +60,7 @@ jobs:
       - name: action-upload-artifact-tryout
         uses: actions/upload-artifact@v2
         with:
-          name: 'upload-artifact'
+          name: 'reports_new_feature'
           path: reports/new_feature
 
 
@@ -97,5 +97,5 @@ jobs:
       - name: action-upload-artifact-tryout
         uses: actions/upload-artifact@v2
         with:
-          name: 'upload-artifact'
+          name: 'reports_functional'
           path: reports/functional
