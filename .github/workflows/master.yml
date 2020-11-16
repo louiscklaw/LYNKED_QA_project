@@ -75,6 +75,8 @@ jobs:
           cd $GITHUB_WORKSPACE/_ref/docker-selenium
             docker-compose -f docker-compose-v3.yml up -d
           cd $GITHUB_WORKSPACE
+          echo 'sleep a while to let docker steady'
+          sleep 30
 
       - name: run test
         env: # Or as an environment variable
