@@ -1,6 +1,9 @@
 # PROJECT SPECIFIC
 flows/*.png
 flows/*.svg
+docs/functional
+docs/new_feature
+docs/regression
 
 # NODE SPECIFIC
 .env
