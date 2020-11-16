@@ -94,6 +94,8 @@ jobs:
           pipenv install pytest pytest-html
           pipenv run pytest --html=reports/functional/report.html tests/UI_test/functional
 
+          ls -l reports/functional/test_viewport
+
       - name: action-upload-artifact-tryout
         uses: actions/upload-artifact@v2
         with:
