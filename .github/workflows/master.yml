@@ -58,6 +58,11 @@ jobs:
       - name: checkout
         uses: actions/checkout@v2
 
+      - run: |
+          cd $GITHUB_WORKSPACE/_ref/docker-selenium
+            docker-compose -f docker-compose-v3.yml up -d
+          cd $GITHUB_WORKSPACE
+
       - name: run test
         env: # Or as an environment variable
           SLACK_TOKEN: ${{ secrets.SLACK_TOKEN }}
@@ -75,3 +80,15 @@ jobs:
           export LANG=C.UTF-8
           pipenv install pytest pytest-html
           pipenv run pytest --html=reports/functional/report.html tests/UI_test/functional
+
+  upload_result:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+
+      - name: action-upload-artifact-tryout
+        uses: actions/upload-artifact@v2
+        with:
+          name: 'upload-artifact'
+          path: reports
