@@ -27,6 +27,12 @@ jobs:
           pipenv install pytest pytest-html
           pipenv run pytest --html=reports/regression/report.html tests/UI_test/regression
 
+      - name: action-upload-artifact-tryout
+        uses: actions/upload-artifact@v2
+        with:
+          name: 'upload-artifact'
+          path: reports/regression
+
   UI_test_new_feature:
     runs-on: ubuntu-20.04
     steps:
@@ -50,6 +56,13 @@ jobs:
           export LANG=C.UTF-8
           pipenv install pytest pytest-html
           pipenv run pytest --html=reports/new_feature/report.html tests/UI_test/new_feature
+
+      - name: action-upload-artifact-tryout
+        uses: actions/upload-artifact@v2
+        with:
+          name: 'upload-artifact'
+          path: reports/new_feature
+
 
 
   UI_test_functional:
@@ -81,14 +94,8 @@ jobs:
           pipenv install pytest pytest-html
           pipenv run pytest --html=reports/functional/report.html tests/UI_test/functional
 
-  upload_result:
-    runs-on: ubuntu-latest
-    steps:
-      - name: Checkout
-        uses: actions/checkout@v2
-
       - name: action-upload-artifact-tryout
         uses: actions/upload-artifact@v2
         with:
           name: 'upload-artifact'
-          path: reports
+          path: reports/functional
