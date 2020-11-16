@@ -8,7 +8,6 @@ from viewports import *
 from config import *
 
 SELENIUM_HUB_HOST='localhost'
-SCREENCAPTURE_PATH='/home/logic/_workspace/LYNKED_QA_project/reports/functional/test_viewport'
 
 def get_sc_filename(SCREENCAPTURE_PATH, viewport_name):
   return '{}/{}_test.png'.format(SCREENCAPTURE_PATH,viewport_name.replace('/','_').replace(' ','_'))
