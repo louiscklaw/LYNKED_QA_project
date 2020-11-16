@@ -24,3 +24,8 @@ reports
 └── regression         # store result of regression test
     └── assets
 ```
+
+## to develop
+```
+$ pipenv install --dev
+```
