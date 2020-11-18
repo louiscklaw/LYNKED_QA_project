@@ -1,2 +1,9 @@
-%% ユーザー流れ - 2 (席の予約/情報更新)の改善, slide 14
-%% User flow-Improvement of 2 (seat reservation / information update)
+%% レストランユーザー流れ - 2 (メニュー管理/ランディングページ), slide 22
+%% Restaurant user flow-2 (Menu management / Landing page)
+
+graph TD
+  A1(admin'manage' page) --> |click food configuration|B(food page appears)
+  B-->|click 編集|C(green food detail dialogue box appears)
+  C-->|update dialogue box|D(dialogue food detail updated)
+  D-->|insert food picture|E(dialogue food picture updated)
+  E-->|click 編集|F(food detail updated, dialogue close)

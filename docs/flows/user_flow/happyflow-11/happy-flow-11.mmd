@@ -1,13 +1,9 @@
-%% ユーザー流れ - 1 (利用規約/ランディングページ)の改善, slide 13
-%% User Flow-1 (Terms of Service / Landing Page) Improvement
+%% ユーザー流れ - 1 (利用規約/ランディングページ)の改善, slide 21
+%% Restaurant user flow-2 (Menu management / Landing page)
 
 graph TD
-  A1(main page with 番號 and table number) --> |restaurant side tap upper left hamburger button|B(restaurant side, orange submenu shown)
-  B-->|user click account managment|C(resturant side, order list shown)
-  C-->|restaurant update food item status '1 or all'|D(restaurant side, food item list updated)
-  D-->E(client side, tap on green button, show bill 'food item, 準備中, red')
-  E-->|tick bill dividing|F(bill dividing checkbox ticked, 1人分)
-  F-->G(total amount equal total price divided by 1)
-  G-->|user select number of people|H(total price divided by num of people)
-  H-->|user tap upper left cross|I(billing dialogue closed)
-  I-->J(main menu shown, with 番號 and table number)
+  A1(admin'manage') --> |click category configuration|B(category page appears)
+  B-->|click Create New Category|C(input box to ask category name)
+  C-->|click create|D(new category created)
+  D-->E(New category dialogue hide)
+  E-->F(Item found in category index page)
