@@ -1,0 +1,28 @@
+{
+	"folders": [
+		{
+			"path": "."
+		},
+		{
+			"path": "../github-playlist"
+		},
+		{
+			"path": "../python-playlist"
+		},
+		{
+			"path": "../appium-playlist"
+		},
+		{
+			"path": "../selenium-playlist"
+		},
+		{
+			"path": "../markdown-playlist"
+		},
+		{
+			"path": "../LynkedKK_QA_test_scripts"
+		}
+	],
+	"settings": {
+		"liveServer.settings.multiRootWorkspaceName": "LYNKED_QA_project"
+	}
+}
