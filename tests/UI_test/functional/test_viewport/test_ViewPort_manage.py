@@ -26,7 +26,7 @@ def test_ViewPort():
       "platform":"LINUX"
       })
 
-  browser.get('http://menymeny.com/manage/%E3%82%84%E3%81%8D%E3%81%A8%E3%82%8A/')
+  browser.get('http://menymeny.com/manage/やきとり/react/')
 
   for viewport_config in ALL_VIEWPORTS:
     (viewport_name, dump1, dump2 , width, height) = viewport_config
