@@ -29,4 +29,10 @@ mmdc -i $FLOWS_DIR/user_flow/happyflow-7/happy-flow-7.mmd -o $FLOWS_DIR/user_flo
 
 mmdc -i $FLOWS_DIR/user_flow/happyflow-8/happy-flow-8.mmd -o $FLOWS_DIR/user_flow/happyflow-8/happy-flow-8.png &
 
+mmdc -i $FLOWS_DIR/user_flow/happyflow-9/happy-flow-9.mmd -o $FLOWS_DIR/user_flow/happyflow-9/happy-flow-9.png &
+
+mmdc -i $FLOWS_DIR/user_flow/happyflow-10/happy-flow-10.mmd -o $FLOWS_DIR/user_flow/happyflow-10/happy-flow-10.png &
+
+mmdc -i $FLOWS_DIR/user_flow/happyflow-11/happy-flow-11.mmd -o $FLOWS_DIR/user_flow/happyflow-11/happy-flow-11.png &
+
 wait
