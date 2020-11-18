@@ -13,6 +13,9 @@ def get_sc_filename(SCREENCAPTURE_PATH, viewport_name):
   return '{}/{}_test.png'.format(SCREENCAPTURE_PATH,viewport_name.replace('/','_').replace(' ','_'))
 
 def test_ViewPort():
+  pprint(get_sc_filename(MANAGE_SCREENCAPTURE_PATH,'viewport_name'))
+  # sys.exit()
+
   selenium_url = 'http://{}:4444/wd/hub'.format(SELENIUM_HUB_HOST)
 
   browser = webdriver.Remote(
@@ -23,15 +26,15 @@ def test_ViewPort():
       "platform":"LINUX"
       })
 
-  browser.get('https://www.google.com')
+  browser.get('http://menymeny.com/manage/%E3%82%84%E3%81%8D%E3%81%A8%E3%82%8A/')
 
   for viewport_config in ALL_VIEWPORTS:
     (viewport_name, dump1, dump2 , width, height) = viewport_config
-    sc_filename =get_sc_filename(SCREENCAPTURE_PATH,viewport_name)
+    sc_filename =get_sc_filename(MANAGE_SCREENCAPTURE_PATH,viewport_name)
 
     browser.set_window_size(width, height)
     browser.save_screenshot(sc_filename)
 
-    assert('Google'==browser.title)
+    # assert('Google'==browser.title)
 
   browser.quit
