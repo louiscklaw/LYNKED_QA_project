@@ -6,6 +6,7 @@ docs/new_feature
 docs/regression
 reports/functional/test_viewport/*.png
 reports/**/*.html
+reports/**/*.png
 
 # NODE SPECIFIC
 .env
