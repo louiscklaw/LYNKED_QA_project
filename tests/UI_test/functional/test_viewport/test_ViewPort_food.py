@@ -39,4 +39,4 @@ def test_ViewPort():
     # assert('Google'==browser.title)
 
   browser.quit
-  sleep(15)
+  sleep(30)

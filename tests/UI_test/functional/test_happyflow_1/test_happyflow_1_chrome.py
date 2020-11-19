@@ -41,4 +41,4 @@ def test_happyflow_1_chrome():
   browser.save_screenshot('reports/UI_test/functional/test_happyflow_1/result/first_time_landing_chrome.png')
 
   browser.quit
-  sleep(15)
+  sleep(30)
