@@ -54,6 +54,7 @@ def test_happyflow_1_chrome_click_accept_and_continue():
   fl_page = first_time_landing.MainPage(browser)
   fl_page.checkLinkExist()
   fl_page.checkAcceptAndContinueButtonExist()
+  fl_page.takeScreenshot('/tmp/t1.png')
   # browser.find_element_by_id('test_link')
   # browser.find_element_by_xpath('//*[@id="test_link"]')
 
