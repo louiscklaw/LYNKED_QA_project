@@ -26,5 +26,7 @@ touch reports/functional/test_viewport/manage/.gitkeep
 # pipenv sync
 
 # pipenv run pytest --html=reports/regression/report.html tests/UI_test/regression
-pipenv run pytest --html=reports/functional/report.html tests/UI_test/functional
+# pipenv run pytest --html=reports/functional/report.html tests/UI_test/functional
+
+pipenv run pytest --html=reports/functional/report.html tests/UI_test/functional/test_happyflow_1
 # pipenv run pytest --html=reports/new_feature/report.html tests/UI_test/new_feature
