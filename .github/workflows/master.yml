@@ -95,6 +95,7 @@ jobs:
 
           export LC_ALL=C.UTF-8
           export LANG=C.UTF-8
+
           pipenv install pytest pytest-html
           pipenv run pytest --html=reports/functional/report.html tests/UI_test/functional
 
