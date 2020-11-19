@@ -9,7 +9,7 @@ set -ex
 
 # trap shutdown SIGTERM SIGINT EXIT
 
-./scripts/clear_report_directory.sh
+# ./scripts/clear_report_directory.sh
 
 mkdir -p reports/functional/test_viewport/food
 mkdir -p reports/functional/test_viewport/manage
@@ -43,4 +43,4 @@ pipenv run pytest --html=reports/functional/report.html tests/UI_test/functional
 # pipenv run pytest --html=reports/functional/report.html tests/UI_test/functional/test_viewport/test_SeleniumCoolDown.py
 pipenv run pytest tests/UI_test/functional/test_functional_Helloworld.py
 
-pipenv run pytest tests/self_test/test_diffimg.py
+pipenv run pytest tests/self_test
