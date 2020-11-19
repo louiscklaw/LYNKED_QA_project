@@ -46,7 +46,8 @@ def test_happyflow_1_chrome():
 
   browser.save_screenshot(ACTUAL_SCREENSHOT)
 
-  assertSameImage(EXPECTED_SCREENSHOT, ACTUAL_SCREENSHOT, 'first time landing test on chrome failed')
 
   browser.quit()
   sleep(30)
+
+  assertSameImage(EXPECTED_SCREENSHOT, ACTUAL_SCREENSHOT, 'first time landing test on chrome failed')

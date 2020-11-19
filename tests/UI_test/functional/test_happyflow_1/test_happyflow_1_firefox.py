@@ -20,10 +20,14 @@ sys.path.append(LIB_CONFIG_DIR)
 
 from lib_helloworld import lib_helloworld
 from po_helloworld import po_helloworld
+from assert_image import assertSameImage
 from jp import *
 
 SELENIUM_HUB_HOST='localhost'
 FOOD_PAGE='http://menymeny.com/food/%E3%82%84%E3%81%8D%E3%81%A8%E3%82%8A/'
+
+ACTUAL_SCREENSHOT='reports/UI_test/functional/test_happyflow_1/result/first_time_landing_firefox.png'
+EXPECTED_SCREENSHOT='tests/UI_test/functional/test_happyflow_1/expected_result/first_time_landing_firefox.png'
 
 def test_happyflow_1_firefox():
   selenium_url = 'http://{}:4444/wd/hub'.format(SELENIUM_HUB_HOST)
@@ -38,7 +42,9 @@ def test_happyflow_1_firefox():
 
   browser.get(FOOD_PAGE)
 
-  browser.save_screenshot('reports/UI_test/functional/test_happyflow_1/result/first_time_landing_firefox.png')
+  browser.save_screenshot(ACTUAL_SCREENSHOT)
 
   browser.quit()
   sleep(30)
+
+  assertSameImage(EXPECTED_SCREENSHOT, ACTUAL_SCREENSHOT, 'first time landing test on firefox failed')
