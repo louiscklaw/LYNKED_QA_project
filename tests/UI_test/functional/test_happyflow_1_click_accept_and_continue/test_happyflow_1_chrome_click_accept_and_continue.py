@@ -46,15 +46,13 @@ def test_happyflow_1_chrome_click_accept_and_continue():
     desired_capabilities = chrome_options.to_capabilities()
   )
 
-  URL = 'http://192.168.88.105:8002/'
-  browser.get(URL)
-  # browser.get(FOOD_PAGE)
+  # URL = 'http://192.168.88.105:8002/'
+  # browser.get(URL)
+  browser.get(FOOD_PAGE)
   sleep(1)
 
   fl_page = first_time_landing.MainPage(browser)
-  print(dir(browser))
-  browser.find_element_by_id('test_link')
-  browser.find_element_by_xpath('//*[@id="test_link"]')
+  fl_page.checkAcceptAndContinueButtonExist()
 
   # fl_page.checkLinkExist()
 

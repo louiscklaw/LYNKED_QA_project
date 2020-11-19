@@ -36,8 +36,8 @@ mkdir -p reports/UI_test/functional/test_happyflow_1/result
 # pipenv run pytest --html=reports/functional/report.html tests/UI_test/functional/test_happyflow_1/test_happyflow_1_chrome.py
 
 # pipenv run pytest --html=reports/functional/report.html tests/UI_test/functional/test_happyflow_1/test_happyflow_1_firefox.py
-# pipenv run pytest --html=reports/functional/report.html tests/UI_test/functional/test_happyflow_1_click_accept_and_continue/test_happyflow_1_chrome_click_accept_and_continue.py
-pipenv run pytest --html=reports/functional/report.html tests/UI_test/functional/test_happyflow_1_click_accept_and_continue/test_po_helloworld.py
+pipenv run pytest --html=reports/functional/report.html tests/UI_test/functional/test_happyflow_1_click_accept_and_continue/test_happyflow_1_chrome_click_accept_and_continue.py
+# pipenv run pytest --html=reports/functional/report.html tests/UI_test/functional/test_happyflow_1_click_accept_and_continue/test_po_helloworld.py
 
 # pipenv run pytest --html=reports/functional/report.html tests/UI_test/functional/test_happyflow_1_click_accept_and_continue/test_po_helloworld.py
 
