@@ -11,8 +11,11 @@ set -ex
 
 
 rm -rf reports/* || true
+
 mkdir -p reports/functional/test_viewport/food
 mkdir -p reports/functional/test_viewport/manage
+mkdir -p reports/UI_test/functional/test_happyflow_1/result
+
 touch reports/functional/test_viewport/food/.gitkeep
 touch reports/functional/test_viewport/manage/.gitkeep
 
@@ -29,4 +32,7 @@ touch reports/functional/test_viewport/manage/.gitkeep
 # pipenv run pytest --html=reports/functional/report.html tests/UI_test/functional
 
 pipenv run pytest --html=reports/functional/report.html tests/UI_test/functional/test_happyflow_1
+
 # pipenv run pytest --html=reports/new_feature/report.html tests/UI_test/new_feature
+
+pipenv run pytest --html=reports/functional/report.html tests/UI_test/functional/test_functional_Helloworld.py
