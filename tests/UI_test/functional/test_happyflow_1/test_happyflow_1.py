@@ -18,10 +18,4 @@ from lib_helloworld import lib_helloworld
 from po_helloworld import po_helloworld
 
 def test_happyflow_1():
-  pprint(TEST_ROOT)
-  # assert a % 2 == 0, "value was odd, should be even"
-  assert 'lib_helloworld helloworld'==lib_helloworld()
-  assert 'po_helloworld helloworld'==po_helloworld()
-
-  # pprint(TEST_ROOT)
-  # pprint("helloworld_happyflow_1")
+  print('helloworld')
