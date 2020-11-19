@@ -34,7 +34,7 @@ SELENIUM_HUB_HOST='localhost'
 FOOD_PAGE='http://menymeny.com/food/%E3%82%84%E3%81%8D%E3%81%A8%E3%82%8A/'
 
 
-def test_happyflow_1_chrome_click_acept_and_continue():
+def test_happyflow_1_chrome_click_accept_and_continue():
   selenium_url = 'http://{}:4444/wd/hub'.format(SELENIUM_HUB_HOST)
 
   chrome_options = webdriver.ChromeOptions()
@@ -46,13 +46,17 @@ def test_happyflow_1_chrome_click_acept_and_continue():
     desired_capabilities = chrome_options.to_capabilities()
   )
 
-  # browser.get(FOOD_PAGE)
   URL = 'http://192.168.88.105:8002/'
-  browser.get(FOOD_PAGE)
+  browser.get(URL)
+  # browser.get(FOOD_PAGE)
   sleep(1)
 
-  fl_page = first_time_landing.CheckPage(browser)
-  fl_page.checkAcceptAndContinueButtonExist()
+  fl_page = first_time_landing.MainPage(browser)
+  print(dir(browser))
+  browser.find_element_by_id('test_link')
+  browser.find_element_by_xpath('//*[@id="test_link"]')
+
+  # fl_page.checkLinkExist()
 
   browser.quit()
   sleep(30)
