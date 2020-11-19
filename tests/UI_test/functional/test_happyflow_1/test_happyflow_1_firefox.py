@@ -1,6 +1,7 @@
 import os,sys
 from pprint import pprint
 from selenium import webdriver
+from time import sleep
 
 TEST_DIR=os.path.dirname(__file__)
 FUNCTIONAL_DIR=os.path.abspath(TEST_DIR+'/..')
@@ -40,3 +41,4 @@ def test_happyflow_1_firefox():
   browser.save_screenshot('reports/UI_test/functional/test_happyflow_1/result/first_time_landing_firefox.png')
 
   browser.quit
+  sleep(15)

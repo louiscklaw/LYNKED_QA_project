@@ -1,5 +1,6 @@
 import os,sys
 from pprint import pprint
+from time import sleep
 
 from selenium import webdriver
 
@@ -38,3 +39,4 @@ def test_ViewPort():
     # assert('Google'==browser.title)
 
   browser.quit
+  sleep(15)
