@@ -28,13 +28,13 @@ mkdir -p reports/UI_test/functional/test_happyflow_1/result
 # pipenv sync
 
 # pipenv run pytest --html=reports/regression/report.html tests/UI_test/regression
-# pipenv run pytest --html=reports/functional/report.html tests/UI_test/functional
+pipenv run pytest --html=reports/functional/report.html tests/UI_test/functional
 # pipenv run pytest --html=reports/new_feature/report.html tests/UI_test/new_feature
 
-pipenv run pytest --html=reports/functional/report.html tests/UI_test/functional/test_functional_Helloworld.py
-pipenv run pytest --html=reports/functional/report.html tests/UI_test/functional/test_happyflow_1/test_happyflow_1_chrome.py
-pipenv run pytest --html=reports/functional/report.html tests/UI_test/functional/test_happyflow_1/test_happyflow_1_firefox.py
-pipenv run pytest --html=reports/functional/report.html tests/UI_test/functional/test_viewport/test_ViewPort_food.py
+# pipenv run pytest --html=reports/functional/report.html tests/UI_test/functional/test_happyflow_1/test_happyflow_1_chrome.py
+# pipenv run pytest --html=reports/functional/report.html tests/UI_test/functional/test_happyflow_1/test_happyflow_1_firefox.py
+
+# pipenv run pytest --html=reports/functional/report.html tests/UI_test/functional/test_viewport/test_ViewPort_food.py
 # pipenv run pytest --html=reports/functional/report.html tests/UI_test/functional/test_viewport/test_ViewPort_manage.py
 
 
