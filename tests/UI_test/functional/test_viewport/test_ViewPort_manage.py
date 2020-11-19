@@ -13,7 +13,7 @@ SELENIUM_HUB_HOST='localhost'
 def get_sc_filename(SCREENCAPTURE_PATH, viewport_name):
   return '{}/{}_test.png'.format(SCREENCAPTURE_PATH,viewport_name.replace('/','_').replace(' ','_'))
 
-def test_ViewPort():
+def test_ViewPort_manage():
   pprint(get_sc_filename(MANAGE_SCREENCAPTURE_PATH,'viewport_name'))
   # sys.exit()
 
