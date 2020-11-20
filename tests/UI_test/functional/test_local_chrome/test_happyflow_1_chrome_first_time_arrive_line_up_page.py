@@ -45,17 +45,28 @@ LINE_UP_PAGE='http://menymeny.com/food/%E3%82%84%E3%81%8D%E3%81%A8%E3%82%8A/?do_
 # TID_002_EXPECTED_SCREENSHOT='tests/UI_test/functional/test_happyflow_1_click_accept_and_continue/expected_result/TID_002_expected_sc_iphonex.png'
 
 
+def takeScreenshot(driver, sc_filename):
+    driver.save_screenshot(sc_filename)
+
 def getActualScreenshotPath(test_number):
-  return 'reports/UI_test/functional/test_happyflow_1_click_accept_and_continue/{}_sc_iphonex.png'.format(test_number)
+  return 'reports/UI_test/functional/test_happyflow_1_click_accept_and_continue/{}_sc.png'.format(test_number)
 
 def getExpectedScreenshotPath(test_number):
-  return 'tests/UI_test/functional/test_happyflow_1_click_accept_and_continue/{}_sc_iphonex.png'.format(test_number)
+  return 'tests/UI_test/functional/test_happyflow_1_click_accept_and_continue/expect/{}_sc.png'.format(test_number)
+
+def assertCheckPoint(driver ,check_point_name, error_message, fail_threshold=0.05):
+  actual_screenshot_path=getActualScreenshotPath(check_point_name)
+  expected_screenshot_path=getExpectedScreenshotPath(check_point_name)
+
+  takeScreenshot(driver, actual_screenshot_path)
+
+  # TODO: RESUME ME
+  assertSameImage(expected_screenshot_path, actual_screenshot_path,fail_threshold,  error_message)
 
 
 def check_TID_001(json_metadata, browser):
   json_metadata['TEST_ID'] = 'TID_001'
-  actual_screenshot_path=getActualScreenshotPath('TID_001')
-  expected_screenshot_path=getExpectedScreenshotPath('TID_001')
+  ERROR_MESSAGE='The device should auto redirect to line up page'
 
   # URL = 'http://192.168.88.105:8002/'
   # browser.get(URL)
@@ -63,41 +74,37 @@ def check_TID_001(json_metadata, browser):
   sleep(1)
 
   fl_page = line_up_page.FirstTimeLanding(browser)
-
   fl_page.checkAcceptAndContinueButtonExist()
   sleep(1)
 
-  fl_page.takeScreenshot(actual_screenshot_path)
-  assertSameImage(expected_screenshot_path, actual_screenshot_path,0.1,  'The device should auto redirect to line up page')
-  # fl_page.checkLinkExist()
+  assertCheckPoint(browser, 'TID_001_1', ERROR_MESSAGE)
 
 def check_TID_002(json_metadata, browser):
   json_metadata['TEST_ID'] = 'TID_002'
-  actual_screenshot_path=getActualScreenshotPath('TID_002')
-  expected_screenshot_path=getExpectedScreenshotPath('TID_002')
+  ERR_MSG_BEFORE_TAPPING_TNC_MSG='error found before tapping t n c message'
+  ERR_MSG_BACK_FROM_TNC_MSG = 'error found during tapping back from tnc message'
 
   fl_page = line_up_page.FirstTimeLanding(browser)
 
+  assertCheckPoint(browser, 'TID_002_1', ERR_MSG_BEFORE_TAPPING_TNC_MSG)
   fl_page.tapTAndCText()
   sleep(1)
 
-  fl_page.takeScreenshot(actual_screenshot_path)
-  assertSameImage(expected_screenshot_path, actual_screenshot_path,0.1,  'The device should auto redirect to line up page')
-
   # back after test
   fl_page.backFromTAndCText()
+  assertCheckPoint(browser, 'TID_002_2', ERR_MSG_BACK_FROM_TNC_MSG)
 
 def check_TID_003(json_metadata, browser):
   json_metadata['TEST_ID'] = 'TID_003'
-  actual_screenshot_path=getActualScreenshotPath('TID_003')
-  expected_screenshot_path=getExpectedScreenshotPath('TID_003')
+  ERR_MSG_FIRST_TIME_LANDING_NOT_FOUND='first time landing not found'
+  ERR_MSG_ERR_FOUND_TAPPING_ACCEPT_AND_CONTINUE_BUTTON='error found after tapping accept and continue button'
 
+  assertCheckPoint(browser, 'TID_003_1', ERR_MSG_FIRST_TIME_LANDING_NOT_FOUND)
   fl_page = line_up_page.FirstTimeLanding(browser)
   fl_page.tapAcceptAndContinueButton()
   sleep(1)
 
-  fl_page.takeScreenshot(actual_screenshot_path)
-  assertSameImage(expected_screenshot_path, actual_screenshot_path,0.1,  'T&C dialog message should close')
+  assertCheckPoint(browser, 'TID_003_2', ERR_MSG_ERR_FOUND_TAPPING_ACCEPT_AND_CONTINUE_BUTTON)
 
 def check_TID_004(json_metadata, browser):
   json_metadata['TEST_ID'] = 'TID_004'
@@ -390,22 +397,22 @@ def test_happyflow_1_chrome_first_time_arrive_line_up_page(json_metadata):
   check_TID_001(json_metadata, browser)
   check_TID_002(json_metadata, browser)
   check_TID_003(json_metadata, browser)
-  check_TID_004(json_metadata, browser)
-  check_TID_005(json_metadata, browser)
-  check_TID_006(json_metadata, browser)
+  # check_TID_004(json_metadata, browser)
+  # check_TID_005(json_metadata, browser)
+  # check_TID_006(json_metadata, browser)
 
-  # check_TID_007 requires closing browser, skipping
-  check_TID_008(json_metadata, browser)
-  check_TID_009(json_metadata, browser)
-  check_TID_010(json_metadata, browser)
-  check_TID_011(json_metadata, browser)
-  check_TID_012(json_metadata, browser)
-  check_TID_013(json_metadata, browser)
-  check_TID_014(json_metadata, browser)
-  check_TID_015(json_metadata, browser)
-  check_TID_016(json_metadata, browser)
-  check_TID_017(json_metadata, browser)
-  check_TID_018(json_metadata, browser)
+  # # check_TID_007 requires closing browser, skipping
+  # check_TID_008(json_metadata, browser)
+  # check_TID_009(json_metadata, browser)
+  # check_TID_010(json_metadata, browser)
+  # check_TID_011(json_metadata, browser)
+  # check_TID_012(json_metadata, browser)
+  # check_TID_013(json_metadata, browser)
+  # check_TID_014(json_metadata, browser)
+  # check_TID_015(json_metadata, browser)
+  # check_TID_016(json_metadata, browser)
+  # check_TID_017(json_metadata, browser)
+  # check_TID_018(json_metadata, browser)
 
 
   browser.quit()

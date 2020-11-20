@@ -68,7 +68,7 @@ def checkIfNeedToExit(count_to_exit, exit_when_larger_than):
 # google limit read rate applied
 # https://gspread.readthedocs.io/en/latest/user-guide.html
 for i in range(5,150):
-  sleep(0.2)
+  sleep(1)
   test_id_on_sheet=sh.sheet1.cell(i, COL_TID_NAME).value
 
   # if test_id_on_sheet=='':
