@@ -10,4 +10,15 @@ from time import sleep
 from assert_check_point import assertCheckPoint
 
 def run_check(json_metadata, browser):
-  pass
+  TEST_ERR_MSG='TID_014 failed'
+  food_menu_po=food_menu.Main(browser)
+  cart_page_po = cart_page.Main(browser)
+
+  assertCheckPoint(browser, 'TID_014_1', TEST_ERR_MSG)
+  for i in range(1,33):
+    cart_page_po.tapAddButton(1)
+    sleep(0.05)
+
+  assertCheckPoint(browser, 'TID_014_2', TEST_ERR_MSG)
+
+  json_metadata['TID_014'] = 'passed'

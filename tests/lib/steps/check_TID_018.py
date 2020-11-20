@@ -10,4 +10,17 @@ from time import sleep
 from assert_check_point import assertCheckPoint
 
 def run_check(json_metadata, browser):
-  pass
+  TEST_ERR_MSG='It should send order successfully'
+
+  food_menu_po=food_menu.Main(browser)
+  cart_page_po = cart_page.Main(browser)
+  item_add_page_po=item_add_page.Main(browser)
+  take_seat_first_dialogue_po=take_seat_first_dialogue.Main(browser)
+
+  assertCheckPoint(browser, 'TID_018_1', TEST_ERR_MSG)
+  sleep(0.5)
+
+  # tap ok to dismiss dialogue
+  take_seat_first_dialogue_po.tapOkButtonOnDialogue()
+
+  assertCheckPoint(browser, 'TID_018_2', TEST_ERR_MSG)

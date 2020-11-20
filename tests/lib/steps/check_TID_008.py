@@ -18,25 +18,27 @@ def run_check(json_metadata, browser):
   dialogue_po= line_up_confirmation_dialogue.Main(browser)
 
   assertCheckPoint(browser, 'TID_008_1', TEST_ERR_MSG)
-  fl_page.tapTopRightGreenButton()
+
 
   # On food menu page, click the number at top right screen
 
   # Update the name, people, note
   # Update my info
+  fl_page.tapTopRightGreenButton()
   assertCheckPoint(browser, 'TID_008_2', TEST_ERR_MSG)
 
   line_up_po.inputName('this is customer name by louis from script updated')
   line_up_po.inputNotes('this is customer notse by louis from script updated')
   line_up_po.changeNumberOfAdult(5)
   line_up_po.changeNumberOfChild(6)
+  assertCheckPoint(browser, 'TID_008_3', TEST_ERR_MSG)
 
   # Close the info page, check the number at top right screen again
   # Observe
   line_up_po.updateLineUpTicket()
-  assertCheckPoint(browser, 'TID_008_3', TEST_ERR_MSG)
+  assertCheckPoint(browser, 'TID_008_4', TEST_ERR_MSG)
 
   dialogue_po.tapOkButtonOnDialogue()
-  assertCheckPoint(browser, 'TID_008_4', TEST_ERR_MSG)
+  assertCheckPoint(browser, 'TID_008_5', TEST_ERR_MSG)
 
   json_metadata['TID_008'] = 'passed'

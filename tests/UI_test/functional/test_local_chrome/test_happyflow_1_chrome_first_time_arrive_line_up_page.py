@@ -71,7 +71,7 @@ def assertCheckPoint_1(driver ,check_point_name, error_message, fail_threshold=0
   # assertSameImage(expected_screenshot_path, actual_screenshot_path,fail_threshold,  error_message)
 
 
-def check_TID_010(json_metadata, browser):
+def check_TID_010a(json_metadata, browser):
   json_metadata['TEST_ID'] = 'TID_010'
   actual_screenshot_path=getActualScreenshotPath('TID_010')
   expected_screenshot_path=getExpectedScreenshotPath('TID_010')
@@ -87,7 +87,7 @@ def check_TID_010(json_metadata, browser):
   item_add_page_po.takeScreenshot(getActualScreenshotPath('TID_010'))
   # assertSameImage(expected_screenshot_path, actual_screenshot_path,0.1,  TEST_ERR_MSG)
 
-def check_TID_011(json_metadata, browser):
+def check_TID_011a(json_metadata, browser):
   json_metadata['TEST_ID'] = 'TID_011'
   actual_screenshot_path=getActualScreenshotPath('TID_011')
   expected_screenshot_path=getExpectedScreenshotPath('TID_011')
@@ -103,7 +103,7 @@ def check_TID_011(json_metadata, browser):
   item_add_page_po.takeScreenshot(getActualScreenshotPath('TID_011'))
   # assertSameImage(expected_screenshot_path, actual_screenshot_path,0.1,  TEST_ERR_MSG)
 
-def check_TID_012(json_metadata, browser):
+def check_TID_012a(json_metadata, browser):
   json_metadata['TEST_ID'] = 'TID_012'
   actual_screenshot_path=getActualScreenshotPath('TID_012')
   expected_screenshot_path=getExpectedScreenshotPath('TID_012')
@@ -119,7 +119,7 @@ def check_TID_012(json_metadata, browser):
   item_add_page_po.takeScreenshot(getActualScreenshotPath('TID_012'))
   # assertSameImage(expected_screenshot_path, actual_screenshot_path,0.1,  TEST_ERR_MSG)
 
-def check_TID_013(json_metadata, browser):
+def check_TID_013a(json_metadata, browser):
   json_metadata['TEST_ID'] = 'TID_013'
   actual_screenshot_path=getActualScreenshotPath('TID_013')
   expected_screenshot_path=getExpectedScreenshotPath('TID_013')
@@ -133,7 +133,7 @@ def check_TID_013(json_metadata, browser):
 
   cart_page_po.takeScreenshot(getActualScreenshotPath('TID_013'))
 
-def check_TID_014(json_metadata, browser):
+def check_TID_014a(json_metadata, browser):
   json_metadata['TEST_ID'] = 'TID_014'
   actual_screenshot_path=getActualScreenshotPath('TID_014')
   expected_screenshot_path=getExpectedScreenshotPath('TID_014')
@@ -150,7 +150,7 @@ def check_TID_014(json_metadata, browser):
   cart_page_po.takeScreenshot(getActualScreenshotPath('TID_014'))
   # assertSameImage(expected_screenshot_path, actual_screenshot_path,0.1,  TEST_ERR_MSG)
 
-def check_TID_015(json_metadata, browser):
+def check_TID_015a(json_metadata, browser):
   json_metadata['TEST_ID'] = 'TID_015'
   actual_screenshot_path=getActualScreenshotPath('TID_015')
   expected_screenshot_path=getExpectedScreenshotPath('TID_015')
@@ -167,7 +167,7 @@ def check_TID_015(json_metadata, browser):
   cart_page_po.takeScreenshot(getActualScreenshotPath('TID_015'))
   # assertSameImage(expected_screenshot_path, actual_screenshot_path,0.1,  TEST_ERR_MSG)
 
-def check_TID_016(json_metadata, browser):
+def check_TID_016a(json_metadata, browser):
   json_metadata['TEST_ID'] = 'TID_016'
   actual_screenshot_path=getActualScreenshotPath('TID_016')
   expected_screenshot_path=getExpectedScreenshotPath('TID_016')
@@ -198,7 +198,7 @@ def check_TID_016(json_metadata, browser):
   # cart_page_po.takeScreenshot(getActualScreenshotPath('TID_016'))
   # assertSameImage(expected_screenshot_path, actual_screenshot_path,0.1,  TEST_ERR_MSG)
 
-def check_TID_017(json_metadata, browser):
+def check_TID_017a(json_metadata, browser):
   json_metadata['TEST_ID'] = 'TID_017'
   actual_screenshot_path=getActualScreenshotPath('TID_017')
   expected_screenshot_path=getExpectedScreenshotPath('TID_017')
@@ -212,7 +212,7 @@ def check_TID_017(json_metadata, browser):
   cart_page_po.takeScreenshot(getActualScreenshotPath('TID_017_2'))
 
 
-def check_TID_018(json_metadata, browser):
+def check_TID_018a(json_metadata, browser):
   json_metadata['TEST_ID'] = 'TID_018'
   actual_screenshot_path=getActualScreenshotPath('TID_018')
   expected_screenshot_path=getExpectedScreenshotPath('TID_018')
@@ -267,13 +267,15 @@ def test_happyflow_1_chrome_first_time_arrive_line_up_page(json_metadata):
   check_TID_007.run_check(json_metadata, browser)
   check_TID_008.run_check(json_metadata, browser)
   check_TID_009.run_check(json_metadata, browser)
-  # check_TID_010.run_check(json_metadata, browser)
-  # check_TID_011.run_check(json_metadata, browser)
-  # check_TID_012.run_check(json_metadata, browser)
-  # check_TID_013.run_check(json_metadata, browser)
-  # check_TID_014.run_check(json_metadata, browser)
-  # check_TID_015.run_check(json_metadata, browser)
-  # check_TID_016.run_check(json_metadata, browser)
+  check_TID_010.run_check(json_metadata, browser)
+  check_TID_011.run_check(json_metadata, browser)
+  check_TID_012.run_check(json_metadata, browser)
+  check_TID_013.run_check(json_metadata, browser)
+  check_TID_014.run_check(json_metadata, browser)
+  check_TID_015.run_check(json_metadata, browser)
+  check_TID_016.run_check(json_metadata, browser)
+  check_TID_017.run_check(json_metadata, browser)
+  check_TID_018.run_check(json_metadata, browser)
   # check_TID_003(json_metadata, browser)
   # check_TID_004(json_metadata, browser)
   # check_TID_005(json_metadata, browser)
