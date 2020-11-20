@@ -20,7 +20,7 @@ def run_check(json_metadata, browser):
   line_up_po.changeNumberOfAdult(2)
   line_up_po.changeNumberOfChild(3)
 
-  assertCheckPoint(browser, 'TID_005_1', TEST_ERR_MSG)
+  assertCheckPoint(browser, 'TID_006_1', TEST_ERR_MSG)
   # assertSameImage(expected_screenshot_path, actual_screenshot_path,0.1,  TEST_ERR_MSG)
 
   line_up_po.submitLineUpTicket()
