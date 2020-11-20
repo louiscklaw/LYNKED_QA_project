@@ -71,60 +71,6 @@ def assertCheckPoint_1(driver ,check_point_name, error_message, fail_threshold=0
   # assertSameImage(expected_screenshot_path, actual_screenshot_path,fail_threshold,  error_message)
 
 
-
-def check_TID_008a(json_metadata, browser):
-  json_metadata['TEST_ID'] = 'TID_008'
-  actual_screenshot_path=getActualScreenshotPath('TID_008')
-  expected_screenshot_path=getExpectedScreenshotPath('TID_008')
-  TEST_ERR_MSG='The user info should be updated'
-
-  # before
-  fl_page = food_menu.Main(browser)
-  line_up_po = line_up_page.Main(browser)
-  dialogue_po= line_up_confirmation_dialogue.Main(browser)
-
-
-  fl_page.takeScreenshot(getActualScreenshotPath('TID_008_01'))
-  fl_page.tapTopRightGreenButton()
-
-  # On food menu page, click the number at top right screen
-
-  # Update the name, people, note
-  # Update my info
-  line_up_po.takeScreenshot(getActualScreenshotPath('TID_008_02'))
-  line_up_po.inputName('this is customer name by louis from script updated')
-  line_up_po.inputNotes('this is customer notse by louis from script updated')
-  line_up_po.changeNumberOfAdult(5)
-  line_up_po.changeNumberOfChild(6)
-
-  # Close the info page, check the number at top right screen again
-  # Observe
-  line_up_po.updateLineUpTicket()
-  line_up_po.takeScreenshot(getActualScreenshotPath('TID_008_03'))
-
-  dialogue_po.tapOkButtonOnDialogue()
-  line_up_po.takeScreenshot(getActualScreenshotPath('TID_008_04'))
-
-  line_up_po.takeScreenshot(actual_screenshot_path)
-  # assertSameImage(expected_screenshot_path, actual_screenshot_path,0.1,  TEST_ERR_MSG)
-
-
-def check_TID_009a(json_metadata, browser, food_item_idx=1):
-  json_metadata['TEST_ID'] = 'TID_009'
-  actual_screenshot_path=getActualScreenshotPath('TID_009')
-  expected_screenshot_path=getExpectedScreenshotPath('TID_009')
-  TEST_ERR_MSG='It should direct to item add page'
-
-  # line_up_po = line_up_page.Main(browser)
-  # dialogue_po= line_up_confirmation_dialogue.Main(browser)
-  food_menu_po = food_menu.Main(browser)
-
-  food_menu_po.takeScreenshot(getActualScreenshotPath('TID_009_1'))
-  food_menu_po.tapFoodItemByIdx(food_item_idx)
-
-  food_menu_po.takeScreenshot(getActualScreenshotPath('TID_009_2'))
-  # assertSameImage(expected_screenshot_path, actual_screenshot_path,0.1,  TEST_ERR_MSG)
-
 def check_TID_010(json_metadata, browser):
   json_metadata['TEST_ID'] = 'TID_010'
   actual_screenshot_path=getActualScreenshotPath('TID_010')
