@@ -272,14 +272,41 @@ def check_TID_014(json_metadata, browser):
     cart_page_po.tapAddButton(1)
     sleep(0.05)
 
-  # cart_page_po.takeScreenshot(getActualScreenshotPath('TID_014_2'))
-  # for i in range(1,5):
-  #   cart_page_po.tapAddButton(2)
-  #   sleep(0.2)
-
   cart_page_po.takeScreenshot(getActualScreenshotPath('TID_014_2'))
 
   cart_page_po.takeScreenshot(getActualScreenshotPath('TID_014'))
+  # assertSameImage(expected_screenshot_path, actual_screenshot_path,0.1,  TEST_ERR_MSG)
+
+def check_TID_015(json_metadata, browser):
+  json_metadata['TEST_ID'] = 'TID_015'
+  actual_screenshot_path=getActualScreenshotPath('TID_015')
+  expected_screenshot_path=getExpectedScreenshotPath('TID_015')
+  food_menu_po=food_menu.Main(browser)
+  cart_page_po = cart_page.Main(browser)
+
+  cart_page_po.takeScreenshot(getActualScreenshotPath('TID_015_1'))
+  for i in range(1,20):
+    cart_page_po.tapMinusButton(1)
+    sleep(0.05)
+
+  cart_page_po.takeScreenshot(getActualScreenshotPath('TID_015_2'))
+
+  cart_page_po.takeScreenshot(getActualScreenshotPath('TID_015'))
+  # assertSameImage(expected_screenshot_path, actual_screenshot_path,0.1,  TEST_ERR_MSG)
+
+def check_TID_016(json_metadata, browser):
+  json_metadata['TEST_ID'] = 'TID_016'
+  actual_screenshot_path=getActualScreenshotPath('TID_016')
+  expected_screenshot_path=getExpectedScreenshotPath('TID_016')
+  food_menu_po=food_menu.Main(browser)
+  cart_page_po = cart_page.Main(browser)
+
+  cart_page_po.takeScreenshot(getActualScreenshotPath('TID_016_1'))
+  cart_page_po.tapRemoveButton(1)
+
+  cart_page_po.takeScreenshot(getActualScreenshotPath('TID_016_2'))
+
+  cart_page_po.takeScreenshot(getActualScreenshotPath('TID_016'))
   # assertSameImage(expected_screenshot_path, actual_screenshot_path,0.1,  TEST_ERR_MSG)
 
 def test_happyflow_1_chrome_first_time_arrive_line_up_page(json_metadata):
@@ -323,6 +350,8 @@ def test_happyflow_1_chrome_first_time_arrive_line_up_page(json_metadata):
   check_TID_012(json_metadata, browser)
   check_TID_013(json_metadata, browser)
   check_TID_014(json_metadata, browser)
+  check_TID_015(json_metadata, browser)
+  check_TID_016(json_metadata, browser)
 
   browser.quit()
 
