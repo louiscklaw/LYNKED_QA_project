@@ -102,7 +102,8 @@ jobs:
 
           pipenv sync
           pipenv install pytest pytest-html
-          pipenv run pytest --html=reports/functional/report.html tests/UI_test/functional
+
+          pipenv run python3 ./tests/self_test/gspread/fill_value_to_google.py
 
           ls -l reports/functional/test_viewport
           ls -l reports/UI_test/functional

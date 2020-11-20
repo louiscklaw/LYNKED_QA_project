@@ -28,7 +28,7 @@ mkdir -p reports/UI_test/functional/test_happyflow_1/result
 # pipenv sync
 
 # pipenv run pytest --html=reports/regression/report.html tests/UI_test/regression
-pipenv run pytest --html=reports/functional/report.html tests/UI_test/functional
+# pipenv run pytest --html=reports/functional/report.html tests/UI_test/functional
 # pipenv run pytest --html=reports/new_feature/report.html tests/UI_test/new_feature
 
 # pipenv run pytest tests/self_test
@@ -49,3 +49,11 @@ pipenv run pytest --html=reports/functional/report.html tests/UI_test/functional
 
 # pipenv run pytest --html=reports/functional/report.html tests/UI_test/functional/test_viewport/test_ViewPort_food.py
 # pipenv run pytest --html=reports/functional/report.html tests/UI_test/functional/test_viewport/test_ViewPort_manage.py
+
+
+
+# mkdir -p ~/.config/gspread
+# cp ./creds/qa-reporting-296203-8b43a1a973e1.json ~/.config/gspread/service_account.json
+
+pipenv sync
+pipenv run python3 ./tests/self_test/gspread/fill_value_to_google.py
