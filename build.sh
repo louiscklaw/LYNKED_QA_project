@@ -50,8 +50,6 @@ mkdir -p reports/UI_test/functional/test_happyflow_1/result
 # pipenv run pytest --html=reports/functional/report.html tests/UI_test/functional/test_viewport/test_ViewPort_food.py
 # pipenv run pytest --html=reports/functional/report.html tests/UI_test/functional/test_viewport/test_ViewPort_manage.py
 
-
-
 # mkdir -p ~/.config/gspread
 # cp ./creds/qa-reporting-296203-8b43a1a973e1.json ~/.config/gspread/service_account.json
 
