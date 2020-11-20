@@ -26,9 +26,12 @@ sys.path.append(LIB_ASSERT_DIR)
 from lib_helloworld import lib_helloworld
 from po_helloworld import po_helloworld
 from assert_image import assertSameImage
+
 import line_up_page
 import food_menu
 import line_up_confirmation_dialogue
+import item_add_page
+import cart_page
 
 from jp import *
 
@@ -183,7 +186,7 @@ def check_TID_009(json_metadata, browser):
   json_metadata['TEST_ID'] = 'TID_009'
   actual_screenshot_path=getActualScreenshotPath('TID_009')
   expected_screenshot_path=getExpectedScreenshotPath('TID_009')
-  TEST_ERR_MSG='User should automatically direct to food menu page with a number display dialog'
+  TEST_ERR_MSG='It should direct to item add page'
 
   # line_up_po = line_up_page.Main(browser)
   # dialogue_po= line_up_confirmation_dialogue.Main(browser)
@@ -193,14 +196,101 @@ def check_TID_009(json_metadata, browser):
   food_menu_po.tapFoodItemByIdx(1)
 
   food_menu_po.takeScreenshot(getActualScreenshotPath('TID_009_2'))
+  # assertSameImage(expected_screenshot_path, actual_screenshot_path,0.1,  TEST_ERR_MSG)
 
+def check_TID_010(json_metadata, browser):
+  json_metadata['TEST_ID'] = 'TID_010'
+  actual_screenshot_path=getActualScreenshotPath('TID_010')
+  expected_screenshot_path=getExpectedScreenshotPath('TID_010')
+  TEST_ERR_MSG='It should increase the quantity of the food item'
+
+  # line_up_po = line_up_page.Main(browser)
+  # dialogue_po= line_up_confirmation_dialogue.Main(browser)
+  item_add_page_po = item_add_page.Main(browser)
+
+  item_add_page_po.takeScreenshot(getActualScreenshotPath('TID_010_1'))
+
+  item_add_page_po.addFood()
+  item_add_page_po.takeScreenshot(getActualScreenshotPath('TID_010'))
+  # assertSameImage(expected_screenshot_path, actual_screenshot_path,0.1,  TEST_ERR_MSG)
+
+def check_TID_011(json_metadata, browser):
+  json_metadata['TEST_ID'] = 'TID_011'
+  actual_screenshot_path=getActualScreenshotPath('TID_011')
+  expected_screenshot_path=getExpectedScreenshotPath('TID_011')
+  TEST_ERR_MSG='It should increase the quantity of the food item'
+
+  # line_up_po = line_up_page.Main(browser)
+  # dialogue_po= line_up_confirmation_dialogue.Main(browser)
+  item_add_page_po = item_add_page.Main(browser)
+
+  item_add_page_po.takeScreenshot(getActualScreenshotPath('TID_011_1'))
+  item_add_page_po.removeFood()
+
+  item_add_page_po.takeScreenshot(getActualScreenshotPath('TID_011'))
+  # assertSameImage(expected_screenshot_path, actual_screenshot_path,0.1,  TEST_ERR_MSG)
+
+def check_TID_012(json_metadata, browser):
+  json_metadata['TEST_ID'] = 'TID_012'
+  actual_screenshot_path=getActualScreenshotPath('TID_012')
+  expected_screenshot_path=getExpectedScreenshotPath('TID_012')
+  TEST_ERR_MSG='It should increase the quantity of the food item'
+
+  # line_up_po = line_up_page.Main(browser)
+  # dialogue_po= line_up_confirmation_dialogue.Main(browser)
+  item_add_page_po = item_add_page.Main(browser)
+
+  item_add_page_po.takeScreenshot(getActualScreenshotPath('TID_012_1'))
+  item_add_page_po.tapAddIntoCartButton()
+
+  item_add_page_po.takeScreenshot(getActualScreenshotPath('TID_012'))
+  # assertSameImage(expected_screenshot_path, actual_screenshot_path,0.1,  TEST_ERR_MSG)
+
+def check_TID_013(json_metadata, browser):
+  json_metadata['TEST_ID'] = 'TID_013'
+  actual_screenshot_path=getActualScreenshotPath('TID_013')
+  expected_screenshot_path=getExpectedScreenshotPath('TID_013')
+  TEST_ERR_MSG='It should increase the quantity of the food item'
+
+  food_menu_po=food_menu.Main(browser)
+  cart_page_po = cart_page.Main(browser)
+
+  food_menu_po.takeScreenshot(getActualScreenshotPath('TID_013_1'))
+  food_menu_po.tapCartButton()
+
+  cart_page_po.takeScreenshot(getActualScreenshotPath('TID_013'))
+
+def check_TID_014(json_metadata, browser):
+  json_metadata['TEST_ID'] = 'TID_014'
+  actual_screenshot_path=getActualScreenshotPath('TID_014')
+  expected_screenshot_path=getExpectedScreenshotPath('TID_014')
+  food_menu_po=food_menu.Main(browser)
+  cart_page_po = cart_page.Main(browser)
+
+  cart_page_po.takeScreenshot(getActualScreenshotPath('TID_014_1'))
+  for i in range(1,33):
+    cart_page_po.tapAddButton(1)
+    sleep(0.05)
+
+  # cart_page_po.takeScreenshot(getActualScreenshotPath('TID_014_2'))
+  # for i in range(1,5):
+  #   cart_page_po.tapAddButton(2)
+  #   sleep(0.2)
+
+  cart_page_po.takeScreenshot(getActualScreenshotPath('TID_014_2'))
+
+  cart_page_po.takeScreenshot(getActualScreenshotPath('TID_014'))
+  # assertSameImage(expected_screenshot_path, actual_screenshot_path,0.1,  TEST_ERR_MSG)
 
 def test_happyflow_1_chrome_first_time_arrive_line_up_page(json_metadata):
   caps = webdriver.DesiredCapabilities.CHROME.copy()
 
   chrome_options = webdriver.ChromeOptions()
+
   mobile_emulation = { "deviceName": "Nexus 5" }
   chrome_options.add_experimental_option("mobileEmulation", mobile_emulation)
+  # chrome_options.add_argument("--headless")
+
   caps=chrome_options.to_capabilities()
   caps['acceptInsecureCerts'] = True
 
@@ -228,7 +318,11 @@ def test_happyflow_1_chrome_first_time_arrive_line_up_page(json_metadata):
   # check_TID_007 requires closing browser, skipping
   check_TID_008(json_metadata, browser)
   check_TID_009(json_metadata, browser)
-
+  check_TID_010(json_metadata, browser)
+  check_TID_011(json_metadata, browser)
+  check_TID_012(json_metadata, browser)
+  check_TID_013(json_metadata, browser)
+  check_TID_014(json_metadata, browser)
 
   browser.quit()
 

@@ -31,6 +31,7 @@ from assert_image import assertSameImage
 import line_up_page
 import food_menu
 import line_up_confirmation_dialogue
+import cart_page
 
 
 OK_BUTTON_PATH='/html/body/div[2]/input'
@@ -38,9 +39,8 @@ OK_BUTTON_PATH='/html/body/div[2]/input'
 def test_local_chrome():
   # Optional argument, if not specified will search path.
   browser = webdriver.Chrome('drivers/chrome/86/chromedriver')
-  TEST_CLICK_ALERTBOX_URL='http://127.0.0.1:8002/test_click_alertbox.html'
   TEST_CART_PAGE_URL='http://127.0.0.1:8002/test_cart_page.html'
-  browser.get(TEST_CLICK_ALERTBOX_URL)
+  browser.get(TEST_CART_PAGE_URL)
 
   time.sleep(1)   # Let the user actually see something!
 
@@ -57,12 +57,11 @@ def test_local_chrome():
 
   # select= Select(browser.find_element_by_xpath('//*[@id="adult"]'))
   # select.select_by_visible_text("5"+"人")
-  line_up_po= line_up_page.Main(browser)
-  line_up_po.changeNumberOfAdult(5)
-  line_up_po.changeNumberOfChild(6)
 
-  lineup_dialogue_po = line_up_confirmation_dialogue.Main(browser)
-  lineup_dialogue_po.tapOkButtonOnDialogue()
+
+  cart_page_po = cart_page.Main(browser)
+  # cart_page_po.tapAddButton(1)
+  cart_page_po.tapAddButton(2)
 
   time.sleep(5)
   browser.quit()
