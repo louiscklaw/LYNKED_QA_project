@@ -24,3 +24,5 @@ def run_check(json_metadata, browser):
   take_seat_first_dialogue_po.tapOkButtonOnDialogue()
 
   assertCheckPoint(browser, 'TID_018_2', TEST_ERR_MSG)
+
+  json_metadata['TID_018'] = 'passed'

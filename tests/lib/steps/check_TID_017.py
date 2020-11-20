@@ -20,3 +20,5 @@ def run_check(json_metadata, browser):
   cart_page_po.tapPlaceOrderButton()
 
   assertCheckPoint(browser, 'TID_017_2', TEST_ERR_MSG)
+
+  json_metadata['TID_017'] = 'passed'
