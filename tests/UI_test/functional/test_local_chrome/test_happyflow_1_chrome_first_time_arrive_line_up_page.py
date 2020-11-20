@@ -16,16 +16,22 @@ LIB_ELE_DIR=os.path.abspath(LIB_DIR+'./elements')
 LANG_DIR=os.path.abspath(TEST_ROOT+'/lang')
 LIB_CONFIG_DIR=os.path.abspath(LIB_DIR+'/configs')
 LIB_ASSERT_DIR=os.path.abspath(LIB_DIR+'/asserts')
+LIB_STEPS_DIR=os.path.abspath(LIB_DIR+'/steps')
 
 sys.path.append(LIB_DIR)
 sys.path.append(LIB_PO_DIR)
 sys.path.append(LANG_DIR)
 sys.path.append(LIB_CONFIG_DIR)
 sys.path.append(LIB_ASSERT_DIR)
+sys.path.append(LIB_STEPS_DIR)
 
 from lib_helloworld import lib_helloworld
 from po_helloworld import po_helloworld
 from assert_image import assertSameImage
+from assert_check_point import assertCheckPoint
+# from steps_helloworld import steps_helloworld
+
+from steps import *
 
 # import POs
 import line_up_page
@@ -34,6 +40,7 @@ import line_up_confirmation_dialogue
 import item_add_page
 import cart_page
 import take_seat_first_dialogue
+
 
 from jp import *
 
@@ -54,17 +61,17 @@ def getActualScreenshotPath(test_number):
 def getExpectedScreenshotPath(test_number):
   return 'tests/UI_test/functional/test_happyflow_1_click_accept_and_continue/expect/{}_sc.png'.format(test_number)
 
-def assertCheckPoint(driver ,check_point_name, error_message, fail_threshold=0.05):
+def assertCheckPoint_1(driver ,check_point_name, error_message, fail_threshold=0.05):
   actual_screenshot_path=getActualScreenshotPath(check_point_name)
   expected_screenshot_path=getExpectedScreenshotPath(check_point_name)
 
   takeScreenshot(driver, actual_screenshot_path)
 
   # TODO: RESUME ME
-  assertSameImage(expected_screenshot_path, actual_screenshot_path,fail_threshold,  error_message)
+  # assertSameImage(expected_screenshot_path, actual_screenshot_path,fail_threshold,  error_message)
 
 
-def check_TID_001(json_metadata, browser):
+def check_TID_001b(json_metadata, browser):
   json_metadata['TEST_ID'] = 'TID_001'
   ERROR_MESSAGE='The device should auto redirect to line up page'
 
@@ -108,16 +115,14 @@ def check_TID_003(json_metadata, browser):
 
 def check_TID_004(json_metadata, browser):
   json_metadata['TEST_ID'] = 'TID_004'
-  actual_screenshot_path=getActualScreenshotPath('TID_004')
-  expected_screenshot_path=getExpectedScreenshotPath('TID_004')
+  ERR_MSG_ERR_FOUND_BEFORE_RUNNING_004='error found before running TID_004'
+  ERR_MSG_TNC_DIALOGUE_SHOULD_CLOSE='tapping close button , T&C dialog message should close'
 
-  fl_page = line_up_page.FirstTimeLanding(browser)
-  # http://menymeny.com/food/%E3%82%84%E3%81%8D%E3%81%A8%E3%82%8A/?do_lineup
+  assertCheckPoint(browser, 'TID_004_1', ERR_MSG_ERR_FOUND_BEFORE_RUNNING_004)
+  line_up_page_po = line_up_page.FirstTimeLanding(browser)
 
-  fl_page.tapCrossButton()
-
-  fl_page.takeScreenshot(actual_screenshot_path)
-  assertSameImage(expected_screenshot_path, actual_screenshot_path,0.1,  'T&C dialog message should close')
+  line_up_page_po.tapCrossButton()
+  assertCheckPoint(browser, 'TID_004_2', ERR_MSG_TNC_DIALOGUE_SHOULD_CLOSE)
 
 
 def check_TID_005(json_metadata, browser):
@@ -394,9 +399,10 @@ def test_happyflow_1_chrome_first_time_arrive_line_up_page(json_metadata):
   #   desired_capabilities = chrome_options.to_capabilities()
   # )
 
-  check_TID_001(json_metadata, browser)
-  check_TID_002(json_metadata, browser)
-  check_TID_003(json_metadata, browser)
+  check_TID_001.run_check(json_metadata, browser)
+  # check_TID_001(json_metadata, browser)
+  # check_TID_002(json_metadata, browser)
+  # check_TID_003(json_metadata, browser)
   # check_TID_004(json_metadata, browser)
   # check_TID_005(json_metadata, browser)
   # check_TID_006(json_metadata, browser)
