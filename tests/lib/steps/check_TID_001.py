@@ -10,7 +10,6 @@ from time import sleep
 from assert_check_point import assertCheckPoint
 
 def run_check(json_metadata, browser):
-  json_metadata['TEST_ID'] = 'TID_001'
   ERROR_MESSAGE='The device should auto redirect to line up page'
 
   # URL = 'http://192.168.88.105:8002/'
@@ -23,3 +22,5 @@ def run_check(json_metadata, browser):
   sleep(1)
 
   assertCheckPoint(browser, 'TID_001_1', ERROR_MESSAGE)
+
+  json_metadata['TID_001'] = 'passed'

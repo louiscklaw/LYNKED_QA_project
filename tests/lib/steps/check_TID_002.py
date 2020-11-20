@@ -10,7 +10,6 @@ from time import sleep
 from assert_check_point import assertCheckPoint
 
 def run_check(json_metadata, browser):
-  json_metadata['TEST_ID'] = 'TID_002'
   ERR_MSG_BEFORE_TAPPING_TNC_MSG='error found before tapping t n c message'
   ERR_MSG_BACK_FROM_TNC_MSG = 'error found during tapping back from tnc message'
 
@@ -24,3 +23,5 @@ def run_check(json_metadata, browser):
   # back after test
   line_up_page_po.backFromTAndCText()
   assertCheckPoint(browser, 'TID_002_3', ERR_MSG_BACK_FROM_TNC_MSG)
+
+  json_metadata['TID_002'] = 'passed'
