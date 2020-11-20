@@ -73,8 +73,8 @@ def check_TID_001(json_metadata, browser):
   browser.get(LINE_UP_PAGE)
   sleep(1)
 
-  fl_page = line_up_page.FirstTimeLanding(browser)
-  fl_page.checkAcceptAndContinueButtonExist()
+  line_up_page_po = line_up_page.FirstTimeLanding(browser)
+  line_up_page_po.checkAcceptAndContinueButtonExist()
   sleep(1)
 
   assertCheckPoint(browser, 'TID_001_1', ERROR_MESSAGE)
@@ -84,14 +84,14 @@ def check_TID_002(json_metadata, browser):
   ERR_MSG_BEFORE_TAPPING_TNC_MSG='error found before tapping t n c message'
   ERR_MSG_BACK_FROM_TNC_MSG = 'error found during tapping back from tnc message'
 
-  fl_page = line_up_page.FirstTimeLanding(browser)
+  line_up_page_po = line_up_page.FirstTimeLanding(browser)
 
   assertCheckPoint(browser, 'TID_002_1', ERR_MSG_BEFORE_TAPPING_TNC_MSG)
-  fl_page.tapTAndCText()
+  line_up_page_po.tapTAndCText()
   sleep(1)
 
   # back after test
-  fl_page.backFromTAndCText()
+  line_up_page_po.backFromTAndCText()
   assertCheckPoint(browser, 'TID_002_2', ERR_MSG_BACK_FROM_TNC_MSG)
 
 def check_TID_003(json_metadata, browser):
@@ -100,8 +100,8 @@ def check_TID_003(json_metadata, browser):
   ERR_MSG_ERR_FOUND_TAPPING_ACCEPT_AND_CONTINUE_BUTTON='error found after tapping accept and continue button'
 
   assertCheckPoint(browser, 'TID_003_1', ERR_MSG_FIRST_TIME_LANDING_NOT_FOUND)
-  fl_page = line_up_page.FirstTimeLanding(browser)
-  fl_page.tapAcceptAndContinueButton()
+  line_up_page_po = line_up_page.FirstTimeLanding(browser)
+  line_up_page_po.tapAcceptAndContinueButton()
   sleep(1)
 
   assertCheckPoint(browser, 'TID_003_2', ERR_MSG_ERR_FOUND_TAPPING_ACCEPT_AND_CONTINUE_BUTTON)
