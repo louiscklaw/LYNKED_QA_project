@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <div id="test_link">go to google.com</div>
+
+  <main>
+    <div id="alert" style="display: block">
+      <div></div>
+      <div class="alert" id="test_div">
+        <div id="message" style="text-align: center; margin-bottom: 10px; font-size: 20px;">あなたの番号は18番です。</div>
+        <input type="button" value="OK" style="font-size: 14px;">
+      </div>
+    </div>
+  </main>
+
+  <script>
+    document.addEventListener( 'DOMContentLoaded', () => {
+      document.querySelector( 'input' ).addEventListener( 'click', () => {
+        alert( 'helloworld' )
+      } )
+    } )
+  </script>
+
+</body>
+
+</html>

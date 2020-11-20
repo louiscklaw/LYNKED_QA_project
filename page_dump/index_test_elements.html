@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <div id="test_link">go to google.com</div>
+  <input type="button" value="同意して予約する"
+    style="font-size: 14px; background-color: rgb(186, 31, 35); color: rgb(255, 255, 255); border: none; padding: 16px;">
+
+  <header>
+    <div style="display: flex; flex-direction: row; margin-bottom: 0px;">
+      <div style="flex: 0 0 20%; margin: 2px auto;"></div>
+      <div style="flex: 0 0 60%; margin: 2px auto; font-size: 18px; padding: 12px 0px; text-align: center;">Powered by
+        LYNKED</div>
+      <div style="flex: 0 0 20%; margin: 2px auto;">
+        <div id="userInfo"
+          style="text-align: center; margin: 5px auto; height: 50px; border-radius: 10px; padding: 1px 0px; display: flex; flex-direction: column; justify-content: center; align-items: center; background-color: rgb(143, 188, 143);">
+          <div style="font-size: 13px;">番号: 19</div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <div id="alert" style="display: block">
+      <div
+        style="position: fixed; top: 0px; left: 0px; height: 100%; width: 100%; z-index: 10; background-color: rgb(0, 0, 0); opacity: 0.1;">
+      </div>
+      <div class="alert">
+        <div id="message" style="text-align: center; margin-bottom: 10px; font-size: 20px;">あなたの番号は18番です。</div><input
+          type="button" value="OK" style="font-size: 14px;">
+      </div>
+    </div>
+  </main>
+
+  <select id="adult" name="adult" style="width: 100%; border: 0px; outline: 0px; font-size: 16px; padding-top: 3px;">
+    <option value="1">1人</option>
+    <option value="2">2人</option>
+    <option value="3">3人</option>
+    <option value="4">4人</option>
+    <option value="5">5人</option>
+    <option value="6">6人</option>
+    <option value="7">7人</option>
+    <option value="8">8人</option>
+    <option value="9">9人</option>
+    <option value="10">10+ 人</option>
+  </select>
+
+  <select id="child" name="child" style="width: 100%; border: 0px; outline: 0px; font-size: 16px; padding-top: 3px;">
+    <option value="0">0人</option>
+    <option value="1">1人</option>
+    <option value="2">2人</option>
+    <option value="3">3人</option>
+    <option value="4">4人</option>
+    <option value="5">5人</option>
+    <option value="6">6人</option>
+    <option value="7">7人</option>
+    <option value="8">8人</option>
+    <option value="9">9人</option>
+  </select>
+
+  <script>
+    document.addEventListener( 'DOMContentLoaded', () => {
+      document.querySelector( '#test_button' ).addEventListener( 'click', () => {
+        alert( 'helloworld' )
+      } )
+    } )
+  </script>
+
+</body>
+
+</html>

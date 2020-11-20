@@ -39,16 +39,26 @@ EXPECTED_SCREENSHOT='tests/UI_test/functional/test_happyflow_1_click_accept_and_
 def test_happyflow_1_chrome_click_accept_and_continue(json_metadata):
   json_metadata['TEST_ID'] = 'TID_003'
 
-  selenium_url = 'http://{}:4444/wd/hub'.format(SELENIUM_HUB_HOST)
+  # selenium_url = 'http://{}:4444/wd/hub'.format(SELENIUM_HUB_HOST)
+
+  # chrome_options = webdriver.ChromeOptions()
+  # mobile_emulation = { "deviceName": "Nexus 5" }
+  # chrome_options.add_experimental_option("mobileEmulation", mobile_emulation)
+
+  # browser = webdriver.Remote(
+  #   command_executor=selenium_url,
+  #   desired_capabilities = chrome_options.to_capabilities()
+  # )
+
+  caps = webdriver.DesiredCapabilities.CHROME.copy()
 
   chrome_options = webdriver.ChromeOptions()
   mobile_emulation = { "deviceName": "Nexus 5" }
   chrome_options.add_experimental_option("mobileEmulation", mobile_emulation)
+  caps=chrome_options.to_capabilities()
+  caps['acceptInsecureCerts'] = True
 
-  browser = webdriver.Remote(
-    command_executor=selenium_url,
-    desired_capabilities = chrome_options.to_capabilities()
-  )
+  browser = webdriver.Chrome('drivers/chrome/86/chromedriver', desired_capabilities=caps)
 
   # URL = 'http://192.168.88.105:8002/'
   # browser.get(URL)
@@ -57,6 +67,7 @@ def test_happyflow_1_chrome_click_accept_and_continue(json_metadata):
 
   fl_page = first_time_landing.MainPage(browser)
   fl_page.checkAcceptAndContinueButtonExist()
+  sleep(1)
   fl_page.takeScreenshot(ACTUAL_SCREENSHOT)
   # fl_page.checkLinkExist()
 

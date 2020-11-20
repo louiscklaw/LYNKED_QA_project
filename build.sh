@@ -2,12 +2,12 @@
 
 set -ex
 
-function shutdown {
-    ./scripts/down_docker_selenium.sh
-    echo "Shutdown complete"
-}
+# function shutdown {
+#     ./scripts/down_docker_selenium.sh
+#     echo "Shutdown complete"
+# }
 
-trap shutdown SIGTERM SIGINT EXIT
+# trap shutdown SIGTERM SIGINT EXIT
 
 ./scripts/clear_report_directory.sh
 
@@ -21,9 +21,9 @@ mkdir -p reports/UI_test/functional/test_happyflow_1/result
 
 # sh docs/flows/test_site_flows/build.sh
 
-./scripts/up_docker_selenium.sh
-echo 'sleep a while to let docker steady'
-sleep 30
+# ./scripts/up_docker_selenium.sh
+# echo 'sleep a while to let docker steady'
+# sleep 30
 
 # pipenv sync
 
@@ -53,6 +53,12 @@ sleep 30
 # mkdir -p ~/.config/gspread
 # cp ./creds/qa-reporting-296203-8b43a1a973e1.json ~/.config/gspread/service_account.json
 
-pipenv sync
-pipenv run pytest --json-report -v  --html=reports/functional/report.html tests/UI_test/functional
-pipenv run python3 ./tests/fill_value_to_google.py
+# pipenv sync
+# pipenv run pytest --json-report -v  --html=reports/functional/report.html tests/UI_test/functional
+# pipenv run pytest --json-report -v  --html=reports/functional/report.html tests/UI_test/functional/test_local_chrome/test_local_chrome.py
+
+# pipenv run pytest --json-report -v  --html=reports/functional/report.html tests/UI_test/functional/test_local_chrome/test_click_alert_box.py
+
+pipenv run pytest -x --json-report -v  --html=reports/functional/report.html tests/UI_test/functional/test_local_chrome/test_happyflow_1_chrome_first_time_arrive_line_up_page.py
+
+# pipenv run python3 ./tests/fill_value_to_google.py
