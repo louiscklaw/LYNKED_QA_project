@@ -27,11 +27,13 @@ from lib_helloworld import lib_helloworld
 from po_helloworld import po_helloworld
 from assert_image import assertSameImage
 
+# import POs
 import line_up_page
 import food_menu
 import line_up_confirmation_dialogue
 import item_add_page
 import cart_page
+import take_seat_first_dialogue
 
 from jp import *
 
@@ -182,7 +184,7 @@ def check_TID_008(json_metadata, browser):
   # assertSameImage(expected_screenshot_path, actual_screenshot_path,0.1,  TEST_ERR_MSG)
 
 
-def check_TID_009(json_metadata, browser):
+def check_TID_009(json_metadata, browser, food_item_idx=1):
   json_metadata['TEST_ID'] = 'TID_009'
   actual_screenshot_path=getActualScreenshotPath('TID_009')
   expected_screenshot_path=getExpectedScreenshotPath('TID_009')
@@ -193,7 +195,7 @@ def check_TID_009(json_metadata, browser):
   food_menu_po = food_menu.Main(browser)
 
   food_menu_po.takeScreenshot(getActualScreenshotPath('TID_009_1'))
-  food_menu_po.tapFoodItemByIdx(1)
+  food_menu_po.tapFoodItemByIdx(food_item_idx)
 
   food_menu_po.takeScreenshot(getActualScreenshotPath('TID_009_2'))
   # assertSameImage(expected_screenshot_path, actual_screenshot_path,0.1,  TEST_ERR_MSG)
@@ -300,14 +302,64 @@ def check_TID_016(json_metadata, browser):
   expected_screenshot_path=getExpectedScreenshotPath('TID_016')
   food_menu_po=food_menu.Main(browser)
   cart_page_po = cart_page.Main(browser)
+  item_add_page_po=item_add_page.Main(browser)
 
+  # escape from cart list page from 015
+  cart_page_po.tapTopLeftCloseButton()
   cart_page_po.takeScreenshot(getActualScreenshotPath('TID_016_1'))
+
+  # add another food
+  food_menu_po.tapFoodItemByIdx(2)
+  food_menu_po.takeScreenshot(getActualScreenshotPath('TID_016_2'))
+
+  item_add_page_po.addFood()
+  item_add_page_po.takeScreenshot(getActualScreenshotPath('TID_016_3'))
+
+  item_add_page_po.tapAddIntoCartButton()
+  item_add_page_po.takeScreenshot(getActualScreenshotPath('TID_016_4'))
+
+  food_menu_po.tapCartButton()
+  food_menu_po.takeScreenshot(getActualScreenshotPath('TID_016_5'))
+
   cart_page_po.tapRemoveButton(1)
+  cart_page_po.takeScreenshot(getActualScreenshotPath('TID_016_6'))
 
-  cart_page_po.takeScreenshot(getActualScreenshotPath('TID_016_2'))
-
-  cart_page_po.takeScreenshot(getActualScreenshotPath('TID_016'))
+  # cart_page_po.takeScreenshot(getActualScreenshotPath('TID_016'))
   # assertSameImage(expected_screenshot_path, actual_screenshot_path,0.1,  TEST_ERR_MSG)
+
+def check_TID_017(json_metadata, browser):
+  json_metadata['TEST_ID'] = 'TID_017'
+  actual_screenshot_path=getActualScreenshotPath('TID_017')
+  expected_screenshot_path=getExpectedScreenshotPath('TID_017')
+  food_menu_po=food_menu.Main(browser)
+  cart_page_po = cart_page.Main(browser)
+  item_add_page_po=item_add_page.Main(browser)
+  ERR_MSG='It should send order successfully'
+
+  cart_page_po.takeScreenshot(getActualScreenshotPath('TID_017_1'))
+  cart_page_po.tapPlaceOrderButton()
+  cart_page_po.takeScreenshot(getActualScreenshotPath('TID_017_2'))
+
+
+def check_TID_018(json_metadata, browser):
+  json_metadata['TEST_ID'] = 'TID_018'
+  actual_screenshot_path=getActualScreenshotPath('TID_018')
+  expected_screenshot_path=getExpectedScreenshotPath('TID_018')
+  ERR_MSG='It should send order successfully'
+
+  food_menu_po=food_menu.Main(browser)
+  cart_page_po = cart_page.Main(browser)
+  item_add_page_po=item_add_page.Main(browser)
+  take_seat_first_dialogue_po=take_seat_first_dialogue.Main(browser)
+
+  take_seat_first_dialogue_po.takeScreenshot(getActualScreenshotPath('TID_018_1'))
+  sleep(0.5)
+
+  # tap ok to dismiss dialogue
+  take_seat_first_dialogue_po.tapOkButtonOnDialogue()
+
+  take_seat_first_dialogue_po.takeScreenshot(getActualScreenshotPath('TID_018_2'))
+
 
 def test_happyflow_1_chrome_first_time_arrive_line_up_page(json_metadata):
   caps = webdriver.DesiredCapabilities.CHROME.copy()
@@ -352,6 +404,9 @@ def test_happyflow_1_chrome_first_time_arrive_line_up_page(json_metadata):
   check_TID_014(json_metadata, browser)
   check_TID_015(json_metadata, browser)
   check_TID_016(json_metadata, browser)
+  check_TID_017(json_metadata, browser)
+  check_TID_018(json_metadata, browser)
+
 
   browser.quit()
 

@@ -1,0 +1,1156 @@
+<html>
+
+<head>
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/js-cookie@rc/dist/js.cookie.min.js"></script>
+  <style>
+    html,
+    body,
+    #root,
+    #wrapper {
+      height: 100%
+    }
+
+    body {
+      margin: 0
+    }
+
+    ul {
+      padding: 0;
+      margin: 0;
+      list-style: none;
+    }
+
+    ol {
+      padding: 0;
+      margin: 0;
+      list-style: none;
+    }
+
+    li {
+      display: block;
+    }
+
+    h4,
+    p {
+      margin: 0;
+      font-weight: normal;
+    }
+
+    .border_top_0 {
+      border-top: 0
+    }
+
+    .border_top_1 {
+      border-top: 1px solid #E2E2E2;
+    }
+
+    .color_000000 {
+      color: #000000
+    }
+
+    .color_545454 {
+      color: #545454
+    }
+
+    .display_block {
+      display: block
+    }
+
+    .display_flex {
+      display: flex
+    }
+
+    .flex_1 {
+      flex: 1
+    }
+
+    .flex_shrink_0 {
+      flex-shrink: 0
+    }
+
+    .font_size_14 {
+      font-size: 14px
+    }
+
+    .font_size_16 {
+      font-size: 16px
+    }
+
+    .font_size_20 {
+      font-size: 20px
+    }
+
+    .height_1 {
+      height: 1px
+    }
+
+    .height_88 {
+      height: 88px
+    }
+
+    .width_8 {
+      width: 8px
+    }
+
+    .width_88 {
+      width: 88px
+    }
+
+    .width_96 {
+      width: 96px
+    }
+
+    .line_height_20 {
+      line-height: 20px
+    }
+
+    .line_height_24 {
+      line-height: 24px
+    }
+
+    .list_style_none {
+      list-style: none
+    }
+
+    .margin_0 {
+      margin: 0
+    }
+
+    .margin_bottom_16 {
+      margin-bottom: 16px
+    }
+
+    .object_fit_cover {
+      object-fit: cover
+    }
+
+    .opacity_1 {
+      opacity: 1
+    }
+
+    .outline_rgba_1 {
+      outline: rgba(0, 0, 0, 0.03) solid 1px;
+    }
+
+    .outline_offset_minus1 {
+      outline-offset: -1px;
+    }
+
+    .overflow_hidden {
+      overflow: hidden
+    }
+
+    .padding_0 {
+      padding: 0
+    }
+
+    .padding_16_0 {
+      padding: 16px 0
+    }
+
+    .padding_0_16 {
+      padding: 0 16px
+    }
+
+    .padding_top_4 {
+      padding-top: 4px
+    }
+
+    .padding_top_8 {
+      padding-top: 8px
+    }
+
+    .padding_top_24 {
+      padding-top: 24px
+    }
+
+    .padding_bottom_24 {
+      padding-bottom: 24px
+    }
+
+    .position_relative {
+      position: relative
+    }
+
+    .text_decoration_none {
+      text-decoration: none
+    }
+
+    .food-top {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: 10;
+      background-color: #fff;
+      justify-content: center;
+      align-items: center;
+      overflow: scroll;
+    }
+
+    .footer-container {
+      width: 100%;
+      background: #fff;
+      position: fixed;
+      bottom: 0;
+      z-index: 1;
+    }
+
+    .footerButton {
+      margin: 10 auto;
+      width: 80%;
+      background-color: #BA1F23;
+      color: #FFFFFF;
+      text-align: center;
+      font-size: 18px;
+      padding: 5px 0;
+      display: flex;
+      justify-content: space-around;
+    }
+
+    .notification {
+      position: fixed;
+      left: 0;
+      right: 0;
+      margin: auto;
+      margin-top: 0;
+      width: 80%;
+      display: flex;
+      font-size: 20px;
+      justify-content: center;
+      align-items: center;
+      background-color: #8FBC8F;
+      color: #1b1c1b;
+      opacity: 0.6;
+      z-index: 99;
+    }
+
+    .alert {
+      position: fixed;
+      left: 0;
+      right: 0;
+      top: 0;
+      bottom: 0;
+      padding: 10;
+      margin: auto;
+      width: 80%;
+      height: 20%;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      background-color: #BA1F23;
+      color: #FFFFCC;
+      z-index: 99;
+    }
+
+    .detail-amount-group {
+      padding: 24px 16px 0 16px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .svg-container-48-circle {
+      display: flex;
+      font-size: 18px;
+      line-height: 24px;
+      width: 48px;
+      height: 48px;
+      cursor: pointer;
+      align-items: center;
+      justify-content: center;
+      box-sizing: border-box;
+      border-width: 2px;
+      border-color: #00f;
+      border-style: solid;
+      background: #fff;
+      border-radius: 50%;
+    }
+
+    .svg-container-24-circle {
+      display: flex;
+      font-size: 18px;
+      line-height: 12px;
+      width: 24px;
+      height: 24px;
+      cursor: pointer;
+      align-items: center;
+      justify-content: center;
+      box-sizing: border-box;
+      border-width: 2px;
+      border-color: #00f;
+      border-style: solid;
+      background: #fff;
+      border-radius: 50%;
+      margin: auto;
+    }
+
+    .svg-minus,
+    .svg-plus {
+      fill: #00f;
+    }
+
+    .svg-minus svg,
+    .svg-plus svg {
+      flex: none;
+    }
+
+    .svg-minus[enabled="false"] {
+      fill: #ccc;
+      border-color: #ccc;
+    }
+
+    .detail-amount {
+      font-size: 16px;
+      line-height: 24px;
+      color: #000000;
+      width: calc(1ch + 48px);
+      text-align: center;
+    }
+
+    .food-detail-img-container {
+      width: 100%;
+      height: 80vw;
+      background-position: center;
+      background-size: cover;
+    }
+
+    .cart-amount-div {
+      display: flex;
+      align-items: center;
+      justify-content: flex-start;
+    }
+
+    .cart-button-base {
+      width: 30px;
+      height: 30px;
+      font-size: 16px;
+      border-width: 1px;
+      border-style: solid;
+      border-color: #ccc;
+      background-color: #fff;
+    }
+
+    .cart-button-l {
+      border-top-left-radius: 4px;
+      border-bottom-left-radius: 4px;
+    }
+
+    .cart-button-l[enabled='false'] {
+      background-color: #eee;
+      color: #bbb;
+    }
+
+    .cart-button-r {
+      border-top-right-radius: 4px;
+      border-bottom-right-radius: 4px;
+    }
+
+    .cart-span {
+      width: 48px;
+      height: 30px;
+      font-size: 14px;
+      text-align: center;
+      line-height: 30px;
+      border-bottom: 1px solid #ccc;
+      border-top: 1px solid #ccc;
+      box-sizing: border-box;
+    }
+
+    .cart-span-price {
+      font-size: 14px;
+      line-height: 1.5;
+      display: flex;
+      flex-direction: column;
+      min-width: 20px;
+    }
+
+    .cart-button-delete {
+      font-size: 14px;
+      background-color: #fff;
+      box-sizing: border-box;
+      border-width: 0;
+      padding: 5px 0;
+      color: #f00;
+    }
+
+    .flex-c {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .flex-r {
+      display: flex;
+      flex-direction: row;
+    }
+
+    * {
+      touch-action: manipulation;
+      outline: 0;
+    }
+
+    .container {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: flex-start;
+      justify-content: space-around;
+      margin: 70px 0;
+    }
+
+    .order_container {
+      margin: 2%;
+      min-width: 96%;
+      padding: 5px;
+      border: 2px solid #00f;
+      position: relative;
+    }
+
+    .order-info {
+      margin-top: 10px;
+      display: flex;
+      justify-content: space-between;
+    }
+
+    .time {
+      position: absolute;
+      top: 0px;
+      right: 0px;
+      background-color: #000;
+      color: #0f0;
+      font-size: 16px;
+    }
+
+    .price {
+      margin-top: 10px;
+    }
+
+    .order-list {
+      box-sizing: border-box;
+      border: 1px solid #000;
+      padding: 2px;
+    }
+
+    .font-size-small {
+      font-size: small;
+    }
+
+    .item-container {
+      font-size: 16px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .bill-item {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin: 5px 0;
+    }
+
+    .tac {
+      position: fixed;
+      left: 0;
+      right: 0;
+      top: 30%;
+      padding: 10;
+      margin: auto;
+      width: 80%;
+      background-color: #fff;
+      color: #000;
+      z-index: 20;
+    }
+
+    .tac-full {
+      position: fixed;
+      left: 0;
+      right: 0;
+      top: 0;
+      bottom: 0;
+      margin: auto;
+      width: 100%;
+      height: 100%;
+      background-color: #fff;
+      color: #000;
+      z-index: 30;
+    }
+
+    #navbar {
+      width: 100%;
+      overflow: auto;
+      white-space: nowrap;
+      background-color: #87cefa;
+      z-index: 1;
+      box-shadow: #E2E2E2 0px -2px 0px inset;
+    }
+
+    #navbar a {
+      display: inline-block;
+      color: #FFFFFF;
+      font-size: 20px;
+      text-align: center;
+      padding: 10px;
+      text-decoration: none;
+    }
+
+    #navbar a:hover {
+      border-bottom: 2px solid #1e90ff;
+    }
+
+    .sticky {
+      position: fixed;
+      top: 0;
+    }
+  </style>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0" data-rh="true">
+</head>
+
+<body>
+
+  <main role="main" class="display_block" style="">
+    <header>
+      <div style="display: flex; flex-direction: row; margin-bottom: 0px;">
+        <div style="flex: 0 0 20%; margin: 2px auto;"></div>
+        <div style="flex: 0 0 60%; margin: 2px auto; font-size: 18px; padding: 12px 0px; text-align: center;">Powered by
+          LYNKED</div>
+        <div style="flex: 0 0 20%; margin: 2px auto;">
+          <div id="userInfo"
+            style="text-align: center; margin: 5px auto; height: 50px; border-radius: 10px; padding: 1px 0px; display: flex; flex-direction: column; justify-content: center; align-items: center; background-color: rgb(143, 188, 143);">
+            <div style="font-size: 13px;">番号: 65</div>
+          </div>
+        </div>
+      </div>
+    </header>
+    <div class="notification" style="display: none;">
+      <p><strong>むねね</strong> をカートに追加されました。</p>
+    </div>
+    <div id="alert" style="">
+      <div
+        style="position: fixed; top: 0px; left: 0px; height: 100%; width: 100%; z-index: 10; background-color: rgb(0, 0, 0); opacity: 0.1;">
+      </div>
+      <div class="alert">
+        <div id="message" style="text-align: center; margin-bottom: 10px; font-size: 20px;">席が確定するまで少々お待ちください。</div>
+        <input id="ok_button" type="button" value="OK" style="font-size: 14px;">
+      </div>
+    </div>
+    <div id="tac-container" style="display: none;">
+      <div
+        style="position: fixed; top: 0px; left: 0px; height: 100%; width: 100%; z-index: 20; background-color: rgb(0, 0, 0); opacity: 0.1;">
+      </div>
+      <div class="tac">
+        <div style="font-size: 16px; text-align: center; font-weight: bolder; padding: 16px;">Menyのご利用規約について</div>
+        <div style="font-size: 16px;">※引き続きサービスを利用するには、ご利用規約に同意していただく必要があります。</div>
+        <div style="text-align: center;"><a href="#" style="font-size: 12px; color: rgb(186, 31, 35);">利用規約</a></div>
+        <div style="text-align: center;"><a href="#" style="font-size: 12px; color: rgb(186, 31, 35);">TERMS &amp;
+            CONDITIONS</a></div>
+        <div style="margin: 20px 0px; display: flex; justify-content: center;"><input type="button" value="同意して予約する"
+            style="font-size: 14px; background-color: rgb(186, 31, 35); color: rgb(255, 255, 255); border: none; padding: 16px;">
+        </div>
+      </div>
+    </div>
+    <div id="tac-link" style="display: none;">
+      <div class="tac-full"><iframe id="showdiv" src="/articles/terms-of-service.html"
+          style="height: 95%; width: 100%; border: none;"></iframe>
+        <div style="text-align: center; border: 1px solid rgb(0, 0, 0);">戻る</div>
+      </div>
+    </div>
+    <div id="navbar"><a href="#5f6205647f11c030c1ddf6e9">焼き鳥</a><a href="#5f62060c7f11c030c1ddf8fc">サイドメニュー</a><a
+        href="#5f62064d7f11c030c1ddf942">ドリンク</a><a href="#5f72eea87f11c030c1e15e5c">定番メニュー</a><a
+        href="#5f9661207f11c030c1ea8867">人気物</a><a href="#5f96b1217f11c030c1ea9bc9">お子様メニュー</a><a
+        href="#5f9796dd7f11c030c1eace79">カツ丼</a><a href="#5f98d5157f11c030c1eb0330">麺類2</a><a
+        href="#5f990dc07f11c030c1eb19cc">ピザ</a><a href="#5fa1f7b87f11c030c1ececbc">Testing</a><a
+        href="#5faa079f7f11c030c1eeded1">Ptt</a></div>
+    <div class="padding_0_16" style="padding-bottom: 50px;">
+      <ul class="list_style_none">
+        <li class="padding_16_0">
+          <h2 id="5f6205647f11c030c1ddf6e9" class="font_size_20 line_height_24 color_000000"
+            style="padding: 10px 0px; margin: 0px;">焼き鳥</h2>
+          <ul class="margin_bottom_16">
+            <li class="overflow_hidden">
+              <div tabindex="0" class="text_decoration_none">
+                <div class="border_top_0 display_flex padding_16_0 position_relative">
+                  <div class="flex_1">
+                    <h4 class="font_size_16 line_height_24 color_000000 display_flex">
+                      <div>もも</div>
+                    </h4>
+                    <div class="padding_top_4 overflow_hidden">
+                      <div class="font_size_14 line_height_20 bx color_545454">Test</div>
+                    </div>
+                    <div class="padding_top_8 position_relative">
+                      <div class="font_size_14 line_height_20 bx color_000000">¥200</div>
+                    </div>
+                  </div>
+                  <div class="height_88 width_96 display_flex flex_shrink_0"><img alt="もも"
+                      src="https://danielcyj.s3-ap-southeast-1.amazonaws.com/momo.jpg" aria-hidden="true"
+                      class="opacity_1 height_88 width_88 outline_rgba_1 object_fit_cover outline_offset_minus1"></div>
+                </div>
+              </div>
+            </li>
+            <li class="overflow_hidden">
+              <div tabindex="0" class="text_decoration_none">
+                <div class="border_top_1 display_flex padding_16_0 position_relative">
+                  <div class="flex_1">
+                    <h4 class="font_size_16 line_height_24 color_000000 display_flex">
+                      <div>むねね</div>
+                    </h4>
+                    <div class="padding_top_4 overflow_hidden">
+                      <div class="font_size_14 line_height_20 bx color_545454"></div>
+                    </div>
+                    <div class="padding_top_8 position_relative">
+                      <div class="font_size_14 line_height_20 bx color_000000">¥200</div>
+                    </div>
+                  </div>
+                  <div class="height_88 width_96 display_flex flex_shrink_0"><img alt="むねね"
+                      src="https://danielcyj.s3-ap-southeast-1.amazonaws.com/mune.jpg" aria-hidden="true"
+                      class="opacity_1 height_88 width_88 outline_rgba_1 object_fit_cover outline_offset_minus1"></div>
+                </div>
+              </div>
+            </li>
+            <li class="overflow_hidden">
+              <div tabindex="0" class="text_decoration_none">
+                <div class="border_top_1 display_flex padding_16_0 position_relative">
+                  <div class="flex_1">
+                    <h4 class="font_size_16 line_height_24 color_000000 display_flex">
+                      <div>かわ</div>
+                    </h4>
+                    <div class="padding_top_4 overflow_hidden">
+                      <div class="font_size_14 line_height_20 bx color_545454"></div>
+                    </div>
+                    <div class="padding_top_8 position_relative">
+                      <div class="font_size_14 line_height_20 bx color_000000">¥150</div>
+                    </div>
+                  </div>
+                  <div class="height_88 width_96 display_flex flex_shrink_0"><img alt="かわ"
+                      src="https://danielcyj.s3-ap-southeast-1.amazonaws.com/kawa.jpg" aria-hidden="true"
+                      class="opacity_1 height_88 width_88 outline_rgba_1 object_fit_cover outline_offset_minus1"></div>
+                </div>
+              </div>
+            </li>
+            <li class="overflow_hidden">
+              <div tabindex="0" class="text_decoration_none">
+                <div class="border_top_1 display_flex padding_16_0 position_relative">
+                  <div class="flex_1">
+                    <h4 class="font_size_16 line_height_24 color_000000 display_flex">
+                      <div>やきうどん</div>
+                    </h4>
+                    <div class="padding_top_4 overflow_hidden">
+                      <div class="font_size_14 line_height_20 bx color_545454"></div>
+                    </div>
+                    <div class="padding_top_8 position_relative">
+                      <div class="font_size_14 line_height_20 bx color_000000">¥300</div>
+                    </div>
+                  </div>
+                  <div class="height_88 width_96 display_flex flex_shrink_0"><img alt="やきうどん"
+                      src="https://danielcyj.s3-ap-southeast-1.amazonaws.com/yakiudon.jpg" aria-hidden="true"
+                      class="opacity_1 height_88 width_88 outline_rgba_1 object_fit_cover outline_offset_minus1"></div>
+                </div>
+              </div>
+            </li>
+            <li class="overflow_hidden">
+              <div tabindex="0" class="text_decoration_none">
+                <div class="border_top_1 display_flex padding_16_0 position_relative">
+                  <div class="flex_1">
+                    <h4 class="font_size_16 line_height_24 color_000000 display_flex">
+                      <div>つくね</div>
+                    </h4>
+                    <div class="padding_top_4 overflow_hidden">
+                      <div class="font_size_14 line_height_20 bx color_545454"></div>
+                    </div>
+                    <div class="padding_top_8 position_relative">
+                      <div class="font_size_14 line_height_20 bx color_000000">¥200</div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </li>
+          </ul>
+        </li>
+        <li class="padding_16_0">
+          <h2 id="5f62060c7f11c030c1ddf8fc" class="font_size_20 line_height_24 color_000000"
+            style="padding: 10px 0px; margin: 0px;">サイドメニュー</h2>
+          <ul class="margin_bottom_16">
+            <li class="overflow_hidden">
+              <div tabindex="0" class="text_decoration_none">
+                <div class="border_top_0 display_flex padding_16_0 position_relative">
+                  <div class="flex_1">
+                    <h4 class="font_size_16 line_height_24 color_000000 display_flex">
+                      <div>唐揚げ</div>
+                    </h4>
+                    <div class="padding_top_4 overflow_hidden">
+                      <div class="font_size_14 line_height_20 bx color_545454"></div>
+                    </div>
+                    <div class="padding_top_8 position_relative">
+                      <div class="font_size_14 line_height_20 bx color_000000">¥300</div>
+                    </div>
+                  </div>
+                  <div class="height_88 width_96 display_flex flex_shrink_0"><img alt="唐揚げ"
+                      src="https://danielcyj.s3-ap-southeast-1.amazonaws.com/karaage.jpg" aria-hidden="true"
+                      class="opacity_1 height_88 width_88 outline_rgba_1 object_fit_cover outline_offset_minus1"></div>
+                </div>
+              </div>
+            </li>
+            <li class="overflow_hidden">
+              <div tabindex="0" class="text_decoration_none">
+                <div class="border_top_1 display_flex padding_16_0 position_relative">
+                  <div class="flex_1">
+                    <h4 class="font_size_16 line_height_24 color_000000 display_flex">
+                      <div>エイヒレ</div>
+                    </h4>
+                    <div class="padding_top_4 overflow_hidden">
+                      <div class="font_size_14 line_height_20 bx color_545454"></div>
+                    </div>
+                    <div class="padding_top_8 position_relative">
+                      <div class="font_size_14 line_height_20 bx color_000000">¥300</div>
+                    </div>
+                  </div>
+                  <div class="height_88 width_96 display_flex flex_shrink_0"><img alt="エイヒレ"
+                      src="https://danielcyj.s3-ap-southeast-1.amazonaws.com/eihire.jpg" aria-hidden="true"
+                      class="opacity_1 height_88 width_88 outline_rgba_1 object_fit_cover outline_offset_minus1"></div>
+                </div>
+              </div>
+            </li>
+            <li class="overflow_hidden">
+              <div tabindex="0" class="text_decoration_none">
+                <div class="border_top_1 display_flex padding_16_0 position_relative">
+                  <div class="flex_1">
+                    <h4 class="font_size_16 line_height_24 color_000000 display_flex">
+                      <div>たまご</div>
+                    </h4>
+                    <div class="padding_top_4 overflow_hidden">
+                      <div class="font_size_14 line_height_20 bx color_545454"></div>
+                    </div>
+                    <div class="padding_top_8 position_relative">
+                      <div class="font_size_14 line_height_20 bx color_000000">¥300</div>
+                    </div>
+                  </div>
+                  <div class="height_88 width_96 display_flex flex_shrink_0"><img alt="たまご"
+                      src="https://danielcyj.s3-ap-southeast-1.amazonaws.com/tamago.jpg" aria-hidden="true"
+                      class="opacity_1 height_88 width_88 outline_rgba_1 object_fit_cover outline_offset_minus1"></div>
+                </div>
+              </div>
+            </li>
+            <li class="overflow_hidden">
+              <div tabindex="0" class="text_decoration_none">
+                <div class="border_top_1 display_flex padding_16_0 position_relative">
+                  <div class="flex_1">
+                    <h4 class="font_size_16 line_height_24 color_000000 display_flex">
+                      <div>とうもろこし</div>
+                    </h4>
+                    <div class="padding_top_4 overflow_hidden">
+                      <div class="font_size_14 line_height_20 bx color_545454"></div>
+                    </div>
+                    <div class="padding_top_8 position_relative">
+                      <div class="font_size_14 line_height_20 bx color_000000">¥300</div>
+                    </div>
+                  </div>
+                  <div class="height_88 width_96 display_flex flex_shrink_0"><img alt="とうもろこし"
+                      src="https://danielcyj.s3-ap-southeast-1.amazonaws.com/corn.jpg" aria-hidden="true"
+                      class="opacity_1 height_88 width_88 outline_rgba_1 object_fit_cover outline_offset_minus1"></div>
+                </div>
+              </div>
+            </li>
+            <li class="overflow_hidden">
+              <div tabindex="0" class="text_decoration_none">
+                <div class="border_top_1 display_flex padding_16_0 position_relative">
+                  <div class="flex_1">
+                    <h4 class="font_size_16 line_height_24 color_000000 display_flex">
+                      <div>もも</div>
+                    </h4>
+                    <div class="padding_top_4 overflow_hidden">
+                      <div class="font_size_14 line_height_20 bx color_545454">Nej</div>
+                    </div>
+                    <div class="padding_top_8 position_relative">
+                      <div class="font_size_14 line_height_20 bx color_000000">¥150</div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </li>
+          </ul>
+        </li>
+        <li class="padding_16_0">
+          <h2 id="5f62064d7f11c030c1ddf942" class="font_size_20 line_height_24 color_000000"
+            style="padding: 10px 0px; margin: 0px;">ドリンク</h2>
+          <ul class="margin_bottom_16">
+            <li class="overflow_hidden">
+              <div tabindex="0" class="text_decoration_none">
+                <div class="border_top_0 display_flex padding_16_0 position_relative">
+                  <div class="flex_1">
+                    <h4 class="font_size_16 line_height_24 color_000000 display_flex">
+                      <div>ハイボール</div>
+                    </h4>
+                    <div class="padding_top_4 overflow_hidden">
+                      <div class="font_size_14 line_height_20 bx color_545454"></div>
+                    </div>
+                    <div class="padding_top_8 position_relative">
+                      <div class="font_size_14 line_height_20 bx color_000000">¥500</div>
+                    </div>
+                  </div>
+                  <div class="height_88 width_96 display_flex flex_shrink_0"><img alt="ハイボール"
+                      src="https://danielcyj.s3-ap-southeast-1.amazonaws.com/high+ball.jpg" aria-hidden="true"
+                      class="opacity_1 height_88 width_88 outline_rgba_1 object_fit_cover outline_offset_minus1"></div>
+                </div>
+              </div>
+            </li>
+            <li class="overflow_hidden">
+              <div tabindex="0" class="text_decoration_none">
+                <div class="border_top_1 display_flex padding_16_0 position_relative">
+                  <div class="flex_1">
+                    <h4 class="font_size_16 line_height_24 color_000000 display_flex">
+                      <div>レモンサワー</div>
+                    </h4>
+                    <div class="padding_top_4 overflow_hidden">
+                      <div class="font_size_14 line_height_20 bx color_545454"></div>
+                    </div>
+                    <div class="padding_top_8 position_relative">
+                      <div class="font_size_14 line_height_20 bx color_000000">¥500</div>
+                    </div>
+                  </div>
+                  <div class="height_88 width_96 display_flex flex_shrink_0"><img alt="レモンサワー"
+                      src="https://danielcyj.s3-ap-southeast-1.amazonaws.com/lemon+sour.jpg" aria-hidden="true"
+                      class="opacity_1 height_88 width_88 outline_rgba_1 object_fit_cover outline_offset_minus1"></div>
+                </div>
+              </div>
+            </li>
+            <li class="overflow_hidden">
+              <div tabindex="0" class="text_decoration_none">
+                <div class="border_top_1 display_flex padding_16_0 position_relative">
+                  <div class="flex_1">
+                    <h4 class="font_size_16 line_height_24 color_000000 display_flex">
+                      <div>コーラ1</div>
+                    </h4>
+                    <div class="padding_top_4 overflow_hidden">
+                      <div class="font_size_14 line_height_20 bx color_545454"></div>
+                    </div>
+                    <div class="padding_top_8 position_relative">
+                      <div class="font_size_14 line_height_20 bx color_000000">¥500</div>
+                    </div>
+                  </div>
+                  <div class="height_88 width_96 display_flex flex_shrink_0"><img alt="コーラ1"
+                      src="https://danielcyj.s3-ap-southeast-1.amazonaws.com/cola.jpg" aria-hidden="true"
+                      class="opacity_1 height_88 width_88 outline_rgba_1 object_fit_cover outline_offset_minus1"></div>
+                </div>
+              </div>
+            </li>
+            <li class="overflow_hidden">
+              <div tabindex="0" class="text_decoration_none">
+                <div class="border_top_1 display_flex padding_16_0 position_relative">
+                  <div class="flex_1">
+                    <h4 class="font_size_16 line_height_24 color_000000 display_flex">
+                      <div>ジンジャーエール</div>
+                    </h4>
+                    <div class="padding_top_4 overflow_hidden">
+                      <div class="font_size_14 line_height_20 bx color_545454"></div>
+                    </div>
+                    <div class="padding_top_8 position_relative">
+                      <div class="font_size_14 line_height_20 bx color_000000">¥500</div>
+                    </div>
+                  </div>
+                  <div class="height_88 width_96 display_flex flex_shrink_0"><img alt="ジンジャーエール"
+                      src="https://danielcyj.s3-ap-southeast-1.amazonaws.com/gingerale.jpg" aria-hidden="true"
+                      class="opacity_1 height_88 width_88 outline_rgba_1 object_fit_cover outline_offset_minus1"></div>
+                </div>
+              </div>
+            </li>
+            <li class="overflow_hidden">
+              <div tabindex="0" class="text_decoration_none">
+                <div class="border_top_1 display_flex padding_16_0 position_relative">
+                  <div class="flex_1">
+                    <h4 class="font_size_16 line_height_24 color_000000 display_flex">
+                      <div>オレンジジュース1</div>
+                    </h4>
+                    <div class="padding_top_4 overflow_hidden">
+                      <div class="font_size_14 line_height_20 bx color_545454"></div>
+                    </div>
+                    <div class="padding_top_8 position_relative">
+                      <div class="font_size_14 line_height_20 bx color_000000">¥500</div>
+                    </div>
+                  </div>
+                  <div class="height_88 width_96 display_flex flex_shrink_0"><img alt="オレンジジュース1"
+                      src="https://danielcyj.s3-ap-southeast-1.amazonaws.com/orange.jpg" aria-hidden="true"
+                      class="opacity_1 height_88 width_88 outline_rgba_1 object_fit_cover outline_offset_minus1"></div>
+                </div>
+              </div>
+            </li>
+            <li class="overflow_hidden">
+              <div tabindex="0" class="text_decoration_none">
+                <div class="border_top_1 display_flex padding_16_0 position_relative">
+                  <div class="flex_1">
+                    <h4 class="font_size_16 line_height_24 color_000000 display_flex">
+                      <div>もも</div>
+                    </h4>
+                    <div class="padding_top_4 overflow_hidden">
+                      <div class="font_size_14 line_height_20 bx color_545454">Bw </div>
+                    </div>
+                    <div class="padding_top_8 position_relative">
+                      <div class="font_size_14 line_height_20 bx color_000000">¥2005</div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </li>
+          </ul>
+        </li>
+        <li class="padding_16_0">
+          <h2 id="5f72eea87f11c030c1e15e5c" class="font_size_20 line_height_24 color_000000"
+            style="padding: 10px 0px; margin: 0px;">定番メニュー</h2>
+          <ul class="margin_bottom_16">
+            <li class="overflow_hidden">
+              <div tabindex="0" class="text_decoration_none">
+                <div class="border_top_0 display_flex padding_16_0 position_relative">
+                  <div class="flex_1">
+                    <h4 class="font_size_16 line_height_24 color_000000 display_flex">
+                      <div>チャーハン</div>
+                    </h4>
+                    <div class="padding_top_4 overflow_hidden">
+                      <div class="font_size_14 line_height_20 bx color_545454">一番美味しい</div>
+                    </div>
+                    <div class="padding_top_8 position_relative">
+                      <div class="font_size_14 line_height_20 bx color_000000">¥1000</div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </li>
+          </ul>
+        </li>
+        <li class="padding_16_0">
+          <h2 id="5f9661207f11c030c1ea8867" class="font_size_20 line_height_24 color_000000"
+            style="padding: 10px 0px; margin: 0px;">人気物</h2>
+          <ul class="margin_bottom_16">
+            <li class="overflow_hidden">
+              <div tabindex="0" class="text_decoration_none">
+                <div class="border_top_0 display_flex padding_16_0 position_relative">
+                  <div class="flex_1">
+                    <h4 class="font_size_16 line_height_24 color_000000 display_flex">
+                      <div>やきそば</div>
+                    </h4>
+                    <div class="padding_top_4 overflow_hidden">
+                      <div class="font_size_14 line_height_20 bx color_545454"></div>
+                    </div>
+                    <div class="padding_top_8 position_relative">
+                      <div class="font_size_14 line_height_20 bx color_000000">¥300</div>
+                    </div>
+                  </div>
+                  <div class="height_88 width_96 display_flex flex_shrink_0"><img alt="やきそば"
+                      src="https://danielcyj.s3-ap-southeast-1.amazonaws.com/yakisoba.jpg" aria-hidden="true"
+                      class="opacity_1 height_88 width_88 outline_rgba_1 object_fit_cover outline_offset_minus1"></div>
+                </div>
+              </div>
+            </li>
+            <li class="overflow_hidden">
+              <div tabindex="0" class="text_decoration_none">
+                <div class="border_top_1 display_flex padding_16_0 position_relative">
+                  <div class="flex_1">
+                    <h4 class="font_size_16 line_height_24 color_000000 display_flex">
+                      <div>チャーハン</div>
+                    </h4>
+                    <div class="padding_top_4 overflow_hidden">
+                      <div class="font_size_14 line_height_20 bx color_545454"></div>
+                    </div>
+                    <div class="padding_top_8 position_relative">
+                      <div class="font_size_14 line_height_20 bx color_000000">¥990</div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </li>
+          </ul>
+        </li>
+        <li class="padding_16_0">
+          <h2 id="5f96b1217f11c030c1ea9bc9" class="font_size_20 line_height_24 color_000000"
+            style="padding: 10px 0px; margin: 0px;">お子様メニュー</h2>
+          <ul class="margin_bottom_16">
+            <li class="overflow_hidden">
+              <div tabindex="0" class="text_decoration_none">
+                <div class="border_top_0 display_flex padding_16_0 position_relative">
+                  <div class="flex_1">
+                    <h4 class="font_size_16 line_height_24 color_000000 display_flex">
+                      <div>test</div>
+                    </h4>
+                    <div class="padding_top_4 overflow_hidden">
+                      <div class="font_size_14 line_height_20 bx color_545454">test</div>
+                    </div>
+                    <div class="padding_top_8 position_relative">
+                      <div class="font_size_14 line_height_20 bx color_000000">¥1000</div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </li>
+          </ul>
+        </li>
+        <li class="padding_16_0">
+          <h2 id="5f9796dd7f11c030c1eace79" class="font_size_20 line_height_24 color_000000"
+            style="padding: 10px 0px; margin: 0px;">カツ丼</h2>
+          <ul class="margin_bottom_16">
+            <li class="overflow_hidden">
+              <div tabindex="0" class="text_decoration_none">
+                <div class="border_top_0 display_flex padding_16_0 position_relative">
+                  <div class="flex_1">
+                    <h4 class="font_size_16 line_height_24 color_000000 display_flex">
+                      <div>豚</div>
+                    </h4>
+                    <div class="padding_top_4 overflow_hidden">
+                      <div class="font_size_14 line_height_20 bx color_545454">美味しい</div>
+                    </div>
+                    <div class="padding_top_8 position_relative">
+                      <div class="font_size_14 line_height_20 bx color_000000">¥1000</div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </li>
+          </ul>
+        </li>
+        <li class="padding_16_0">
+          <h2 id="5f98d5157f11c030c1eb0330" class="font_size_20 line_height_24 color_000000"
+            style="padding: 10px 0px; margin: 0px;">麺類2</h2>
+          <ul class="margin_bottom_16">
+            <li class="overflow_hidden">
+              <div tabindex="0" class="text_decoration_none">
+                <div class="border_top_0 display_flex padding_16_0 position_relative">
+                  <div class="flex_1">
+                    <h4 class="font_size_16 line_height_24 color_000000 display_flex">
+                      <div>焼きそば3</div>
+                    </h4>
+                    <div class="padding_top_4 overflow_hidden">
+                      <div class="font_size_14 line_height_20 bx color_545454">22</div>
+                    </div>
+                    <div class="padding_top_8 position_relative">
+                      <div class="font_size_14 line_height_20 bx color_000000">¥400</div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </li>
+          </ul>
+        </li>
+        <li class="padding_16_0">
+          <h2 id="5f990dc07f11c030c1eb19cc" class="font_size_20 line_height_24 color_000000"
+            style="padding: 10px 0px; margin: 0px;">ピザ</h2>
+          <ul class="margin_bottom_16">
+            <li class="overflow_hidden">
+              <div tabindex="0" class="text_decoration_none">
+                <div class="border_top_0 display_flex padding_16_0 position_relative">
+                  <div class="flex_1">
+                    <h4 class="font_size_16 line_height_24 color_000000 display_flex">
+                      <div>マーガレット222’e</div>
+                    </h4>
+                    <div class="padding_top_4 overflow_hidden">
+                      <div class="font_size_14 line_height_20 bx color_545454"></div>
+                    </div>
+                    <div class="padding_top_8 position_relative">
+                      <div class="font_size_14 line_height_20 bx color_000000">¥10001567</div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </li>
+            <li class="overflow_hidden">
+              <div tabindex="0" class="text_decoration_none">
+                <div class="border_top_1 display_flex padding_16_0 position_relative">
+                  <div class="flex_1">
+                    <h4 class="font_size_16 line_height_24 color_000000 display_flex">
+                      <div>Ress</div>
+                    </h4>
+                    <div class="padding_top_4 overflow_hidden">
+                      <div class="font_size_14 line_height_20 bx color_545454"></div>
+                    </div>
+                    <div class="padding_top_8 position_relative">
+                      <div class="font_size_14 line_height_20 bx color_000000">¥10000</div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </li>
+            <li class="overflow_hidden">
+              <div tabindex="0" class="text_decoration_none">
+                <div class="border_top_1 display_flex padding_16_0 position_relative">
+                  <div class="flex_1">
+                    <h4 class="font_size_16 line_height_24 color_000000 display_flex">
+                      <div>ppppvgbn</div>
+                    </h4>
+                    <div class="padding_top_4 overflow_hidden">
+                      <div class="font_size_14 line_height_20 bx color_545454">123</div>
+                    </div>
+                    <div class="padding_top_8 position_relative">
+                      <div class="font_size_14 line_height_20 bx color_000000">¥1111</div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </li>
+          </ul>
+        </li>
+        <li class="padding_16_0">
+          <h2 id="5fa1f7b87f11c030c1ececbc" class="font_size_20 line_height_24 color_000000"
+            style="padding: 10px 0px; margin: 0px;">Testing</h2>
+          <ul class="margin_bottom_16">
+            <li class="overflow_hidden">
+              <div tabindex="0" class="text_decoration_none">
+                <div class="border_top_0 display_flex padding_16_0 position_relative">
+                  <div class="flex_1">
+                    <h4 class="font_size_16 line_height_24 color_000000 display_flex">
+                      <div>Kt,tm</div>
+                    </h4>
+                    <div class="padding_top_4 overflow_hidden">
+                      <div class="font_size_14 line_height_20 bx color_545454">Kemw</div>
+                    </div>
+                    <div class="padding_top_8 position_relative">
+                      <div class="font_size_14 line_height_20 bx color_000000">¥12</div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </li>
+          </ul>
+        </li>
+        <li class="padding_16_0">
+          <h2 id="5faa079f7f11c030c1eeded1" class="font_size_20 line_height_24 color_000000"
+            style="padding: 10px 0px; margin: 0px;">Ptt</h2>
+          <ul class="margin_bottom_16">
+            <li class="overflow_hidden">
+              <div tabindex="0" class="text_decoration_none">
+                <div class="border_top_0 display_flex padding_16_0 position_relative">
+                  <div class="flex_1">
+                    <h4 class="font_size_16 line_height_24 color_000000 display_flex">
+                      <div>Jak</div>
+                    </h4>
+                    <div class="padding_top_4 overflow_hidden">
+                      <div class="font_size_14 line_height_20 bx color_545454">Nn</div>
+                    </div>
+                    <div class="padding_top_8 position_relative">
+                      <div class="font_size_14 line_height_20 bx color_000000">¥900</div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </li>
+          </ul>
+        </li>
+      </ul>
+    </div>
+    <div class="footer-container">
+      <div class="footerButton" style="">カート<div class="cart_total_price">¥400</div>
+      </div>
+    </div>
+  </main>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      document.querySelector('#ok_button').addEventListener('click', () => {
+        alert('ok button tapping')
+      })
+
+
+    })
+  </script>
+
+</body>
+
+</html>

@@ -61,5 +61,6 @@ mkdir -p reports/UI_test/functional/test_happyflow_1/result
 # pipenv run pytest --json-report -v  --html=reports/functional/report.html tests/UI_test/functional/test_local_chrome/test_cart_page_chrome.py
 
 pipenv run pytest -x --json-report -v  --html=reports/functional/report.html tests/UI_test/functional/test_local_chrome/test_happyflow_1_chrome_first_time_arrive_line_up_page.py
+# pipenv run pytest -x --json-report -v  --html=reports/functional/report.html tests/UI_test/functional/test_local_chrome/test_take_seat_first_dialogue.py
 
 # pipenv run python3 ./tests/fill_value_to_google.py
