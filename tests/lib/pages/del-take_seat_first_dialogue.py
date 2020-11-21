@@ -23,8 +23,8 @@ class BasePage(object):
       self.driver.save_screenshot(sc_filename)
 
 class Main(BasePage):
-  def getLineUpIcon(self):
-    return self.driver.find_element_by_xpath(LINE_UP_ICON_XPATH)
+  # def getLineUpIcon(self):
+  #   return self.driver.find_element_by_xpath(LINE_UP_ICON_XPATH)
 
   def tapOkButtonOnDialogue(self):
     sleep(1)

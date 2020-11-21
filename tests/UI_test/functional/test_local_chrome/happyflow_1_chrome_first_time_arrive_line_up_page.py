@@ -61,7 +61,7 @@ def getActualScreenshotPath(test_number):
 def getExpectedScreenshotPath(test_number):
   return 'tests/UI_test/functional/test_happyflow_1_click_accept_and_continue/expect/{}_sc.png'.format(test_number)
 
-def test_happyflow_1_chrome_first_time_arrive_line_up_page(json_metadata):
+def setupLocalChrome():
   caps = webdriver.DesiredCapabilities.CHROME.copy()
 
   chrome_options = webdriver.ChromeOptions()
@@ -74,18 +74,11 @@ def test_happyflow_1_chrome_first_time_arrive_line_up_page(json_metadata):
   caps['acceptInsecureCerts'] = True
 
   browser = webdriver.Chrome('drivers/chrome/86/chromedriver', desired_capabilities=caps)
+  return browser
 
+def test_happyflow_1_chrome_first_time_arrive_line_up_page(json_metadata):
 
-  # selenium_url = 'http://{}:4444/wd/hub'.format(SELENIUM_HUB_HOST)
-
-  # chrome_options = webdriver.ChromeOptions()
-  # mobile_emulation = { "deviceName": "Nexus 5" }
-  # chrome_options.add_experimental_option("mobileEmulation", mobile_emulation)
-
-  # browser = webdriver.Remote(
-  #   command_executor=selenium_url,
-  #   desired_capabilities = chrome_options.to_capabilities()
-  # )
+  browser = setupLocalChrome()
 
   check_TID_001.run_check(json_metadata, browser)
   check_TID_002.run_check(json_metadata, browser)
