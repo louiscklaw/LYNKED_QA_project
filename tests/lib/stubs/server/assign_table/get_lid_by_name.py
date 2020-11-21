@@ -6,7 +6,7 @@ import json
 
 import requests
 
-from list_all_table import listAllTable
+from stubs.server.assign_table.list_all_table import listAllTable
 
 def getLidByName(queue_user_name):
   all_table_json = listAllTable()

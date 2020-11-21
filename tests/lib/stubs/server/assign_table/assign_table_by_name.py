@@ -6,8 +6,8 @@ import json
 import random
 
 import requests
-from get_lid_by_name import getLidByName
-from assign_table_by_lid import assignTableByLid
+from stubs.server.assign_table.get_lid_by_name import getLidByName
+from stubs.server.assign_table.assign_table_by_lid import assignTableByLid
 
 
 def assignTableByName(name, seat):

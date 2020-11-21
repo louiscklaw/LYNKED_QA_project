@@ -9,14 +9,14 @@ from config import *
 from time import sleep
 from assert_check_point import assertCheckPoint
 
-def run_check(json_metadata, browser):
+def run_check(json_metadata, browser, TEST_USER, TEST_NOTE='this is some note'):
   TEST_ERR_MSG='User should automatically direct to food menu page with a number display dialog'
 
   line_up_po = line_up_page.Main(browser)
   dialogue_po= line_up_confirmation_dialogue.Main(browser)
 
-  line_up_po.inputName('this is customer name by louis from script')
-  line_up_po.inputNotes('this is customer notse by louis from script')
+  line_up_po.inputName(TEST_USER)
+  line_up_po.inputNotes(TEST_NOTE)
   line_up_po.changeNumberOfAdult(2)
   line_up_po.changeNumberOfChild(3)
 

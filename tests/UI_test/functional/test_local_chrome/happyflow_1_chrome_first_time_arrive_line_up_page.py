@@ -18,12 +18,17 @@ LIB_CONFIG_DIR=os.path.abspath(LIB_DIR+'/configs')
 LIB_ASSERT_DIR=os.path.abspath(LIB_DIR+'/asserts')
 LIB_STEPS_DIR=os.path.abspath(LIB_DIR+'/steps')
 
+LIB_STUBS_DIR=os.path.abspath(LIB_DIR+'/stubs')
+LIB_STUBS_SERVER_DIR=os.path.abspath(LIB_STUBS_DIR+'/server')
+
+
 sys.path.append(LIB_DIR)
 sys.path.append(LIB_PO_DIR)
 sys.path.append(LANG_DIR)
 sys.path.append(LIB_CONFIG_DIR)
 sys.path.append(LIB_ASSERT_DIR)
 sys.path.append(LIB_STEPS_DIR)
+sys.path.append(LIB_STUBS_DIR)
 
 from lib_helloworld import lib_helloworld
 from po_helloworld import po_helloworld
@@ -77,27 +82,34 @@ def setupLocalChrome():
   return browser
 
 def test_happyflow_1_chrome_first_time_arrive_line_up_page(json_metadata):
+  TEST_USER_NAME='louis_finger_print_1'
 
   browser = setupLocalChrome()
 
+  # CATEGORY - USER, COMPONENT - CART, TEST TYPE - FUNCTIONAL
   check_TID_001.run_check(json_metadata, browser)
   check_TID_002.run_check(json_metadata, browser)
   check_TID_003.run_check(json_metadata, browser)
   check_TID_004.run_check(json_metadata, browser)
   check_TID_005.run_check(json_metadata, browser)
-  check_TID_006.run_check(json_metadata, browser)
-  check_TID_007.run_check(json_metadata, browser)
-  check_TID_008.run_check(json_metadata, browser)
-  check_TID_009.run_check(json_metadata, browser)
-  check_TID_010.run_check(json_metadata, browser)
-  check_TID_011.run_check(json_metadata, browser)
-  check_TID_012.run_check(json_metadata, browser)
-  check_TID_013.run_check(json_metadata, browser)
-  check_TID_014.run_check(json_metadata, browser)
-  check_TID_015.run_check(json_metadata, browser)
-  check_TID_016.run_check(json_metadata, browser)
-  check_TID_017.run_check(json_metadata, browser)
-  check_TID_018.run_check(json_metadata, browser)
+  check_TID_006.run_check(json_metadata, browser, TEST_USER_NAME)
+  # check_TID_007.run_check(json_metadata, browser)
+  # check_TID_008.run_check(json_metadata, browser)
+  # check_TID_009.run_check(json_metadata, browser)
+  # check_TID_010.run_check(json_metadata, browser)
+  # check_TID_011.run_check(json_metadata, browser)
+  # check_TID_012.run_check(json_metadata, browser)
+  # check_TID_013.run_check(json_metadata, browser)
+  # check_TID_014.run_check(json_metadata, browser)
+  # check_TID_015.run_check(json_metadata, browser)
+  # check_TID_016.run_check(json_metadata, browser)
+  # check_TID_017.run_check(json_metadata, browser)
+
+  # check_TID_019.run_check(json_metadata, browser)
+
+
+  # CATEGORY - USER, COMPONENT - ORDER, TEST_TYPE - FUNCTIONAL
+  check_TID_020.run_check(json_metadata, browser, TEST_USER_NAME)
 
 
   browser.quit()
