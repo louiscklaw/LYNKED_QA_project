@@ -1,0 +1,582 @@
+@charset "utf-8";
+html, body {
+  margin: 0;
+  padding: 0;
+} /* ボタン */
+.btn01 {
+  max-width: 300px;
+  height: 56px;
+  background-color: #ba1f23;
+  font-size: 24px;
+  color: #fff;
+  text-align: center;
+  vertical-align: middle;
+  margin: 20px auto 50px;
+  padding-top: 24px;
+  position: relative;
+}
+.btn01 a {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  text-indent: -999px;
+}
+.btn01 a:hover {
+  background-color: #fff;
+  filter: alpha(opacity=60);
+  -moz-opacity: 0.6;
+  opacity: 0.6;
+}
+.btn02 {
+  max-width: 100%;
+  height: 56px;
+  background-color: #ba1f23;
+  font-size: 24px;
+  color: #fff;
+  text-align: center;
+  vertical-align: middle;
+  margin-bottom: 50px;
+  margin-left: 20px;
+  margin-right: 20px;
+  padding-top: 24px;
+  position: relative;
+}
+.btn02 a {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  text-indent: -999px;
+}
+.btn02 a:hover {
+  background-color: #fff;
+  filter: alpha(opacity=60);
+  -moz-opacity: 0.6;
+  opacity: 0.6;
+}
+/* フォーム */
+.reform input {
+  width: 96%;
+  padding: 6px;
+  border: 2px #ccc solid;
+  margin-bottom: 10px;
+}
+.reform2 input {
+  width: 100%;
+  padding: 6px;
+  border: 2px #ccc solid;
+}
+.reform3 {
+  width: 96%;
+  padding: 6px;
+  border: 2px #ccc solid;
+}
+.reform2 select {
+  padding: 6px;
+  border: 2px #ccc solid;
+  width: 156px;
+}
+/* モーダルウィンドウ */
+.modal {
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+}
+.modal h2 {
+  font-size: 14px;
+}
+.modal p {
+  font-size: 14px;
+  line-height: 2;
+}
+.modal:not(:target) {
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.5s, visibility 0.5s;
+}
+.modal:target {
+  opacity: 1;
+  visibility: visible;
+  transition: opacity 0.5s, visibility 0.5s;
+}
+.modal .overlay {
+  display: block;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  background-color: #000;
+  opacity: 0.7;
+  top: 0;
+  left: 0;
+}
+.modal-wrapper {
+  width: 100%;
+  max-width: 650px;
+  min-width: 300px;
+  height: 100%;
+  max-height: 550px;
+  background-color: #fff;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+.modal-contents {
+  overflow: auto;
+  width: 100%;
+  height: 100%;
+  box-sizing: border-box;
+  position: relative;
+  text-align: center;
+}
+.modal-content {
+  margin: 25px;
+}
+.modal-close {
+  position: absolute;
+  top: 5px;
+  right: 10px;
+  text-decoration: none;
+}
+.modal-content a:link, .modal-content a:visited, .modal-content a:hover, .modal-content a:active {
+  color: #ba1f23;
+}
+/* menu */
+.ttl00 {
+  text-align: center;
+  font-size: 16px;
+  margin-bottom: 20px;
+  text-decoration: underline;
+}
+/* menu 予約登録済みのとき*/
+.ttl02 a {
+  color: #000;
+}
+/* menu 予約未登録のとき*/
+.ttl03 a {
+  color: #ba1f23;
+}
+/* menu 案内済のとき*/
+.ttl04 {
+  color: #2a76b2;
+  text-decoration: none;
+}
+/* menu のとき*/
+.ttl05 a {}
+.ttl06 {
+  text-align: center;
+  font-size: 16px;
+  color: #ba1f23;
+  font-weight: 600;
+  margin-bottom: 16px;
+}
+/* menu カテゴリー*/
+.menucate01 {
+  font-size: 14px;
+  display: -webkit-flex;
+  display: -moz-flex;
+  display: -ms-flex;
+  display: -o-flex;
+  display: flex;
+  margin-bottom: 16px;
+  overflow-x: auto;
+  white-space: nowrap;
+  -webkit-overflow-scrolling: touch;
+  line-height: 1;
+  margin: 0 auto 16px;
+}
+.menucate01 div {
+  padding: 6px 8px 5px;
+}
+.menucate01 div a {
+  text-decoration: none;
+  color: #000;
+}
+.menucate02 {
+  background-color: #666;
+  color: #fff;
+  border-radius: 12px;
+}
+.menucate02 a {
+  color: #fff !important;
+}
+.menucate01::-webkit-scrollbar {
+  display: none;
+}
+/* menu 一覧*/
+.menu01 {
+  width: 100%;
+  text-align: left;
+  margin: 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  height: auto;
+  vertical-align: middle;
+  position: relative;
+  line-height: 1.3;
+  font-weight: 600;
+}
+.menu01 a {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  text-indent: -999px;
+}
+.menu02 {
+  text-align: right;
+  margin: 4px 10px 0;
+}
+.menu02 img {
+  width: 80px;
+  height: 80px;
+  object-fit: cover;
+}
+.menu03 {
+  background-color: #f9f9f9;
+  font-size: 15px;
+  width: 100%;
+  margin: 0;
+}
+.menu03 ul {
+  padding: 0;
+  margin: 0;
+}
+.menu03 p {
+  margin-left: 10px;
+}
+.menu03 li:nth-child(even) {
+  background: #fff;
+}
+.products01 {
+  width: 100%;
+  position: relative;
+  height: 250px;
+  margin: 0 0 15px 0;
+}
+.products01 img {
+  width: 100%;
+  height: 250px;
+  object-fit: cover;
+}
+.products02 {
+  position: absolute;
+  top: 10px;
+  left: 16px;
+}
+.products03 {
+  margin: 0 10px;
+}
+.products04 {
+  text-align: center;
+  margin-bottom: 16px;
+}
+.products05 {
+  text-align: left;
+  font-size: 15px;
+}
+.size01 {
+  display: -webkit-flex;
+  display: -moz-flex;
+  display: -ms-flex;
+  display: -o-flex;
+  display: flex;
+  font-size: 18px;
+  color: #000;
+  height: 48px;
+  text-align: center;
+}
+.size01 div {
+  margin: 0 6px;
+  padding: 8px 4px;
+}
+.size02 {
+  color: #fff;
+  background-color: #000;
+}
+.size03 {
+  color: #fff;
+  background-color: #eee;
+}
+.cart01 {
+  width: 100%;
+  text-align: center;
+  margin: 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  font-size: 15px;
+}
+.cart02 {
+  text-align: left;
+  margin: 10px;
+  line-height: 1.3;
+  font-weight: 600;
+}
+.cart03 p {
+  margin: 0 0 10px 0;
+}
+.cart03 {
+  background-color: #f9f9f9;
+  padding: 0;
+  margin: 0;
+  font-size: 15px;
+  width: 100%;
+  margin-bottom: 30px;
+}
+.cart_can {
+  background-color: #999;
+  color: #fff;
+  width: 82px;
+  height: 22px;
+  text-align: center;
+  padding-top: 2px;
+  font-size: 13px;
+  position: relative;
+}
+.cart_can a {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  text-indent: -999px;
+}
+.cart03 ul {
+  padding: 0;
+  margin: 0;
+}
+.cart03 li {
+  margin-bottom: 4px;
+}
+.cart03 li:nth-child(even) {
+  background: #fff;
+}
+.cart04 {
+  text-align: right;
+  margin: 10px 10px 10px 0;
+}
+.cart05 {
+  display: -webkit-flex;
+  display: -moz-flex;
+  display: -ms-flex;
+  display: -o-flex;
+  display: flex;
+  line-height: 1;
+}
+.cart05 input[type="text"] {
+  background: #f9f9f9;
+  border: none;
+  font-weight: 600;
+  width: 18px;
+  text-align: center;
+}
+.cart05 input {
+  border: 2px #ddd solid;
+  border-radius: 50%;
+  font-weight: 600;
+}
+.order_his01 {
+  width: 100%;
+  text-align: left;
+  margin: 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  font-size: 15px;
+  color: #000;
+}
+.order_his02 {
+  text-align: left;
+  background-color: #f9f9f9;
+}
+.order_his02 ul {
+  padding: 0;
+  margin: 0 0 24px 0;
+}
+.order_his02 li {
+  margin-bottom: 4px;
+  padding: 8px 0 6px;
+}
+.order_his02 li:nth-child(even) {
+  background: #fff;
+}
+.order_his03 {
+  font-size: 12px;
+  font-weight: 600;
+  line-height: 1;
+  padding: 0 10px 6px;
+}
+.order_preparation01 {
+  font-size: 10px;
+  color: #ba1f23;
+  background-color: #ccc;
+  border-radius: 3px;
+  padding: 3px 12px;
+  line-height: 1;
+}
+.order_his04 {
+  text-align: left;
+  margin: 0 10px 0;
+  line-height: 1.3;
+}
+.order_his05 {
+  text-align: right;
+  margin-right: 10px;
+}
+.order_his06 {
+  text-align: left;
+}
+.order_done {
+  font-size: 10px;
+  line-height: 1;
+  color: #fff;
+  background-color: #ccc;
+  border-radius: 3px;
+  text-align: center;
+  padding: 3px 6px;
+}
+.order_total01 table {
+  border-collapse: collapse;
+  margin: 0 10px 0 auto;
+}
+.order_total01 td {
+  text-align: right;
+  vertical-align: top;
+  font-size: 15px;
+  line-height: 2;
+  table-layout: auto;
+  font-weight: 600;
+}
+.order_total02 {
+  font-size: 12px;
+  text-align: right;
+  margin: 0 10px;
+}
+.divide01 {
+  text-align: left;
+  display: -webkit-flex;
+  display: -moz-flex;
+  display: -ms-flex;
+  display: -o-flex;
+  display: flex;
+  margin: 0 10px 20px;
+}
+.divide01 p {
+  margin: 10px;
+  line-height: 1;
+}
+.divide01 select {
+  padding: 6px;
+  border: 2px #ccc solid;
+  width: 100px;
+}
+.reservation01 {
+  max-width: 100%;
+  padding: 0 10px;
+  text-align: center;
+  margin: 0 auto;
+}
+.reservation02 {
+  font-size: 18px;
+  font-size: 20px;
+  font-weight: 400;
+}
+.reservation03 {
+  font-size: 24px;
+}
+.reform p {
+  font-size: 16px;
+  margin-bottom: 10px;
+  font-weight: 500;
+}
+.reform2 {
+  max-width: 100%;
+  font-size: 15px;
+  display: -webkit-flex;
+  display: -moz-flex;
+  display: -ms-flex;
+  display: -o-flex;
+  display: flex;
+  margin-bottom: 10px;
+  text-align: left;
+}
+.reform2 div {
+  margin: 0 18px 0 0;
+}
+.ttl01 {
+  text-align: left;
+  line-height: 1.2;
+}
+.ttl01 h2 {
+  font-size: 20px;
+  font-weight: 400;
+}
+.ttl07 {
+  font-size: 14px;
+  font-weight: 400;
+  margin-left: 6px;
+}
+.orderno01 {
+  font-size: 18px;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+.orderno02 {
+  font-size: 28px;
+}
+/* フッター copyright */
+.footer_copy01 {
+  text-align: center;
+  margin: 60px auto 6px;
+}
+/* フッター固定コンテンツ */
+.wrapper {
+  min-height: 100vh;
+  position: relative;
+  padding-bottom: 60px;
+  box-sizing: border-box;
+}
+.footer_con01 {
+  width: 100%;
+  height: 60px;
+  background-color: #000;
+  text-align: center;
+  padding: 10px auto;
+  margin: 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  position: absolute;
+  position: fixed;
+  bottom: 0;
+}
+.footer_con01 div {
+  text-align: center;
+  margin: 8px auto;
+}
+/* フッター固定コンテンツ　非リンクのとき */
+.footer_con_off {
+  filter: alpha(opacity=30);
+  -moz-opacity: 0.3;
+  opacity: 0.3;
+}

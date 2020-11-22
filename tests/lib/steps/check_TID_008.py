@@ -9,7 +9,7 @@ from config import *
 from time import sleep
 from assert_check_point import assertCheckPoint
 
-def run_check(json_metadata, browser):
+def run_check(json_metadata, browser, user_name, user_note='this is customer notse by louis from script updated'):
   TEST_ERR_MSG='The user info should be updated'
 
   # before
@@ -27,18 +27,23 @@ def run_check(json_metadata, browser):
   fl_page.tapTopRightGreenButton()
   assertCheckPoint(browser, 'TID_008_2', TEST_ERR_MSG)
 
-  line_up_po.inputName('this is customer name by louis from script updated')
-  line_up_po.inputNotes('this is customer notse by louis from script updated')
+  line_up_po.inputName(user_name)
+  line_up_po.inputNotes(user_note)
   line_up_po.changeNumberOfAdult(5)
   line_up_po.changeNumberOfChild(6)
   assertCheckPoint(browser, 'TID_008_3', TEST_ERR_MSG)
 
   # Close the info page, check the number at top right screen again
   # Observe
-  line_up_po.updateLineUpTicket()
-  assertCheckPoint(browser, 'TID_008_4', TEST_ERR_MSG)
 
-  dialogue_po.tapOkButtonOnDialogue()
-  assertCheckPoint(browser, 'TID_008_5', TEST_ERR_MSG)
+  # line_up_po.updateLineUpTicket()
+  # WORKAROUND: [Bug #072] start
+  browser.get(URL_FOOD_MENU_PAGE)
+  # line_up_po.tapTopLeftCloseButton()
+  # assertCheckPoint(browser, 'TID_008_4', TEST_ERR_MSG)
 
-  json_metadata['TID_008'] = 'passed'
+  # dialogue_po.tapOkButtonOnDialogue()
+  # assertCheckPoint(browser, 'TID_008_5', TEST_ERR_MSG)
+  # WORKAROUND: [Bug #072] end
+
+  json_metadata['TID_008'] = 'skip with #072'

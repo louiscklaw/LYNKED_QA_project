@@ -17,7 +17,7 @@ def run_check(json_metadata, browser):
   assertCheckPoint(browser, 'TID_015_1', TEST_ERR_MSG)
   for i in range(1,20):
     cart_page_po.tapMinusButton(1)
-    sleep(0.05)
+
 
   assertCheckPoint(browser, 'TID_015_2', TEST_ERR_MSG)
 

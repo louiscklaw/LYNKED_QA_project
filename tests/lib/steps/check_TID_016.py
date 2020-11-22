@@ -16,10 +16,12 @@ def run_check(json_metadata, browser):
   item_add_page_po=item_add_page.Main(browser)
 
   # escape from cart list page from 015
-  cart_page_po.tapTopLeftCloseButton()
-  assertCheckPoint(browser, 'TID_016_1', TEST_ERR_MSG)
+  # todo: remove me
+  # cart_page_po.tapTopLeftCloseButton()
+  # assertCheckPoint(browser, 'TID_016_1', TEST_ERR_MSG)
 
   # add another food
+  cart_page_po.tapBottomBarMenuButton()
   food_menu_po.tapFoodItemByIdx(2)
   assertCheckPoint(browser, 'TID_016_2', TEST_ERR_MSG)
 

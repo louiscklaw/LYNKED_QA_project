@@ -3,6 +3,7 @@ from pprint import pprint
 
 def po_helloworld():
   print('po_helloworld helloworld')
+  assert False, 'po_helloworld launched'
   return 'po_helloworld helloworld'
 
 class BasePage(object):

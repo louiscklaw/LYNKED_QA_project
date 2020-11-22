@@ -17,5 +17,6 @@ def run_check(json_metadata, browser):
   line_up_page_po = line_up_page.FirstTimeLanding(browser)
 
   line_up_page_po.tapCrossButton()
+
   assertCheckPoint(browser, 'TID_004_2', ERR_MSG_TNC_DIALOGUE_SHOULD_CLOSE)
   json_metadata['TID_004'] = 'passed'

@@ -8,15 +8,18 @@ from selenium.webdriver.support.ui import Select
 ACCEPT_AND_CONTINUE_XPATH='//*[@value="同意して予約する"]'
 # ACCEPT_AND_CONTINUE_XPATH='//*[@value="同意して予約する"]'
 BACK_BUTTON_XPATH='//*[@id="tac-link"]/div/div'
-CROSS_BUTTON_XPATH='//*[@id="close"]'
+# CROSS_BUTTON_XPATH='//*[@id="close"]'
 
-NAME_INPUT='/html/body/main/div[8]/div[2]/div/div[1]/input'
-NOTE_INPUT='/html/body/main/div[8]/div[2]/div/div[3]/textarea'
+TOP_LEFT_CLOSE_BUTTON='//*[@id="close"]'
+CROSS_BUTTON_XPATH=TOP_LEFT_CLOSE_BUTTON
+
+NAME_INPUT='//*[@id="app"]/div[1]/div[1]/main/div[6]/div[2]/div/div[1]/input'
+NOTE_INPUT='//*[@id="app"]/div[1]/div[1]/main/div[6]/div[2]/div/div[3]/textarea'
 AMOUNT_OF_PEOPLE_XPATH='//*[@id="adult"]'
 AMOUNT_OF_CHILDREN_XPATH='//*[@id="child"]'
 
-SUBMIT_TICKET_XPATH='/html/body/main/div[8]/div[2]/div/div[4]'
-UPDATE_TICKET_INFO_XPATH='/html/body/main/div[8]/div[2]/div/div[4]/div'
+SUBMIT_TICKET_XPATH='//*[@id="app"]/div[1]/div[1]/main/div[6]/div[2]/div/div[4]/div'
+UPDATE_TICKET_INFO_XPATH='//*[@id="app"]/div[1]/div[1]/main/div[6]/div[2]/div/div[4]/div'
 
 ADULT_SELECTOR_XPATH='//*[@id="adult"]'
 CHILD_SELECTOR_XPATH='//*[@id="child"]'
@@ -57,6 +60,9 @@ class BasePage(object):
     def inputAmountOfPeople(self, xpath, number_of_people):
       sys.exit()
       pass
+
+    def tapTopLeftCloseButton(self):
+      self.tapButton(TOP_LEFT_CLOSE_BUTTON)
 
 # T&C accepted
 class Main(BasePage):
@@ -107,7 +113,9 @@ class FirstTimeLanding(BasePage):
       ELE_ACCEPT_BUTTON.click()
 
     def tapCrossButton(self):
+      print('redirect me using tapTopLeftCloseButton')
       self.tapButton(CROSS_BUTTON_XPATH)
+
 
     # def is_title_matches(self):
     #     """Verifies that the hardcoded text "Python" appears in page title"""

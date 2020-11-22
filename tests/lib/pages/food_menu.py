@@ -9,11 +9,17 @@ ACCEPT_AND_CONTINUE_XPATH='//*[@value="同意して予約する"]'
 # ACCEPT_AND_CONTINUE_XPATH='//*[@value="同意して予約する"]'
 BACK_BUTTON_XPATH='//*[@id="tac-link"]/div/div'
 CROSS_BUTTON_XPATH='//*[@id="close"]'
-LINE_UP_ICON_XPATH='/html/body/main/header/div/div[3]'
+# LINE_UP_ICON_XPATH='/html/body/main/header/div/div[3]'
+LINE_UP_ICON_XPATH='//*[@id="divLineupInfo"]'
 
-TOP_RIGHT_GREEN_BUTTON='//*[@id="userInfo"]'
+# TOP_RIGHT_GREEN_BUTTON='//*[@id="userInfo"]'
+TOP_RIGHT_GREEN_BUTTON='//*[@id="divLineupInfo"]'
 
-CART_BUTTON_XPATH='/html/body/main/div[7]/div'
+# CART BUTTON IN BOTTOM BAR
+CART_BUTTON_XPATH='//*[@id="cart"]'
+
+HELLOWORLD_FOOD_ITEM1='//*[@id="app"]/div[1]/div[1]/main/div[5]/ul/li[1]/ul/li[1]'
+HELLOWORLD_FOOD_ITEM2='//*[@id="app"]/div[1]/div[1]/main/div[5]/ul/li[1]/ul/li[2]'
 
 def helloworld():
   print('helloworld')
@@ -28,7 +34,8 @@ class BasePage(object):
         self.driver = driver
 
     def getFoodItemFromList(self, food_item_idx):
-      return '/html/body/main/div[6]/ul/li[1]/ul/li[{}]/div/div'.format(food_item_idx)
+      # return '/html/body/main/div[6]/ul/li[1]/ul/li[{}]/div/div'.format(food_item_idx)
+      return '//*[@id="app"]/div[1]/div[1]/main/div[5]/ul/li[1]/ul/li[{}]'.format(food_item_idx)
 
     def takeScreenshot(self, sc_filename):
         self.driver.save_screenshot(sc_filename)

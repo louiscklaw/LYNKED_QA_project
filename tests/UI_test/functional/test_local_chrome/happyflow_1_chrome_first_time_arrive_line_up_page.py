@@ -90,19 +90,23 @@ def test_happyflow_1_chrome_first_time_arrive_line_up_page(json_metadata):
   check_TID_001.run_check(json_metadata, browser)
   check_TID_002.run_check(json_metadata, browser)
   check_TID_003.run_check(json_metadata, browser)
+
   check_TID_004.run_check(json_metadata, browser)
+
   check_TID_005.run_check(json_metadata, browser)
   check_TID_006.run_check(json_metadata, browser, TEST_USER_NAME)
-  # check_TID_007.run_check(json_metadata, browser)
-  # check_TID_008.run_check(json_metadata, browser)
-  # check_TID_009.run_check(json_metadata, browser)
-  # check_TID_010.run_check(json_metadata, browser)
-  # check_TID_011.run_check(json_metadata, browser)
-  # check_TID_012.run_check(json_metadata, browser)
-  # check_TID_013.run_check(json_metadata, browser)
-  # check_TID_014.run_check(json_metadata, browser)
-  # check_TID_015.run_check(json_metadata, browser)
-  # check_TID_016.run_check(json_metadata, browser)
+  check_TID_007.run_check(json_metadata, browser)
+  check_TID_008.run_check(json_metadata, browser, TEST_USER_NAME)
+
+  # worksround for ticket
+  check_TID_009.run_check(json_metadata, browser)
+  check_TID_010.run_check(json_metadata, browser)
+  check_TID_011.run_check(json_metadata, browser)
+  check_TID_012.run_check(json_metadata, browser)
+  check_TID_013.run_check(json_metadata, browser)
+  check_TID_014.run_check(json_metadata, browser)
+  check_TID_015.run_check(json_metadata, browser)
+  check_TID_016.run_check(json_metadata, browser)
   # check_TID_017.run_check(json_metadata, browser)
 
   # check_TID_019.run_check(json_metadata, browser)

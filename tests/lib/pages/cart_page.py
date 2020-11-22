@@ -1,5 +1,6 @@
 import os,sys
 from pprint import pprint
+from time import sleep
 
 FIRST_ADD_BUTTON='//*[@id="plus"]'
 # add button 1
@@ -14,6 +15,8 @@ FIRST_ADD_BUTTON='//*[@id="plus"]'
 # remove 削除
 # /html/body/main/div[8]/div[2]/div[2]/div[3]/button
 # /html/body/main/div[8]/div[2]/div[3]/div[3]/button
+# //*[@id="app"]/div[1]/div[1]/main/div[3]/div/div[1]/div[2]/div[2]
+# //*[@id="app"]/div[1]/div[1]/main/div[3]/div/div[2]/div[2]/div[2]
 
 TOP_LEFT_CLOSE_BUTTON_XPATH='//*[@id="close"]'
 PLACE_ORDER_BUTTON_XPATH='/html/body/main/div[8]/div[3]/div'
@@ -31,23 +34,26 @@ class BasePage(object):
       ele_button = self.driver.find_element_by_xpath(xpath)
       ele_button.click()
 
+    # TODO: to obsolete
     def getFoodItemXpathFromIdx(self, item_idx):
       return '/html/body/main/div[8]/div[2]/div[{}]'.format(item_idx+1)
 
     def getAddButtonXpath(self, item_idx):
-      return '{}/div[2]/div[3]/button[2]'.format(self.getFoodItemXpathFromIdx(item_idx))
+      return '/html/body/div/div[1]/div[1]/main/div[3]/div/div[{}]/div[2]/div[1]/button[1]'.format(item_idx)
 
     def getMinusButtonXpath(self, item_idx):
-      return '{}/div[2]/div[3]/button[1]'.format(self.getFoodItemXpathFromIdx(item_idx))
+      return '/html/body/div/div[1]/div[1]/main/div[3]/div/div[{}]/div[2]/div[1]/button[2]'.format(item_idx)
 
-    def getRemoveButtonXpath(self, item_idx):
-      return '{}/div[3]/button'.format(self.getFoodItemXpathFromIdx(item_idx))
+    def getRemoveButtonXpath(self, idx):
+      return '//*[@id="app"]/div[1]/div[1]/main/div[3]/div/div[{}]/div[2]/div[2]'.format(idx)
 
-    def tapAddButton(self, item_idx):
+    def tapAddButton(self, item_idx, sleep_after_tap_s=0.1):
       self.tapButton(self.getAddButtonXpath(item_idx))
+      sleep(sleep_after_tap_s)
 
-    def tapMinusButton(self, item_idx):
+    def tapMinusButton(self, item_idx, sleep_after_tap_s=0.1):
       self.tapButton(self.getMinusButtonXpath(item_idx))
+      sleep(sleep_after_tap_s)
 
     def tapRemoveButton(self, item_idx):
       self.tapButton((self.getRemoveButtonXpath(item_idx)))
@@ -67,6 +73,9 @@ class Main(BasePage):
 
   def tapTopRightGreenButton(self):
     self.tapButton(TOP_RIGHT_GREEN_BUTTON)
+
+  def tapBottomBarMenuButton(self):
+    self.tapButton('//*[@id="menu"]')
 
 
 class FirstTimeLanding(BasePage):
