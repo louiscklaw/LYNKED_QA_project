@@ -104,7 +104,6 @@ def test_happyflow_1_chrome_first_time_arrive_line_up_page(json_metadata):
 
   assignTableByName(TID_020_USERNAME, random.randrange(2,50,3))
 
-  sleep(10)
   confirm_assigned_table_on_client_side(json_metadata, browser)
 
   # check_TID_020.run_check(json_metadata, browser)

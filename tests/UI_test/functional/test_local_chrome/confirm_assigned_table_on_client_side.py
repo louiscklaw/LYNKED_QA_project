@@ -66,7 +66,9 @@ LINE_UP_PAGE='http://menymeny.com/food/%E3%82%84%E3%81%8D%E3%81%A8%E3%82%8A/?do_
 # def getExpectedScreenshotPath(test_number):
 #   return 'tests/UI_test/functional/test_happyflow_1_click_accept_and_continue/expect/{}_sc.png'.format(test_number)
 
-def confirm_assigned_table_on_client_side(json_metadata, browser):
+def confirm_assigned_table_on_client_side(json_metadata, browser, sleep_before_confirm_s=10):
+
+  sleep(sleep_before_confirm_s)
   table_assigned_dialogue_po = table_assigned_dialogue.Main(browser)
   table_assigned_dialogue_po.tapOkButtonOnDialogue()
 
