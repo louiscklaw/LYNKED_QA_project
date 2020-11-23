@@ -106,7 +106,13 @@ def test_happyflow_1_chrome_first_time_arrive_line_up_page(json_metadata):
 
   confirm_assigned_table_on_client_side(json_metadata, browser)
 
-  # check_TID_020.run_check(json_metadata, browser)
+  # User had placed few orders
+  fm_po = food_menu.Main(browser)
+  fm_po.user_had_placed_few_orders()
+
+  # go to cart page, check item added
+  fm_po.tapCartButton()
+  check_TID_020.run_check(json_metadata, browser)
 
   # # CATEGORY - USER, COMPONENT - CART, TEST TYPE - FUNCTIONAL
   # check_TID_001.run_check(json_metadata, browser)

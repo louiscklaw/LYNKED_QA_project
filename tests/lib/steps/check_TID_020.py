@@ -19,13 +19,9 @@ from assert_check_point import assertCheckPoint
 from stubs.server.assign_table.assign_table_by_name import assignTableByName
 
 def run_check(json_metadata, browser):
+  TEST_ERR_MSG = 'ERROR RUNNING TID_020'
   # check cart page
 
-  assertCheckPoint(browser, 'TID_020_1', TEST_ERR_MSG)
-
-  cart_page_po = cart_page.Main(browser)
-
-
-  assertCheckPoint(browser, 'TID_020_2', TEST_ERR_MSG)
+  assertCheckPoint(browser, 'TID_020_1', 'TEST_ERR_MSG')
 
   json_metadata['TID_020'] = 'passed'

@@ -4,6 +4,10 @@ import os,sys
 from pprint import pprint
 from selenium.webdriver.common.by import By
 
+# todo: refactor me
+sys.path.append('/home/logic/_workspace/LYNKED_QA_project/tests/lib/pages')
+import item_add_page
+
 
 ACCEPT_AND_CONTINUE_XPATH='//*[@value="同意して予約する"]'
 # ACCEPT_AND_CONTINUE_XPATH='//*[@value="同意して予約する"]'
@@ -22,10 +26,12 @@ BOTTOM_STAFF_ICON_XPATH='//*[@id="staff"]'
 TOP_RIGHT_GREEN_BUTTON='//*[@id="divLineupInfo"]'
 
 # CART BUTTON IN BOTTOM BAR
-CART_BUTTON_XPATH='//*[@id="cart"]'
+CART_BUTTON_XPATH=BOTTOM_CART_ICON_XPATH
 
 HELLOWORLD_FOOD_ITEM1='//*[@id="app"]/div[1]/div[1]/main/div[5]/ul/li[1]/ul/li[1]'
 HELLOWORLD_FOOD_ITEM2='//*[@id="app"]/div[1]/div[1]/main/div[5]/ul/li[1]/ul/li[2]'
+
+
 
 def helloworld():
   print('helloworld')
@@ -55,7 +61,7 @@ class BasePage(object):
       self.tapButton(food_xpath)
 
     def tapCartButton(self):
-      self.tapButton(CART_BUTTON_XPATH)
+      self.tapButton(BOTTOM_CART_ICON_XPATH)
 
 class Main(BasePage):
   def getLineUpIcon(self):
@@ -73,6 +79,18 @@ class Main(BasePage):
   def tapFoodMenuIcon(self):
     self.getFoodMenuIcon().click()
 
+
+
+
+  def user_had_placed_few_orders(self, food_item_idx=1, food_item_qty=1):
+    self.tapFoodMenuIcon()
+    self.tapFoodItemByIdx(food_item_idx)
+
+    item_add_page_po = item_add_page.Main(self.driver)
+    for i in range(0,food_item_qty+1):
+      item_add_page_po.addFood()
+
+    item_add_page_po.tapAddIntoCartButton()
 
 class FirstTimeLanding(BasePage):
     """Home page action methods come here. I.e. Python.org"""

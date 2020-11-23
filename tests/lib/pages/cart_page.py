@@ -77,6 +77,9 @@ class Main(BasePage):
   def tapBottomBarMenuButton(self):
     self.tapButton('//*[@id="menu"]')
 
+  def tapBottomBarCartButton(self):
+    self.tapButton('//*[@id="cart"]')
+
 
 class FirstTimeLanding(BasePage):
     """Home page action methods come here. I.e. Python.org"""
