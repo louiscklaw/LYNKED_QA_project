@@ -29,6 +29,7 @@ sys.path.append(LIB_CONFIG_DIR)
 sys.path.append(LIB_ASSERT_DIR)
 sys.path.append(LIB_STEPS_DIR)
 sys.path.append(LIB_STUBS_DIR)
+sys.path.append(TEST_DIR)
 
 from lib_helloworld import lib_helloworld
 from po_helloworld import po_helloworld
@@ -46,6 +47,8 @@ import item_add_page
 import cart_page
 import take_seat_first_dialogue
 
+# packed steps
+from first_time_login_to_do_lineup import *
 
 from jp import *
 
@@ -81,44 +84,25 @@ def setupLocalChrome():
   browser = webdriver.Chrome('drivers/chrome/86/chromedriver', desired_capabilities=caps)
   return browser
 
-def test_happyflow_1_chrome_first_time_arrive_line_up_page(json_metadata):
+def confirm_line_up_request(json_metadata, browser):
+  dialogue_po= line_up_confirmation_dialogue.Main(browser)
+  dialogue_po.tapOkButtonOnDialogue()
+
+
+def submit_and_confirm_lineup_request(json_metadata, browser, username, notes):
   TEST_USER_NAME='louis_finger_print_1'
   TID_006_USERNAME = 'TID_006'
   TID_008_USERNAME = 'TID_008'
   TID_020_USERNAME = TID_006_USERNAME+TID_008_USERNAME
+  TID_020_NOTES='TID_020_NOTES'
 
-  browser = setupLocalChrome()
-
-  # # CATEGORY - USER, COMPONENT - CART, TEST TYPE - FUNCTIONAL
-  # check_TID_001.run_check(json_metadata, browser)
-  # check_TID_002.run_check(json_metadata, browser)
-  # check_TID_003.run_check(json_metadata, browser)
-
-  # check_TID_004.run_check(json_metadata, browser)
-
-  # check_TID_005.run_check(json_metadata, browser)
-  # check_TID_006.run_check(json_metadata, browser, 'TID_006')
-  # check_TID_007.run_check(json_metadata, browser)
-  # check_TID_008.run_check(json_metadata, browser, 'TID_008')
-
-  # # worksround for ticket
-  # check_TID_009.run_check(json_metadata, browser)
-  # check_TID_010.run_check(json_metadata, browser)
-  # check_TID_011.run_check(json_metadata, browser)
-  # check_TID_012.run_check(json_metadata, browser)
-  # check_TID_013.run_check(json_metadata, browser)
-  # check_TID_014.run_check(json_metadata, browser)
-  # check_TID_015.run_check(json_metadata, browser)
-  # check_TID_016.run_check(json_metadata, browser)
-  # # check_TID_017.run_check(json_metadata, browser)
-
-  # # check_TID_019.run_check(json_metadata, browser)
-
-
-  # CATEGORY - USER, COMPONENT - ORDER, TEST_TYPE - FUNCTIONAL
-  check_TID_020.run_check(json_metadata, browser, TID_020_USERNAME)
-
-
-  browser.quit()
+  line_up_page_po = line_up_page.Main(browser)
+  line_up_page_po.inputName(TID_020_USERNAME)
+  line_up_page_po.inputNotes(TID_020_NOTES)
+  line_up_page_po.changeNumberOfAdult(2)
+  line_up_page_po.changeNumberOfChild(1)
+  line_up_page_po.submitLineUpTicket()
+  sleep(3)
+  confirm_line_up_request(json_metadata, browser)
 
   # assertSameImage(EXPECTED_SCREENSHOT, ACTUAL_SCREENSHOT,0.1,  'first time landing test after clicking accept failed')

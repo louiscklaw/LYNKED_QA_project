@@ -20,9 +20,12 @@
 		},
 		{
 			"path": "../LynkedKK_QA_test_scripts"
+		},
+		{
+			"path": "../react-playlist"
 		}
 	],
 	"settings": {
-		"liveServer.settings.multiRootWorkspaceName": "LYNKED_QA_project"
+		"liveServer.settings.multiRootWorkspaceName": "react-playlist"
 	}
 }

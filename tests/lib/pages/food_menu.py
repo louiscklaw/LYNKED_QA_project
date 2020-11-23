@@ -10,7 +10,13 @@ ACCEPT_AND_CONTINUE_XPATH='//*[@value="同意して予約する"]'
 BACK_BUTTON_XPATH='//*[@id="tac-link"]/div/div'
 CROSS_BUTTON_XPATH='//*[@id="close"]'
 # LINE_UP_ICON_XPATH='/html/body/main/header/div/div[3]'
-LINE_UP_ICON_XPATH='//*[@id="divLineupInfo"]'
+BOTTOM_LINE_UP_ICON_XPATH='//*[@id="divLineupInfo"]'
+LINE_UP_ICON_XPATH=BOTTOM_LINE_UP_ICON_XPATH
+
+BOTTOM_FOOD_MENU_ICON_XPATH='//*[@id="menu"]'
+BOTTOM_CART_ICON_XPATH='//*[@id="cart"]'
+BOTTOM_ORDERHISTORY_ICON_XPATH='//*[@id="orderhistory"]'
+BOTTOM_STAFF_ICON_XPATH='//*[@id="staff"]'
 
 # TOP_RIGHT_GREEN_BUTTON='//*[@id="userInfo"]'
 TOP_RIGHT_GREEN_BUTTON='//*[@id="divLineupInfo"]'
@@ -55,13 +61,17 @@ class Main(BasePage):
   def getLineUpIcon(self):
     return self.driver.find_element_by_xpath(LINE_UP_ICON_XPATH)
 
+  def getFoodMenuIcon(self):
+    return self.driver.find_element_by_xpath(BOTTOM_FOOD_MENU_ICON_XPATH)
+
   def tapLineUpIcon(self):
     self.getLineUpIcon().click()
 
   def tapTopRightGreenButton(self):
     self.tapButton(TOP_RIGHT_GREEN_BUTTON)
 
-
+  def tapFoodMenuIcon(self):
+    self.getFoodMenuIcon().click()
 
 
 class FirstTimeLanding(BasePage):

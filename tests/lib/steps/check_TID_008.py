@@ -37,13 +37,16 @@ def run_check(json_metadata, browser, user_name, user_note='this is customer not
   # Observe
 
   # line_up_po.updateLineUpTicket()
-  # WORKAROUND: [Bug #072] start
-  browser.get(URL_FOOD_MENU_PAGE)
-  # line_up_po.tapTopLeftCloseButton()
-  # assertCheckPoint(browser, 'TID_008_4', TEST_ERR_MSG)
+  # WORKAROUND: [Bug #70] After user performed lineup, click cart icon & click menu icon will navigate to lineup page
+  # browser.get(URL_FOOD_MENU_PAGE)
 
-  # dialogue_po.tapOkButtonOnDialogue()
-  # assertCheckPoint(browser, 'TID_008_5', TEST_ERR_MSG)
-  # WORKAROUND: [Bug #072] end
+  # TODO: remove me
+  # line_up_po.tapTopLeftCloseButton()
+  line_up_po.submitLineUpTicket()
+  assertCheckPoint(browser, 'TID_008_4', TEST_ERR_MSG)
+
+  dialogue_po.tapOkButtonOnDialogue()
+  assertCheckPoint(browser, 'TID_008_5', TEST_ERR_MSG)
+  # WORKAROUND: [Bug #70] After user performed lineup, click cart icon & click menu icon will navigate to lineup page
 
   json_metadata['TID_008'] = 'skip with #072'

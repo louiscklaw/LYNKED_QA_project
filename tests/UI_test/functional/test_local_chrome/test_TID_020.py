@@ -1,6 +1,8 @@
 import os,sys
 from pprint import pprint
 
+import random
+
 from selenium import webdriver
 from selenium.webdriver.chrome.options import Options
 
@@ -29,6 +31,7 @@ sys.path.append(LIB_CONFIG_DIR)
 sys.path.append(LIB_ASSERT_DIR)
 sys.path.append(LIB_STEPS_DIR)
 sys.path.append(LIB_STUBS_DIR)
+sys.path.append(TEST_DIR)
 
 from lib_helloworld import lib_helloworld
 from po_helloworld import po_helloworld
@@ -46,8 +49,14 @@ import item_add_page
 import cart_page
 import take_seat_first_dialogue
 
+# packed steps
+from first_time_login_to_do_lineup import *
+from submit_and_confirm_lineup_request import *
+from confirm_assigned_table_on_client_side import *
 
 from jp import *
+
+from stubs.server.assign_table.assign_table_by_name import assignTableByName
 
 SELENIUM_HUB_HOST='localhost'
 LINE_UP_PAGE='http://menymeny.com/food/%E3%82%84%E3%81%8D%E3%81%A8%E3%82%8A/?do_lineup'
@@ -86,8 +95,19 @@ def test_happyflow_1_chrome_first_time_arrive_line_up_page(json_metadata):
   TID_006_USERNAME = 'TID_006'
   TID_008_USERNAME = 'TID_008'
   TID_020_USERNAME = TID_006_USERNAME+TID_008_USERNAME
+  TID_020_USER_NOTE='TID_020 USER NOTE'
+
 
   browser = setupLocalChrome()
+  first_time_login_to_do_lineup(json_metadata,browser)
+  submit_and_confirm_lineup_request(json_metadata, browser, TID_020_USERNAME, TID_020_USER_NOTE)
+
+  assignTableByName(TID_020_USERNAME, random.randrange(2,50,3))
+
+  sleep(10)
+  confirm_assigned_table_on_client_side(json_metadata, browser)
+
+  # check_TID_020.run_check(json_metadata, browser)
 
   # # CATEGORY - USER, COMPONENT - CART, TEST TYPE - FUNCTIONAL
   # check_TID_001.run_check(json_metadata, browser)
@@ -116,7 +136,7 @@ def test_happyflow_1_chrome_first_time_arrive_line_up_page(json_metadata):
 
 
   # CATEGORY - USER, COMPONENT - ORDER, TEST_TYPE - FUNCTIONAL
-  check_TID_020.run_check(json_metadata, browser, TID_020_USERNAME)
+  # check_TID_020.run_check(json_metadata, browser, 'TID_020_USERNAME')
 
 
   browser.quit()

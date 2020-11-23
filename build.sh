@@ -61,7 +61,8 @@ mkdir -p reports/UI_test/functional/test_happyflow_1/result
 # pipenv run pytest --json-report -v  --html=reports/functional/report.html tests/UI_test/functional/test_local_chrome/test_cart_page_chrome.py
 
 # local test
-pipenv run pytest --maxfail=999 --json-report  --html=reports/functional/report.html -x tests/UI_test/functional/test_local_chrome/happyflow_1_chrome_first_time_arrive_line_up_page.py
+# pipenv run pytest --maxfail=999 --json-report  --html=reports/functional/report.html -x tests/UI_test/functional/test_local_chrome/happyflow_1_chrome_first_time_arrive_line_up_page.py
+pipenv run pytest --maxfail=999 --json-report  --html=reports/functional/report.html -x tests/UI_test/functional/test_local_chrome/test_TID_020.py
 
 # pipenv run pytest -x --json-report -v  --html=reports/functional/report.html tests/UI_test/functional/test_local_chrome/test_take_seat_first_dialogue.py
 
