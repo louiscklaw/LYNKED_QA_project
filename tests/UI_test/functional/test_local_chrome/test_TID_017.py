@@ -106,7 +106,7 @@ def test_happyflow_1_chrome_first_time_arrive_line_up_page(json_metadata):
   # check result
   # FLEXIBILITY: the landing may follow the entry point
   browser.get(LINE_UP_PAGE)
-  check_TID_006.run_check(json_metadata, browser,'TID_017_USER','TID_017_NOTES',1,3)
+  check_TID_006.run_check(json_metadata, browser,'TID_017_USER','TID_017_NOTES',1,7)
 
   # grant table
   assignTableByName('TID_017_USER', 17)
@@ -123,7 +123,7 @@ def test_happyflow_1_chrome_first_time_arrive_line_up_page(json_metadata):
 
   check_TID_016.run_check(json_metadata, browser)
 
-
+  check_TID_017.run_check(json_metadata, browser)
 
   browser.quit()
 
