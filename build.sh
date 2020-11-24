@@ -71,12 +71,12 @@ mkdir -p reports/UI_test/functional/test_happyflow_1/result
 # pipenv run pytest --maxfail=999 --json-report  --html=reports/functional/report.html -x tests/UI_test/functional/test_local_chrome/test_TID_006.py
 # pipenv run pytest --maxfail=999 --json-report  --html=reports/functional/report.html -x tests/UI_test/functional/test_local_chrome/test_TID_007.py
 # pipenv run pytest --maxfail=999 --json-report  --html=reports/functional/report.html -x tests/UI_test/functional/test_local_chrome/test_TID_008.py
-pipenv run pytest --maxfail=999 --json-report  --html=reports/functional/report.html -x tests/UI_test/functional/test_local_chrome/test_TID_009.py
+# pipenv run pytest --maxfail=999 --json-report  --html=reports/functional/report.html -x tests/UI_test/functional/test_local_chrome/test_TID_009.py
 # pipenv run pytest --maxfail=999 --json-report  --html=reports/functional/report.html -x tests/UI_test/functional/test_local_chrome/test_TID_010.py
 # pipenv run pytest --maxfail=999 --json-report  --html=reports/functional/report.html -x tests/UI_test/functional/test_local_chrome/test_TID_011.py
 # pipenv run pytest --maxfail=999 --json-report  --html=reports/functional/report.html -x tests/UI_test/functional/test_local_chrome/test_TID_012.py
 # pipenv run pytest --maxfail=999 --json-report  --html=reports/functional/report.html -x tests/UI_test/functional/test_local_chrome/test_TID_013.py
-# pipenv run pytest --maxfail=999 --json-report  --html=reports/functional/report.html -x tests/UI_test/functional/test_local_chrome/test_TID_014.py
+pipenv run pytest --maxfail=999 --json-report  --html=reports/functional/report.html -x tests/UI_test/functional/test_local_chrome/test_TID_014.py
 # pipenv run pytest --maxfail=999 --json-report  --html=reports/functional/report.html -x tests/UI_test/functional/test_local_chrome/test_TID_015.py
 # pipenv run pytest --maxfail=999 --json-report  --html=reports/functional/report.html -x tests/UI_test/functional/test_local_chrome/test_TID_016.py
 # pipenv run pytest --maxfail=999 --json-report  --html=reports/functional/report.html -x tests/UI_test/functional/test_local_chrome/test_TID_017.py
