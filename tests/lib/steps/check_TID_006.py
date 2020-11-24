@@ -9,7 +9,7 @@ from config import *
 from time import sleep
 from assert_check_point import assertCheckPoint
 
-def run_check(json_metadata, browser, TEST_USER, TEST_NOTE='this is some note'):
+def run_check(json_metadata, browser, TEST_USER="TID_006_USER", TEST_NOTE='this is some note'):
   TEST_ERR_MSG='User should automatically direct to food menu page with a number display dialog'
 
   line_up_po = line_up_page.Main(browser)

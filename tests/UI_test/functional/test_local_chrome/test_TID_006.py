@@ -103,8 +103,8 @@ def test_happyflow_1_chrome_first_time_arrive_line_up_page(json_metadata):
 
   # check result
   # FLEXIBILITY: the landing may follow the entry point
-  browser.get(MAIN_MENU_PAGE)
-  check_TID_005.run_check(json_metadata, browser)
+  browser.get(LINE_UP_PAGE)
+  check_TID_006.run_check(json_metadata, browser )
 
   browser.quit()
 
