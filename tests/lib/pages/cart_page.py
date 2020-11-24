@@ -22,6 +22,11 @@ TOP_LEFT_CLOSE_BUTTON_XPATH='//*[@id="close"]'
 
 PLACE_ORDER_BUTTON_XPATH='//*[@id="app"]/div[1]/div[1]/main/div[4]/div'
 
+BOTTOM_FOOD_MENU_ICON_XPATH='//*[@id="menu"]'
+BOTTOM_CART_ICON_XPATH='//*[@id="cart"]'
+BOTTOM_ORDERHISTORY_ICON_XPATH='//*[@id="orderhistory"]'
+BOTTOM_STAFF_ICON_XPATH='//*[@id="staff"]'
+
 
 class BasePage(object):
     """Base class to initialize the base page that will be called from all pages"""
@@ -82,6 +87,8 @@ class Main(BasePage):
   def tapBottomBarCartButton(self):
     self.tapButton('//*[@id="cart"]')
 
+  def tapBottomBarOrderHistoryButton(self):
+    self.tapButton(BOTTOM_ORDERHISTORY_ICON_XPATH)
 
 class FirstTimeLanding(BasePage):
     """Home page action methods come here. I.e. Python.org"""

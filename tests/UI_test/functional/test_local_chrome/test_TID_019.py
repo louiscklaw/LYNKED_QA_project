@@ -103,27 +103,26 @@ def test_happyflow_1_chrome_first_time_arrive_line_up_page(json_metadata):
   # accept TnC
   check_TID_003.run_check(json_metadata, browser)
 
-
-
   # check result
   # FLEXIBILITY: the landing may follow the entry point
   browser.get(LINE_UP_PAGE)
-  check_TID_006.run_check(json_metadata, browser,'TID_009_USER','TID_009_NOTES',1,9)
+  check_TID_006.run_check(json_metadata, browser,'TID_019_USER','TID_019_NOTES',1,9)
+
+  # the update of line up info appears here
+  check_TID_009.run_check(json_metadata, browser)
+
+  check_TID_012.run_check(json_metadata, browser)
 
   # At food menu page, click any of the food
   browser.get(FOOD_MENU_PAGE)
+  check_TID_013.run_check(json_metadata, browser)
 
-  # the update of line up info appears here
-  for i in range(1,1+1):
-    check_TID_009.run_check(json_metadata, browser,i)
-    check_TID_010.run_check(json_metadata, browser)
-    check_TID_012.run_check(json_metadata, browser)
+  check_TID_016.run_check(json_metadata, browser)
 
-    # notes: sleep a while to let dialogue gone
-    pprint('sleep a while to let dialogue gone')
-    sleep(1)
+  # order should send failure as no table assigned
+  check_TID_017.run_check(json_metadata, browser)
 
-  check_TID_022.run_check(json_metadata, browser)
+  check_TID_019.run_check(json_metadata, browser)
 
   browser.quit()
 

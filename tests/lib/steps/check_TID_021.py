@@ -11,13 +11,10 @@ from assert_check_point import assertCheckPoint
 
 def run_check(json_metadata, browser):
   TEST_ERR_MSG='error during running test 021'
-  food_menu_po=food_menu.Main(browser)
-  cart_page_po = cart_page.Main(browser)
 
   assertCheckPoint(browser, 'TID_021_1', TEST_ERR_MSG)
-  for i in range(1,20):
-    cart_page_po.tapMinusButton(1)
-
+  cart_page_po = cart_page.Main(browser)
+  cart_page_po.tapBottomBarOrderHistoryButton()
 
   assertCheckPoint(browser, 'TID_021_2', TEST_ERR_MSG)
 

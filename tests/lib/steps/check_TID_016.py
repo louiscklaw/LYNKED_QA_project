@@ -9,7 +9,7 @@ from config import *
 from time import sleep
 from assert_check_point import assertCheckPoint
 
-def run_check(json_metadata, browser):
+def run_check(json_metadata, browser, add_food_item_idx=2):
   TEST_ERR_MSG='test failed at TID_016'
   food_menu_po=food_menu.Main(browser)
   cart_page_po = cart_page.Main(browser)
@@ -22,7 +22,7 @@ def run_check(json_metadata, browser):
 
   # add another food
   cart_page_po.tapBottomBarMenuButton()
-  food_menu_po.tapFoodItemByIdx(2)
+  food_menu_po.tapFoodItemByIdx(add_food_item_idx)
   assertCheckPoint(browser, 'TID_016_2', TEST_ERR_MSG)
 
 
