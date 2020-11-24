@@ -9,7 +9,7 @@ from config import *
 from time import sleep
 from assert_check_point import assertCheckPoint
 
-def run_check(json_metadata, browser, user_name, user_note='this is customer notse by louis from script updated'):
+def run_check(json_metadata, browser, user_name='TID_008_USERNAME', user_note='this is customer notes by louis from script updated'):
   TEST_ERR_MSG='The user info should be updated'
 
   # before
