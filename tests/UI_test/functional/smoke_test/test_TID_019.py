@@ -107,6 +107,7 @@ def test_happyflow_1_chrome_first_time_arrive_line_up_page(json_metadata):
   # FLEXIBILITY: the landing may follow the entry point
   browser.get(LINE_UP_PAGE)
   check_TID_006.run_check(json_metadata, browser,'TID_019_USER','TID_019_NOTES',1,9)
+  check_TID_006_1.run_check(json_metadata, browser,'TID_019_USER', 10)
 
   # the update of line up info appears here
   check_TID_009.run_check(json_metadata, browser)

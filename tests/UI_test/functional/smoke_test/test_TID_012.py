@@ -108,7 +108,8 @@ def test_happyflow_1_chrome_first_time_arrive_line_up_page(json_metadata):
   # check result
   # FLEXIBILITY: the landing may follow the entry point
   browser.get(LINE_UP_PAGE)
-  check_TID_006.run_check(json_metadata, browser,'TID_009_USER','TID_009_NOTES',1,9)
+  check_TID_006.run_check(json_metadata, browser,'TID_012_USER','TID_012_NOTES',1,9)
+  check_TID_006_1.run_check(json_metadata, browser,'TID_012_USER', 10)
 
   # At food menu page, click any of the food
   browser.get(FOOD_MENU_PAGE)

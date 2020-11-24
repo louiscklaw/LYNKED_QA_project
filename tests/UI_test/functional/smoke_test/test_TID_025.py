@@ -106,11 +106,8 @@ def test_happyflow_1_chrome_first_time_arrive_line_up_page(json_metadata):
   # check result
   # FLEXIBILITY: the landing may follow the entry point
   browser.get(LINE_UP_PAGE)
-  check_TID_006.run_check(json_metadata, browser,'TID_022_USER','TID_022_NOTES',NUM_ADULT,NUM_CHILDREN)
-
-  # grant table
-  assignTableByName('TID_022_USER', 22)
-  confirm_assigned_table_on_client_side(json_metadata, browser)
+  check_TID_006.run_check(json_metadata, browser,'TID_025_USER','TID_025_NOTES',NUM_ADULT,NUM_CHILDREN)
+  check_TID_006_1.run_check(json_metadata, browser,'TID_025_USER', 10)
 
   # the update of line up info appears here
   for i in range(1,4+1):
