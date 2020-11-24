@@ -4,7 +4,7 @@ import os,sys
 from pprint import pprint
 from subprocess import run
 
-HELLOWORLD_FILENAME='/home/logic/_workspace/LYNKED_QA_project/tests/lib/steps/check_TID_helloworld.py'
+HELLOWORLD_FILENAME='/home/logic/_workspace/LYNKED_QA_project/tests/lib/steps/check_TID_helloworld.py.template'
 
 def getTargetFilename(idx):
   return HELLOWORLD_FILENAME.replace('check_TID_helloworld','check_TID_{:03.0f}'.format(idx))

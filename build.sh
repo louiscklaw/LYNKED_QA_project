@@ -85,8 +85,8 @@ mkdir -p reports/UI_test/functional/test_happyflow_1/result
 # pipenv run pytest --maxfail=999 --json-report  --html=reports/functional/report.html -x tests/UI_test/functional/test_local_chrome/test_TID_019.py
 # pipenv run pytest --maxfail=999 --json-report  --html=reports/functional/report.html -x tests/UI_test/functional/test_local_chrome/test_TID_020.py
 # pipenv run pytest --maxfail=999 --json-report  --html=reports/functional/report.html -x tests/UI_test/functional/test_local_chrome/test_TID_021.py
-pipenv run pytest --maxfail=999 --json-report  --html=reports/functional/report.html -x tests/UI_test/functional/test_local_chrome/test_TID_022.py
-# pipenv run pytest --maxfail=999 --json-report  --html=reports/functional/report.html -x tests/UI_test/functional/test_local_chrome/test_TID_023.py
+# pipenv run pytest --maxfail=999 --json-report  --html=reports/functional/report.html -x tests/UI_test/functional/test_local_chrome/test_TID_022.py
+pipenv run pytest --maxfail=999 --json-report  --html=reports/functional/report.html -x tests/UI_test/functional/test_local_chrome/test_TID_023.py
 # pipenv run pytest --maxfail=999 --json-report  --html=reports/functional/report.html -x tests/UI_test/functional/test_local_chrome/test_TID_022.py
 
 # pipenv run pytest -x --json-report -v  --html=reports/functional/report.html tests/UI_test/functional/test_local_chrome/test_take_seat_first_dialogue.py
