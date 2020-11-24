@@ -103,27 +103,22 @@ def test_happyflow_1_chrome_first_time_arrive_line_up_page(json_metadata):
   # check result
   # FLEXIBILITY: the landing may follow the entry point
   browser.get(LINE_UP_PAGE)
-  check_TID_006.run_check(json_metadata, browser,'TID_021_USER','TID_021_NOTES',2,1)
+  check_TID_006.run_check(json_metadata, browser,'TID_022_USER','TID_022_NOTES',2,2)
 
   # grant table
-  assignTableByName('TID_021_USER', 21)
+  assignTableByName('TID_022_USER', 22)
   confirm_assigned_table_on_client_side(json_metadata, browser)
 
   # the update of line up info appears here
-  check_TID_009.run_check(json_metadata, browser)
-
-  check_TID_012.run_check(json_metadata, browser)
+  for i in range(1,4+1):
+    check_TID_009.run_check(json_metadata, browser, i)
+    check_TID_012.run_check(json_metadata, browser)
 
   # At food menu page, click any of the food
-  browser.get(FOOD_MENU_PAGE)
-  check_TID_013.run_check(json_metadata, browser)
 
-  check_TID_016.run_check(json_metadata, browser)
+  # check_TID_017.run_check(json_metadata, browser)
 
-  check_TID_017.run_check(json_metadata, browser)
-
-  check_TID_021.run_check(json_metadata, browser)
-
+  check_TID_022.run_check(json_metadata, browser)
 
   browser.quit()
 

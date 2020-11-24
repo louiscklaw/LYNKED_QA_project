@@ -71,6 +71,9 @@ class BasePage(object):
     def tapPlaceOrderButton(self):
       self.tapButton(PLACE_ORDER_BUTTON_XPATH)
 
+    def tapOrderhistoryIcon(self):
+      self.tapButton(BOTTOM_ORDERHISTORY_ICON_XPATH)
+
 class Main(BasePage):
   def getLineUpIcon(self):
     return self.driver.find_element_by_xpath(LINE_UP_ICON_XPATH)
