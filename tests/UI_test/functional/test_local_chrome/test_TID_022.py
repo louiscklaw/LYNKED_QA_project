@@ -49,8 +49,6 @@ import item_add_page
 import cart_page
 import take_seat_first_dialogue
 
-from pages.config import *
-
 # packed steps
 from first_time_login_to_do_lineup import *
 from submit_and_confirm_lineup_request import *
@@ -60,12 +58,11 @@ from jp import *
 
 from stubs.server.assign_table.assign_table_by_name import assignTableByName
 
-# TODO: refactor here
 SELENIUM_HUB_HOST='localhost'
-LINE_UP_PAGE='http://menymeny.com/food/やきとり/?do_lineup'
-FOOD_MENU_PAGE='http://menymeny.com/food/やきとり/'
-MAIN_MENU_PAGE=FOOD_MENU_PAGE
 
+# todo: factorize me
+LINE_UP_PAGE='http://menymeny.com/food/%E3%82%84%E3%81%8D%E3%81%A8%E3%82%8A/?do_lineup'
+FOOD_MENU_PAGE='http://menymeny.com/food/やきとり/'
 
 
 def takeScreenshot(driver, sc_filename):
@@ -103,27 +100,30 @@ def test_happyflow_1_chrome_first_time_arrive_line_up_page(json_metadata):
   # accept TnC
   check_TID_003.run_check(json_metadata, browser)
 
-
-
   # check result
   # FLEXIBILITY: the landing may follow the entry point
   browser.get(LINE_UP_PAGE)
-  check_TID_006.run_check(json_metadata, browser,'TID_009_USER','TID_009_NOTES',1,9)
+  check_TID_006.run_check(json_metadata, browser,'TID_021_USER','TID_021_NOTES',2,1)
+
+  # grant table
+  assignTableByName('TID_021_USER', 21)
+  confirm_assigned_table_on_client_side(json_metadata, browser)
+
+  # the update of line up info appears here
+  check_TID_009.run_check(json_metadata, browser)
+
+  check_TID_012.run_check(json_metadata, browser)
 
   # At food menu page, click any of the food
   browser.get(FOOD_MENU_PAGE)
+  check_TID_013.run_check(json_metadata, browser)
 
-  # the update of line up info appears here
-  for i in range(1,1+1):
-    check_TID_009.run_check(json_metadata, browser,i)
-    check_TID_010.run_check(json_metadata, browser)
-    check_TID_012.run_check(json_metadata, browser)
+  check_TID_016.run_check(json_metadata, browser)
 
-    # notes: sleep a while to let dialogue gone
-    pprint('sleep a while to let dialogue gone')
-    sleep(1)
+  check_TID_017.run_check(json_metadata, browser)
 
-  check_TID_022.run_check(json_metadata, browser)
+  check_TID_021.run_check(json_metadata, browser)
+
 
   browser.quit()
 
