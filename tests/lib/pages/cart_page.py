@@ -19,7 +19,9 @@ FIRST_ADD_BUTTON='//*[@id="plus"]'
 # //*[@id="app"]/div[1]/div[1]/main/div[3]/div/div[2]/div[2]/div[2]
 
 TOP_LEFT_CLOSE_BUTTON_XPATH='//*[@id="close"]'
-PLACE_ORDER_BUTTON_XPATH='/html/body/main/div[8]/div[3]/div'
+
+PLACE_ORDER_BUTTON_XPATH='//*[@id="app"]/div[1]/div[1]/main/div[4]/div'
+
 
 class BasePage(object):
     """Base class to initialize the base page that will be called from all pages"""

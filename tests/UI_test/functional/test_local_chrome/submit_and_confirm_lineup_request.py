@@ -89,7 +89,7 @@ def confirm_line_up_request(json_metadata, browser):
   dialogue_po.tapOkButtonOnDialogue()
 
 
-def submit_and_confirm_lineup_request(json_metadata, browser, username, notes):
+def submit_and_confirm_lineup_request(json_metadata, browser, username, notes, number_of_adults=2, number_of_children=1):
   TEST_USER_NAME='louis_finger_print_1'
   TID_006_USERNAME = 'TID_006'
   TID_008_USERNAME = 'TID_008'
@@ -99,8 +99,8 @@ def submit_and_confirm_lineup_request(json_metadata, browser, username, notes):
   line_up_page_po = line_up_page.Main(browser)
   line_up_page_po.inputName(TID_020_USERNAME)
   line_up_page_po.inputNotes(TID_020_NOTES)
-  line_up_page_po.changeNumberOfAdult(2)
-  line_up_page_po.changeNumberOfChild(1)
+  line_up_page_po.changeNumberOfAdult(number_of_adults)
+  line_up_page_po.changeNumberOfChild(number_of_children)
   line_up_page_po.submitLineUpTicket()
   sleep(3)
   confirm_line_up_request(json_metadata, browser)

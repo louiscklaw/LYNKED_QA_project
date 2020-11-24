@@ -36,6 +36,9 @@ class BasePage(object):
     def __init__(self, driver):
         self.driver = driver
 
+    def gotoLineUpPage(self):
+        self.driver.get('http://menymeny.com/food/%E3%82%84%E3%81%8D%E3%81%A8%E3%82%8A/?do_lineup')
+
     def takeScreenshot(self, sc_filename):
         self.driver.save_screenshot(sc_filename)
 

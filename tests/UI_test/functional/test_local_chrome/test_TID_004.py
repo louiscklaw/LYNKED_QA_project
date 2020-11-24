@@ -49,6 +49,8 @@ import item_add_page
 import cart_page
 import take_seat_first_dialogue
 
+from pages.config import *
+
 # packed steps
 from first_time_login_to_do_lineup import *
 from submit_and_confirm_lineup_request import *
@@ -60,11 +62,6 @@ from stubs.server.assign_table.assign_table_by_name import assignTableByName
 
 SELENIUM_HUB_HOST='localhost'
 LINE_UP_PAGE='http://menymeny.com/food/%E3%82%84%E3%81%8D%E3%81%A8%E3%82%8A/?do_lineup'
-
-# ACTUAL_SCREENSHOT='reports/UI_test/functional/test_happyflow_1_click_accept_and_continue/sc_to_check.png'
-# TID_001_EXPECTED_SCREENSHOT='tests/UI_test/functional/test_happyflow_1_click_accept_and_continue/expected_result/TID_001_expected_sc_iphonex.png'
-# TID_002_EXPECTED_SCREENSHOT='tests/UI_test/functional/test_happyflow_1_click_accept_and_continue/expected_result/TID_002_expected_sc_iphonex.png'
-
 
 def takeScreenshot(driver, sc_filename):
     driver.save_screenshot(sc_filename)
@@ -91,29 +88,19 @@ def setupLocalChrome():
   return browser
 
 def test_happyflow_1_chrome_first_time_arrive_line_up_page(json_metadata):
-  TEST_USER_NAME='louis_finger_print_1'
-  TID_006_USERNAME = 'TID_006'
-  TID_008_USERNAME = 'TID_008'
-  TID_020_USERNAME = TID_006_USERNAME+TID_008_USERNAME
-  TID_020_USER_NOTE='TID_020 USER NOTE'
-
 
   browser = setupLocalChrome()
-  first_time_login_to_do_lineup(json_metadata,browser)
-  submit_and_confirm_lineup_request(json_metadata, browser, TID_020_USERNAME, TID_020_USER_NOTE)
 
-  assignTableByName(TID_020_USERNAME, random.randrange(2,50,3))
+  # pre condition
+  # get to lineup page
+  check_TID_001.run_check(json_metadata, browser)
 
-  confirm_assigned_table_on_client_side(json_metadata, browser)
+  # accept t&c
+  check_TID_003.run_check(json_metadata, browser)
 
-  # User had placed few orders
-  fm_po = food_menu.Main(browser)
-  fm_po.user_had_placed_few_orders()
 
-  # go to cart page, check item added
-  fm_po.tapCartButton()
-  check_TID_021.run_check(json_metadata, browser)
-
+  # check result
+  check_TID_004.run_check(json_metadata, browser)
 
   browser.quit()
 

@@ -108,11 +108,12 @@ def test_happyflow_1_chrome_first_time_arrive_line_up_page(json_metadata):
 
   # User had placed few orders
   fm_po = food_menu.Main(browser)
-  fm_po.user_had_placed_few_orders()
+  for i in range(1,4+1):
+    fm_po.user_had_placed_few_orders(i, i)
 
   # go to cart page, check item added
   fm_po.tapCartButton()
-  check_TID_021.run_check(json_metadata, browser)
+  check_TID_022.run_check(json_metadata, browser)
 
 
   browser.quit()

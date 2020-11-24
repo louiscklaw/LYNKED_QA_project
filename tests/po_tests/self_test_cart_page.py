@@ -56,20 +56,20 @@ def try_locate_element():
     item_add_po.addFood()
     item_add_po.tapAddIntoCartButton()
 
-  item_add_po.tapBottomCartPageButton()
+  # item_add_po.tapBottomCartPageButton()
 
-  cart_page_po=cart_page.Main(browser)
-  for i in range(1,2+1):
-    cart_page_po.tapAddButton(i)
-    cart_page_po.tapAddButton(i)
-    cart_page_po.tapAddButton(i)
-    cart_page_po.tapAddButton(i)
-    cart_page_po.tapAddButton(i)
-    cart_page_po.tapMinusButton(i)
-    cart_page_po.tapMinusButton(i)
+  # cart_page_po=cart_page.Main(browser)
+  # for i in range(1,2+1):
+  #   cart_page_po.tapAddButton(i)
+  #   cart_page_po.tapAddButton(i)
+  #   cart_page_po.tapAddButton(i)
+  #   cart_page_po.tapAddButton(i)
+  #   cart_page_po.tapAddButton(i)
+  #   cart_page_po.tapMinusButton(i)
+  #   cart_page_po.tapMinusButton(i)
 
-  try_locate_remove_button(cart_page_po)
+  # try_locate_remove_button(cart_page_po)
 
-  sleep(3)
+  sleep(30)
 
   browser.quit()

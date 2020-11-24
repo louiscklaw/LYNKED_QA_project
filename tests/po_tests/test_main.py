@@ -36,12 +36,14 @@ import self_test_food_menu
 import self_test_line_up_page
 import self_test_item_add_page
 import self_test_cart_page
+import self_test_order_history_page
 
 def test_food_menu_helloworld():
   # self_test_food_menu.try_locate_element()
   # self_test_line_up_page.try_locate_element()
   # self_test_item_add_page.try_locate_element()
   self_test_cart_page.try_locate_element()
+  # self_test_order_history_page.try_locate_element()
 
 def test_helloworld():
   print('helloworld')

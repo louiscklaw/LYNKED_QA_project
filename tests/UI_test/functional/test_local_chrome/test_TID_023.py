@@ -48,6 +48,7 @@ import line_up_confirmation_dialogue
 import item_add_page
 import cart_page
 import take_seat_first_dialogue
+import order_history_page
 
 # packed steps
 from first_time_login_to_do_lineup import *
@@ -100,7 +101,7 @@ def test_happyflow_1_chrome_first_time_arrive_line_up_page(json_metadata):
 
   browser = setupLocalChrome()
   first_time_login_to_do_lineup(json_metadata,browser)
-  submit_and_confirm_lineup_request(json_metadata, browser, TID_020_USERNAME, TID_020_USER_NOTE)
+  submit_and_confirm_lineup_request(json_metadata, browser, TID_020_USERNAME, TID_020_USER_NOTE, 3, 1)
 
   assignTableByName(TID_020_USERNAME, random.randrange(2,50,3))
 
@@ -110,9 +111,15 @@ def test_happyflow_1_chrome_first_time_arrive_line_up_page(json_metadata):
   fm_po = food_menu.Main(browser)
   fm_po.user_had_placed_few_orders()
 
-  # go to cart page, check item added
+  # Place order
   fm_po.tapCartButton()
-  check_TID_021.run_check(json_metadata, browser)
+  cart_page_po = cart_page.Main(browser)
+  cart_page_po.tapPlaceOrderButton()
+
+  fm_po.tapOrderhistoryIcon()
+  order_history_with_order_po = order_history_page.WithOrder(browser)
+
+  check_TID_023.run_check(json_metadata, browser)
 
 
   browser.quit()

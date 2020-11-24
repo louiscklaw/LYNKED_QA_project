@@ -63,6 +63,9 @@ class BasePage(object):
     def tapCartButton(self):
       self.tapButton(BOTTOM_CART_ICON_XPATH)
 
+    def getOrderHistoryIcon(self):
+      pass
+
 class Main(BasePage):
   def getLineUpIcon(self):
     return self.driver.find_element_by_xpath(LINE_UP_ICON_XPATH)
@@ -79,7 +82,8 @@ class Main(BasePage):
   def tapFoodMenuIcon(self):
     self.getFoodMenuIcon().click()
 
-
+  def tapOrderhistoryIcon(self):
+    self.tapButton(BOTTOM_ORDERHISTORY_ICON_XPATH)
 
 
   def user_had_placed_few_orders(self, food_item_idx=1, food_item_qty=1):

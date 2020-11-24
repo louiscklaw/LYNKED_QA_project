@@ -55,9 +55,6 @@ def test_local_chrome():
   # ac = ActionChains(browser)
   # ac.move_to_element(elem).move_by_offset(10, 10).click().perform()
 
-  # select= Select(browser.find_element_by_xpath('//*[@id="adult"]'))
-  # select.select_by_visible_text("5"+"人")
-
 
   cart_page_po = cart_page.Main(browser)
   # cart_page_po.tapAddButton(1)
