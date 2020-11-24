@@ -117,8 +117,9 @@ def test_happyflow_1_chrome_first_time_arrive_line_up_page(json_metadata):
   # At food menu page, click any of the food
 
   # check_TID_017.run_check(json_metadata, browser)
+  check_TID_022.run_check(json_metadata, browser)
 
-  check_TID_023.run_check(json_metadata, browser)
+  check_TID_023.run_check(json_metadata, browser,1)
 
   browser.quit()
 

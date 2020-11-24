@@ -32,7 +32,7 @@ CART_BUTTON_XPATH=BOTTOM_CART_ICON_XPATH
 HELLOWORLD_FOOD_ITEM1='//*[@id="app"]/div[1]/div[1]/main/div[5]/ul/li[1]/ul/li[1]'
 HELLOWORLD_FOOD_ITEM2='//*[@id="app"]/div[1]/div[1]/main/div[5]/ul/li[1]/ul/li[2]'
 
-NUMBER_OF_PEOPLE_XPATH='//*[@id="app"]/div[1]/div[1]/main/div[3]/div[3]/select'
+NUMBER_OF_PEOPLE_XPATH='//*[@id="app"]/div[1]/div[1]/main/div[3]/div[2]/select'
 
 def po_helloworld():
   print('po_helloworld helloworld')
