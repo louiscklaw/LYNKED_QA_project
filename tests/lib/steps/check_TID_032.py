@@ -18,18 +18,19 @@ from stubs.server.assign_table.assign_table_by_name import assignTableByName
 import restaurant_manage.admin_page
 
 def run_check(json_metadata, browser):
-  TEST_ERR_MSG='test failed at TID_030'
+  TEST_ERR_MSG='test failed at TID_032'
 
-  assertCheckPoint(browser, 'TID_030_1', TEST_ERR_MSG)
+  assertCheckPoint(browser, 'TID_032_1', TEST_ERR_MSG)
 
   admin_page_po = restaurant_manage.admin_page.Main(browser)
   admin_page_po.tapSiteNavigator()
 
-  assertCheckPoint(browser, 'TID_030_2', TEST_ERR_MSG)
+  assertCheckPoint(browser, 'TID_032_2', TEST_ERR_MSG)
 
   admin_page_with_site_nav_po = restaurant_manage.admin_page.SiteNavigatorPopup(browser)
-  admin_page_with_site_nav_po.tapOrderManagmentButton()
+  # click billing
+  admin_page_with_site_nav_po.tapAccountManagmentButton()
 
-  assertCheckPoint(browser, 'TID_030_3', TEST_ERR_MSG)
+  assertCheckPoint(browser, 'TID_032_3', TEST_ERR_MSG)
 
-  json_metadata['TID_030'] = 'passed'
+  json_metadata['TID_032'] = 'passed'

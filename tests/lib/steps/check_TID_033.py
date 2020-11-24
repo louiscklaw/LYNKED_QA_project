@@ -28,7 +28,7 @@ def run_check(json_metadata, browser):
   assertCheckPoint(browser, 'TID_030_2', TEST_ERR_MSG)
 
   admin_page_with_site_nav_po = restaurant_manage.admin_page.SiteNavigatorPopup(browser)
-  admin_page_with_site_nav_po.tapOrderManagmentButton()
+  admin_page_with_site_nav_po.tapBackButton()
 
   assertCheckPoint(browser, 'TID_030_3', TEST_ERR_MSG)
 

@@ -15,21 +15,22 @@ from assert_check_point import assertCheckPoint
 
 from stubs.server.assign_table.assign_table_by_name import assignTableByName
 
+import restaurant_manage.admin_page
+
 def run_check(json_metadata, browser):
   TEST_ERR_MSG='test failed at TID_030'
-  food_menu_po=food_menu.Main(browser)
-  cart_page_po = cart_page.Main(browser)
-  item_add_page_po=item_add_page.Main(browser)
-
-  # please_take_seat_first_dialogue_po=please_take_seat_first_dialogue.Main(browser)
-  # item_add_page_po=item_add_page.Main(browser)
 
   assertCheckPoint(browser, 'TID_030_1', TEST_ERR_MSG)
-  sleep(0.5)
 
-  # tap ok to dismiss dialogue
-  # please_take_seat_first_dialogue_po.tapOkButtonOnDialogue()
+  admin_page_po = restaurant_manage.admin_page.Main(browser)
+  admin_page_po.tapSiteNavigator()
 
   assertCheckPoint(browser, 'TID_030_2', TEST_ERR_MSG)
+
+  admin_page_with_site_nav_po = restaurant_manage.admin_page.SiteNavigatorPopup(browser)
+  # click food control
+  admin_page_with_site_nav_po.tapOrderManagmentButton()
+
+  assertCheckPoint(browser, 'TID_030_3', TEST_ERR_MSG)
 
   json_metadata['TID_030'] = 'passed'

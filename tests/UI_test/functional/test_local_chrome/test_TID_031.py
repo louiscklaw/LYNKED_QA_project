@@ -47,15 +47,12 @@ FOOD_MENU_PAGE='http://menymeny.com/food/やきとり/'
 
 from setupLocalChrome import *
 
-from test_TID_026 import *
+from test_TID_028 import *
 
-def test_TID_028(json_metadata):
-  correct_password=['999999']
+def test_TID_031(json_metadata):
+  restaurant_manage_browser = test_TID_028(json_metadata)
 
-  restaurant_manage_browser = test_TID_026(json_metadata)
-
-  for password in correct_password:
-    check_TID_028.run_check(json_metadata, restaurant_manage_browser, password)
+  check_TID_031.run_check(json_metadata, restaurant_manage_browser)
 
   return restaurant_manage_browser
 
