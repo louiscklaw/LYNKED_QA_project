@@ -6,7 +6,7 @@ import food_menu
 import line_up_confirmation_dialogue
 import item_add_page
 import cart_page
-import take_seat_first_dialogue
+
 import table_assigned_dialogue
 
 # import item_add_page

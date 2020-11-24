@@ -7,7 +7,7 @@ import food_menu
 import line_up_confirmation_dialogue
 import item_add_page
 import cart_page
-import take_seat_first_dialogue
+
 import order_history_page
 
 from config import *
