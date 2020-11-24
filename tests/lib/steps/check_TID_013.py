@@ -13,7 +13,6 @@ def run_check(json_metadata, browser):
   TEST_ERR_MSG='It should increase the quantity of the food item'
 
   food_menu_po=food_menu.Main(browser)
-  cart_page_po = cart_page.Main(browser)
 
   assertCheckPoint(browser, 'TID_013_1', TEST_ERR_MSG)
   food_menu_po.tapCartButton()
