@@ -1,13 +1,6 @@
 import random
 from pprint import pprint
-
-import please_take_seat_first_dialogue
-import line_up_page
-import food_menu
-import line_up_confirmation_dialogue
-import item_add_page
-import cart_page
-
+from time import sleep
 
 from config import *
 from time import sleep
@@ -17,19 +10,20 @@ from stubs.server.assign_table.assign_table_by_name import assignTableByName
 
 import restaurant_manage.admin_page
 
-def run_check(json_metadata, browser):
-  TEST_ERR_MSG='test failed at TID_030'
+def run_check(json_metadata, r_browser, c_browser):
+  TEST_ERR_MSG='test failed at TID_036'
 
-  assertCheckPoint(browser, 'TID_030_1', TEST_ERR_MSG)
+  assertCheckPoint(r_browser, 'TID_036_1', TEST_ERR_MSG)
+  assertCheckPoint(c_browser, 'TID_036_2', TEST_ERR_MSG)
 
-  admin_page_po = restaurant_manage.admin_page.Main(browser)
-  admin_page_po.tapSiteNavigator()
+  admin_page_with_site_nav_po = restaurant_manage.admin_page.Main(r_browser)
+  admin_page_with_site_nav_po.assignTable('let say any table number test')
+  admin_page_with_site_nav_po.assignTableSubmit()
 
-  assertCheckPoint(browser, 'TID_030_2', TEST_ERR_MSG)
+  assertCheckPoint(r_browser, 'TID_036_3', TEST_ERR_MSG)
 
-  admin_page_with_site_nav_po = restaurant_manage.admin_page.SiteNavigatorPopup(browser)
-  admin_page_with_site_nav_po.tapOrderManagmentButton()
+  sleep(10)
 
-  assertCheckPoint(browser, 'TID_030_3', TEST_ERR_MSG)
+  assertCheckPoint(c_browser, 'TID_036_4', TEST_ERR_MSG)
 
-  json_metadata['TID_030'] = 'passed'
+  json_metadata['TID_036'] = 'passed'

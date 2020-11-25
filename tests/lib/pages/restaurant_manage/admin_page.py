@@ -55,9 +55,11 @@ class Main(BasePage):
   def tapUnassignedUserTable(self, idx=1):
     self.tapButton('//*[@id="divLineupGuestList"]/div[{}]'.format(idx))
 
+  # Assign the user to any table number
   def assignTable(self, table_number=1):
     self.inputTextByXpath('//*[@id="seat_number"]',str(table_number))
 
+  # Assign the user to any table number
   def assignTableSubmit(self):
     self.tapButton('//*[@id="seat_management"]/input[2]')
 
