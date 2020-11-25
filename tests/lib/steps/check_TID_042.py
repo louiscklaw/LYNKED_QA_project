@@ -20,7 +20,7 @@ def run_check(json_metadata, r_browser, table_number=38):
   order_page_po.tapTopMostOrder()
   assertCheckPoint(r_browser, 'TID_041_2', TEST_ERR_MSG)
 
-  order_page_po.tapTopMostOrderOneDelivered()
+  order_page_po.tapTopMostOrderAllDelivered()
   assertCheckPoint(r_browser, 'TID_041_3', TEST_ERR_MSG)
 
   json_metadata['TID_041'] = 'passed'

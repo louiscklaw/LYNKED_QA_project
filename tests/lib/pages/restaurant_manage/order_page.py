@@ -61,6 +61,12 @@ class Main(BasePage):
   def tapTopMostOrder(self):
     self.tapButton('//*[@id="orders"]/div[not(@hide)]/div[2]/div')
 
+  def tapTopMostOrderOneDelivered(self):
+    self.tapButton('//*[@id="orders"]/div[not(@hide)]/div[2]/div/div[3]/div[2]')
+
+  def tapTopMostOrderAllDelivered(self):
+    self.tapButton('//*[@id="orders"]/div[not(@hide)]/div[2]/div/div[3]/div[3]')
+
 class FirstTimeLanding(BasePage):
     """Home page action methods come here. I.e. Python.org"""
 
