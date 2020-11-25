@@ -70,8 +70,11 @@ class Main(BasePage):
   def tapTopMostOrder(self):
     self.tapButton('//*[@id="orders"]/div[not(@hide)]/div[2]/div')
 
-  def longPressToShowDelete(self):
+  def longPressTopMostToShowDelete(self):
     self.longPressByXpath('//*[@id="orders"]/div[not(@hide)]/div[2]/div')
+
+  def tapTopMostDeleteButton(self):
+    self.tapButton('//*[@id="orders"]/div[not(@hide)]/div[2]/div/div[4]/div')
 
   def tapTopMostOrderOneDelivered(self):
     self.tapButton('//*[@id="orders"]/div[not(@hide)]/div[2]/div/div[3]/div[2]')

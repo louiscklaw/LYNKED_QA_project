@@ -23,7 +23,7 @@ def run_check(json_metadata, r_browser, table_number=38):
   assertCheckPoint(r_browser, 'TID_044_1', TEST_ERR_MSG)
 
   order_page_po = restaurant_manage.order_page.Main(r_browser)
-  order_page_po.longPressToShowDelete()
+  order_page_po.longPressTopMostToShowDelete()
 
   assertCheckPoint(r_browser, 'TID_044_2', TEST_ERR_MSG)
 
