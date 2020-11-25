@@ -15,16 +15,16 @@ from urls import *
 
 from setupLocalChrome import *
 
-from test_TID_047 import *
+from test_TID_049 import *
 
-def tour_TID_049(json_metadata, table_num=41, food_quantity=5):
+def test_TID_050(json_metadata, table_num=50, food_quantity=5):
   # clear before test
 
-  (r_browser, c_browser) = tour_TID_047(json_metadata, table_num, food_quantity)
+  (r_browser, c_browser) = tour_TID_049(json_metadata, table_num, food_quantity)
 
   # r_browser = setupLocalChrome()
-  # r_browser.get('http://menymeny.com/manage/%E3%82%84%E3%81%8D%E3%81%A8%E3%82%8A/?home=bill')
+  c_browser.get(LINE_UP_PAGE)
 
-  check_TID_049.run_check(json_metadata, r_browser)
+  check_TID_050.run_check(json_metadata, c_browser)
 
   return (r_browser, c_browser)
