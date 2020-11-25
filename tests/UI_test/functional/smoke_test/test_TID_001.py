@@ -11,7 +11,7 @@ from steps import *
 from pages.config import *
 from jp import *
 
-def test_TID_001(json_metadata):
+def tour_TID_001(json_metadata):
 
   browser = setupLocalChrome()
 

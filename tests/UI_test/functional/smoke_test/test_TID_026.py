@@ -49,7 +49,7 @@ FOOD_MENU_PAGE='http://menymeny.com/food/やきとり/'
 
 from setupLocalChrome import *
 
-def test_TID_026(json_metadata):
+def tour_TID_026(json_metadata):
   restaurant_manage_browser = setupLocalChrome()
 
   restaurant_manage_browser.get(RESTURANT_MANAGE_URL)

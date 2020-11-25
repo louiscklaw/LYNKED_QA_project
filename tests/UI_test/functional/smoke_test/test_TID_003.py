@@ -12,9 +12,9 @@ from jp import *
 
 from test_TID_002 import *
 
-def test_TID_003(json_metadata):
+def tour_TID_003(json_metadata):
 
-  browser = test_TID_002(json_metadata)
+  browser = tour_TID_002(json_metadata)
 
   # check result
   check_TID_003.run_check(json_metadata, browser)

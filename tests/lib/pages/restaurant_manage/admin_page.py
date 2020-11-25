@@ -71,7 +71,8 @@ class SiteNavigatorPopup(Main):
     def tapBackButton(self):
       self.tapButton(BACK_BUTTON_XPATH)
 
-    def tapSeatResertationManagmentButton(self):
+    # line up button, lineup button
+    def tapSeatReservationManagmentButton(self):
       self.tapButton(SEAT_RESERVATION_MANAGMENT_BUTTON_XPATH)
 
     # food control
