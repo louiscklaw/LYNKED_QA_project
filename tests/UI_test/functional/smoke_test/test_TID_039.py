@@ -21,7 +21,7 @@ from test_assign_all_table import *
 
 import table_assigned_dialogue
 
-def tour_TID_037(json_metadata, table_num=37):
+def tour_TID_039(json_metadata, table_num=37, food_quantity=5):
   # clear before test
 
   (r_browser, c_browser) = tour_TID_036(json_metadata, table_num)
@@ -31,8 +31,14 @@ def tour_TID_037(json_metadata, table_num=37):
 
   # check_TID_009.run_check(json_metadata, c_browser)
   check_TID_009.run_check(json_metadata, c_browser, 1)
+
+
+  for i in range(0,food_quantity+1):
+    check_TID_010.run_check(json_metadata, c_browser)
+
   check_TID_012.run_check(json_metadata, c_browser)
   check_TID_013.run_check(json_metadata, c_browser)
+
   check_TID_017.run_check(json_metadata, c_browser)
 
   # goto order page

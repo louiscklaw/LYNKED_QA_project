@@ -55,6 +55,12 @@ class Main(BasePage):
   def inputTableFilter(self, filter_text):
     self.inputTextByXpath('//*[@id="inputTableFilter"]', filter_text)
 
+  def tapOrder(self, idx=1):
+    self.tapButton('//*[@id="orders"]/div[{}]'.format(idx))
+
+  def tapTopMostOrder(self):
+    self.tapButton('//*[@id="orders"]/div[not(@hide)]/div[2]/div')
+
 class FirstTimeLanding(BasePage):
     """Home page action methods come here. I.e. Python.org"""
 
