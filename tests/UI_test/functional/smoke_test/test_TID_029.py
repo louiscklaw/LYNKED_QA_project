@@ -38,6 +38,8 @@ from jp import *
 
 from stubs.server.assign_table.assign_table_by_name import assignTableByName
 
+from test_assign_all_table import *
+
 SELENIUM_HUB_HOST='localhost'
 
 # todo: factorize me
@@ -49,8 +51,10 @@ from setupLocalChrome import *
 
 from test_TID_028 import *
 
-def test_TID_029(json_metadata):
-  restaurant_manage_browser = test_TID_028(json_metadata)
+def tour_TID_029(json_metadata):
+  tour_clear_all_table(json_metadata)
+
+  restaurant_manage_browser = tour_TID_028(json_metadata)
 
   check_TID_029.run_check(json_metadata, restaurant_manage_browser)
 

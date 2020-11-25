@@ -18,16 +18,15 @@ from urls import *
 
 from setupLocalChrome import *
 
-from test_TID_033 import *
+from test_TID_029 import *
 from test_TID_006 import *
 from test_assign_all_table import *
 
 
 def test_TID_034(json_metadata):
   # clear before test
-  tour_clear_all_table(json_metadata)
 
-  restaurant_manage_browser = tour_TID_033(json_metadata)
+  restaurant_manage_browser = tour_TID_029(json_metadata)
   client_browser = tour_TID_006(json_metadata)
 
   check_TID_034.run_check(json_metadata, restaurant_manage_browser, client_browser)

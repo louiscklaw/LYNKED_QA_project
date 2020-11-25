@@ -119,7 +119,6 @@ def test_happyflow_1_chrome_first_time_arrive_line_up_page(json_metadata):
   check_TID_010.run_check(json_metadata, browser)
   check_TID_011.run_check(json_metadata, browser)
 
-
   browser.quit()
 
   # assertSameImage(EXPECTED_SCREENSHOT, ACTUAL_SCREENSHOT,0.1,  'first time landing test after clicking accept failed')

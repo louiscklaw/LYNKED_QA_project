@@ -52,7 +52,7 @@ from test_TID_026 import *
 def test_TID_027(json_metadata):
   password_to_bruce=['xxxxxx']
 
-  restaurant_manage_browser = test_TID_026(json_metadata)
+  restaurant_manage_browser = tour_TID_026(json_metadata)
 
   for password in password_to_bruce:
     check_TID_027.run_check(json_metadata, restaurant_manage_browser, password)

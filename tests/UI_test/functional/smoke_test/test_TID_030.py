@@ -50,7 +50,7 @@ from setupLocalChrome import *
 from test_TID_028 import *
 
 def test_TID_030(json_metadata):
-  restaurant_manage_browser = test_TID_028(json_metadata)
+  restaurant_manage_browser = tour_TID_028(json_metadata)
 
   check_TID_030.run_check(json_metadata, restaurant_manage_browser)
 
