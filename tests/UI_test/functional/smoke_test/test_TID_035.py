@@ -11,25 +11,20 @@ from steps import *
 from pages.config import *
 from jp import *
 
-from stubs.server.assign_table.assign_all_table import assignAllTable
-
 from urls import *
 
 from setupLocalChrome import *
 
-from test_TID_029 import *
-from test_TID_006 import *
+from test_TID_034 import *
 from test_assign_all_table import *
 
-
-def tour_TID_034(json_metadata):
+def test_TID_035(json_metadata):
   # clear before test
 
-  restaurant_manage_browser = tour_TID_029(json_metadata)
-  client_browser = tour_TID_006(json_metadata)
+  (r_browser, c_browser) = tour_TID_034(json_metadata)
 
-  check_TID_034.run_check(json_metadata, restaurant_manage_browser, client_browser)
+  check_TID_035.run_check(json_metadata, r_browser, c_browser)
 
-  return (restaurant_manage_browser, client_browser)
+  return (r_browser, c_browser)
 
   # assertSameImage(EXPECTED_SCREENSHOT, ACTUAL_SCREENSHOT,0.1,  'first time landing test after clicking accept failed')

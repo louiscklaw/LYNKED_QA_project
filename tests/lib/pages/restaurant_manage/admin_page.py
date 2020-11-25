@@ -51,6 +51,16 @@ class Main(BasePage):
   def tapSiteNavigator(self):
     self.tapButton(SITE_NAVIGATOR_BUTTON_XPATH)
 
+  # click at any unassigned user table
+  def tapUnassignedUserTable(self, idx=1):
+    self.tapButton('//*[@id="divLineupGuestList"]/div[{}]'.format(idx))
+
+  def assignTable(self, table_number=1):
+    self.inputTextByXpath('//*[@id="seat_number"]',str(table_number))
+
+  def assignTableSubmit(self):
+    self.tapButton('//*[@id="seat_management"]/input[2]')
+
 class FirstTimeLanding(BasePage):
     """Home page action methods come here. I.e. Python.org"""
 

@@ -17,7 +17,7 @@ def assignTableByLid(lid, seat):
     if r.status_code != 200:
       raise Exception(ERR_END_POINT_NOT_REACHABLE)
 
-    print(r.text)
+    # print(r.text)
   except Exception as e:
     raise e
 

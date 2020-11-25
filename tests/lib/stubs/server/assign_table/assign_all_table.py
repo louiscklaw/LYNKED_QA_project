@@ -16,12 +16,16 @@ def assignAllTable(name_pattern='TID_.*', seat='1'):
     pending_list = listAllTable()
     for pending in pending_list:
       m = re.match(name_pattern, pending['name'])
-      if ( len(m.groups()) > 0):
-        # assert False, 'assign table by tid {}'.format(pending['lid'])
-        assignTableByLid(pending['lid'], seat)
-    # assert False, 'hello fail'
+      if (m is not None):
+        if ( len(m.groups()) > 0):
+          # assert False, 'assign table by tid {}'.format(pending['lid'])
+          assignTableByLid(pending['lid'], seat)
+      # assert False, 'hello fail'
   except Exception as e:
+    # pprint(pending_list)
+    # pprint(m)
     raise e
+    # pass
 
 if __name__=="__main__":
   assignAllTable()
