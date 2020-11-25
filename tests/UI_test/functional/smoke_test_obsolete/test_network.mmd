@@ -1,13 +1,13 @@
 graph TD
-  1[TID_001, client start]-->2[TID_002]
-  2-->3[TID_003]
+  1[TID_001, <br/>The device should auto redirect to line up page]--At line up page,<br/> click on T&C text-->2[TID_002, <br/>The device should auto redirect to T&C page]
+  2--click 同意して<br/> button-->3[TID_003, <br/>T&C dialog message should close]
   1-->3_1
   3_1-->4[TID_004]
   3_1-->5[TID_005]
-  3-->6[TID_006, request table]
+  3--At line up page, fill in the name, amount of people, notes<br>Take a number 上記 xxx-->6[TID_006, <br/>User should automatically direct to food menu page with a number display dialog]
   6-->6_1[TID_006_1, assign table by stub]
   6-->8[TID_008]
-  6-->9[TID_009]
+  6--At food menu page, click any of the food-->9[TID_009, <br/>It should direct to item add page]
   9-->10[TID_0010]
   10-->11[TID_011]
   6_1-->12
@@ -63,4 +63,6 @@ graph TD
   46-->48[48, check bill]
   32-. check .->48
 
-  47-->49
+  47-->49[49, 完了 order => OK]
+
+  49-->50
