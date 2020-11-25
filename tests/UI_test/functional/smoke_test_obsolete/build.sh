@@ -10,4 +10,4 @@ export PATH=$PATH:$PROJ_HOME/node_modules/.bin
 # mmdc -i happy_flow_1.mmd -o happy_flow_1.png
 # mmdc -i happy_flow_1.mmd -o happy_flow_1.png
 
-mmdc -i test_network.mmd -w 1080 0h 1920 -o test_network.png
+mmdc -i test_network.mmd -w 1920 0h 1920 -o test_network.png
