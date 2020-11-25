@@ -20,8 +20,8 @@ from test_TID_039 import *
 def tour_TID_040(json_metadata, table_num=40, food_quantity=5):
   # clear before test
 
-  (r_browser, c_browser) = tour_TID_039(json_metadata, table_num)
+  (r_browser, c_browser) = tour_TID_039(json_metadata, table_num, food_quantity)
 
-  check_TID_040.run_check(json_metadata, r_browser, 40)
+  check_TID_040.run_check(json_metadata, r_browser, table_num)
 
   return (r_browser, c_browser)

@@ -15,13 +15,13 @@ from urls import *
 
 from setupLocalChrome import *
 
-from test_TID_040 import *
+from test_TID_041 import *
 
-def tour_TID_041(json_metadata, table_num=41, food_quantity=5):
+def test_TID_043(json_metadata, table_num=43, food_quantity=5):
+
   # clear before test
+  (r_browser, c_browser) = tour_TID_041(json_metadata, table_num, food_quantity)
 
-  (r_browser, c_browser) = tour_TID_040(json_metadata, table_num, food_quantity)
-
-  check_TID_041.run_check(json_metadata, r_browser, table_num)
+  check_TID_043.run_check(json_metadata, r_browser,  food_quantity-1)
 
   return (r_browser, c_browser)

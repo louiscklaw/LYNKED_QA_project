@@ -33,7 +33,8 @@ def tour_TID_039(json_metadata, table_num=37, food_quantity=5):
   check_TID_009.run_check(json_metadata, c_browser, 1)
 
 
-  for i in range(0,food_quantity+1):
+  # default will add one, this is the number of times for "+" to press
+  for i in range(0,food_quantity-1):
     check_TID_010.run_check(json_metadata, c_browser)
 
   check_TID_012.run_check(json_metadata, c_browser)
