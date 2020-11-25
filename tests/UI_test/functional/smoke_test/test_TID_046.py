@@ -17,7 +17,7 @@ from setupLocalChrome import *
 
 from test_TID_045 import *
 
-def test_TID_046(json_metadata, table_num=41, food_quantity=5):
+def tour_TID_046(json_metadata, table_num=41, food_quantity=5):
   # clear before test
 
   (r_browser, c_browser) = tour_TID_045(json_metadata, table_num, food_quantity)
