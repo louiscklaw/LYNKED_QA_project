@@ -1,6 +1,8 @@
 import os,sys
 from pprint import pprint
 
+from selenium.webdriver.common.touch_actions import TouchActions
+
 PASSWORD_INPUT_XPATH='//*[@id="root"]/main/div/div[1]/div[2]/input'
 LOGIN_BUTTON_XPATH='//*[@id="root"]/main/div/div[3]/div'
 SITE_NAVIGATOR_BUTTON_XPATH='//*[@id="root"]/header/div[1]/div[1]/button'
@@ -31,9 +33,16 @@ class BasePage(object):
       ele_button = self.driver.find_element_by_xpath(xpath)
       ele_button.click()
 
+    def longPressByXpath(self, xpath):
+      action = TouchActions(self.driver)
+      ele_to_press = self.driver.find_element_by_xpath(xpath)
+      action.long_press(ele_to_press).perform()
+
     def inputTextByXpath(self, xpath, text_to_input):
       ele_button = self.driver.find_element_by_xpath(xpath)
       ele_button.send_keys(text_to_input)
+
+
 
 class Main(BasePage):
   def getLineUpIcon(self):
@@ -61,11 +70,15 @@ class Main(BasePage):
   def tapTopMostOrder(self):
     self.tapButton('//*[@id="orders"]/div[not(@hide)]/div[2]/div')
 
+  def longPressToShowDelete(self):
+    self.longPressByXpath('//*[@id="orders"]/div[not(@hide)]/div[2]/div')
+
   def tapTopMostOrderOneDelivered(self):
     self.tapButton('//*[@id="orders"]/div[not(@hide)]/div[2]/div/div[3]/div[2]')
 
   def tapTopMostOrderAllDelivered(self):
     self.tapButton('//*[@id="orders"]/div[not(@hide)]/div[2]/div/div[3]/div[3]')
+
 
 class FirstTimeLanding(BasePage):
     """Home page action methods come here. I.e. Python.org"""
