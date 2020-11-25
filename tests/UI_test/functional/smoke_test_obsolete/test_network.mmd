@@ -1,29 +1,29 @@
 graph TD
-  1[TID_001]-->2[TID_002]
+  1[TID_001, client start]-->2[TID_002]
   2-->3[TID_003]
   1-->3_1
   3_1-->4[TID_004]
   3_1-->5[TID_005]
-  3-->6[TID_006]
-  6-->6_1[TID_006_1]
+  3-->6[TID_006, request table]
+  6-->6_1[TID_006_1, assign table by stub]
   6-->8[TID_008]
   6-->9[TID_009]
   9-->10[TID_0010]
   10-->11[TID_011]
   6_1-->12
-  10-->12[TID_012]
+  10-->12[TID_012, add into cart]
   12-->13[TID_013]
   12-->14[TID_014]
   14-->15[TID_015]
   13-->16[TID_016]
-  16-->17[TID_017]
+  16-->17[TID_017, place food order]
   17-->19[TID_019]
   17-->21[check_TID_021]
   12-->22[TID_022]
   22-->23[TID_023]
   23-->25
 
-  26[TID_026]-->27[TID_027]
+  26[TID_026, manage start]-->27[TID_027]
   26-->28[TID_28]
   28-->29[TID_29, line up]
   28-->30[TID_30]
@@ -33,4 +33,9 @@ graph TD
   29-->34
   6-->34
   34-->35
-  35-->36
+  35-->36[36, assign table]
+  36-->37[37, make order after assigned table]
+  9-. check .->37
+  12-. check .->37
+  17-. check .->37
+  31-. check .->37

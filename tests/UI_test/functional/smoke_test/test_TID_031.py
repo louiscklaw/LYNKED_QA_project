@@ -50,10 +50,10 @@ from setupLocalChrome import *
 from test_TID_028 import *
 
 def test_TID_031(json_metadata):
-  restaurant_manage_browser = tour_TID_028(json_metadata)
+  r_browser = tour_TID_028(json_metadata)
 
-  check_TID_031.run_check(json_metadata, restaurant_manage_browser)
+  check_TID_031.run_check(json_metadata, r_browser)
 
-  return restaurant_manage_browser
+  return r_browser
 
   # assertSameImage(EXPECTED_SCREENSHOT, ACTUAL_SCREENSHOT,0.1,  'first time landing test after clicking accept failed')

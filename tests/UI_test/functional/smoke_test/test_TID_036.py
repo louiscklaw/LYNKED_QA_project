@@ -18,11 +18,12 @@ from setupLocalChrome import *
 from test_TID_035 import *
 from test_assign_all_table import *
 
-def test_TID_036(json_metadata):
+def tour_TID_036(json_metadata, table_num='TID_036'):
   # clear before test
 
   (r_browser, c_browser) = tour_TID_035(json_metadata)
 
-  check_TID_036.run_check(json_metadata, r_browser, c_browser)
+  check_TID_036.run_check(json_metadata, r_browser, c_browser, table_num)
+
 
   return (r_browser, c_browser)
