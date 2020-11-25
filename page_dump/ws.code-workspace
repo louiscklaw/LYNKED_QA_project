@@ -1,0 +1,14 @@
+{
+	"folders": [
+		{
+			"path": "."
+		},
+		{
+			"path": "../tests/UI_test/functional/smoke_test"
+		},
+		{
+			"path": "../tests/lib/steps"
+		}
+	],
+	"settings": {}
+}
