@@ -11,8 +11,7 @@ from urls import *
 from Auto_Reload.Functional.test_TID_006 import tour_TID_006 as tour_TID_006
 import lib.checks.check_TID_008 as check_TID_008
 
-def tour_TID_008(json_metadata):
-
+def test_TID_008(json_metadata):
   browser = tour_TID_006(json_metadata)
 
   # the update of line up info appears here

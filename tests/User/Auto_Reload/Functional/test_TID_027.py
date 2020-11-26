@@ -11,7 +11,7 @@ from urls import *
 from Auto_Reload.Functional.test_TID_026 import tour_TID_026 as tour_TID_026
 import lib.checks.check_TID_027 as check_TID_027
 
-def tour_TID_027(json_metadata):
+def test_TID_027(json_metadata):
   password_to_bruce=['xxxxxx']
 
   restaurant_manage_browser = tour_TID_026(json_metadata)

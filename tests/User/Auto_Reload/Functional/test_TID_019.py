@@ -11,7 +11,7 @@ from urls import *
 from Auto_Reload.Functional.test_TID_017 import tour_TID_017 as tour_TID_017
 import lib.checks.check_TID_019 as check_TID_019
 
-def test_TID_019(json_metadata, username="TID_019"):
+def tour_TID_019(json_metadata, username="TID_019"):
 
   browser = tour_TID_017(json_metadata, username)
 

@@ -7,10 +7,10 @@ graph TD
   3--At line up page, fill in the name, amount of people, notes<br>Take a number 上記 xxx-->6[TID_006, <br/>User should automatically direct to food menu page with a number display dialog]
   6-->6_1[TID_006_1, <br/>assign table<br/> by stub]
   6--On food menu page, click the number at top right screen<br/>Update the name, people, note<br/>Update my info<br/>Close the info page, check the number at top right screen again<br/>-->8[TID_008, <br/>The user info<br/> should be updated]
-  6--At food menu page, click any of the food-->9[TID_009, <br/>It should direct to<br/> item add page]
+  6_1--At food menu page, click any of the food-->9[TID_009, <br/>It should direct to<br/> item add page]
   9-->10[TID_010, <br/>increase the quantity<br/> of the food item]
   10-->11[TID_011, <br/>reduce the quantity<br/> of the food item]
-  6_1-->12
+  9-->12
   10-->12[TID_012, <br/>add into cart]
   12-->13[TID_013, <br/>It should open up cart page <br/>with all foods that user ordered]
   12-->14[TID_014, <br/>It should increase the <br/>quantity of the food item]

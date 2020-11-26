@@ -89,7 +89,7 @@ mkdir -p reports/UI_test/functional/test_happyflow_1/result
 # pipenv run pytest --maxfail=999 --json-report  --html=reports/functional/report.html -x tests/UI_test/functional/smoke_test/test_TID_047.py
 # pipenv run pytest --maxfail=999 --json-report  --html=reports/functional/report.html -x tests/UI_test/functional/smoke_test/test_TID_048.py
 # pipenv run pytest --maxfail=999 --json-report  --html=reports/functional/report.html -x tests/UI_test/functional/smoke_test/test_TID_049.py
-pipenv run pytest --maxfail=999 --json-report  --html=reports/functional/report.html -x tests/UI_test/functional/smoke_test/test_TID_050.py
+# pipenv run pytest --maxfail=999 --json-report  --html=reports/functional/report.html -x tests/UI_test/functional/smoke_test/test_TID_050.py
 # pipenv run pytest --maxfail=999 --json-report  --html=reports/functional/report.html -x tests/UI_test/functional/smoke_test/test_TID_051.py
 # pipenv run pytest --maxfail=999 --json-report  --html=reports/functional/report.html -x tests/UI_test/functional/smoke_test/test_TID_052.py
 # pipenv run pytest --maxfail=999 --json-report  --html=reports/functional/report.html -x tests/UI_test/functional/smoke_test/test_TID_053.py
@@ -99,8 +99,11 @@ pipenv run pytest --maxfail=999 --json-report  --html=reports/functional/report.
 # pipenv run pytest --maxfail=999 --json-report  --html=reports/functional/report.html -x tests/UI_test/functional/smoke_test/debug_helloworld.py
 # pipenv run pytest --maxfail=999 --json-report  --html=reports/functional/report.html -x tests/UI_test/functional/smoke_test/debug_js_alert.py
 
+sudo rm -rf /home/logic/_workspace/LYNKED_QA_project/_ref/docker-appium/video-nexus_10/*
 
-
+# pipenv run pytest --maxfail=999 --json-report  --html=tests/User/reports/report.html -x tests/User/Auto_Reload/Functional
+pipenv run pytest --maxfail=999 --json-report  --html=tests/User/reports/report.html -x tests/User/Auto_Reload/Functional/test_TID_021.py
+# pipenv run pytest --maxfail=999 --json-report  --html=tests/User/reports/report.html -x tests/User/helloworlds
 
 
 

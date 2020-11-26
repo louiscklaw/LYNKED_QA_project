@@ -5,9 +5,11 @@ from time import sleep
 sys.path.append(os.path.dirname(__file__))
 from path_config import *
 from urls import *
-from setupLocalChrome import *
 
 from steps import *
+from tours import *
+from checks import *
+
 from pages.config import *
 from jp import *
 

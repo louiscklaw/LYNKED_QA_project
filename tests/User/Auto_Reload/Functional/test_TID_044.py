@@ -9,7 +9,7 @@ from lib.config import *
 from Auto_Reload.Functional.test_TID_037 import tour_TID_037 as tour_TID_037
 import lib.checks.check_TID_044 as check_TID_044
 
-def tour_TID_044(json_metadata):
+def test_TID_044(json_metadata):
   # clear before test
 
   (r_browser, c_browser) = tour_TID_037(json_metadata, '44')
