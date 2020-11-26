@@ -2,15 +2,15 @@ import os,sys
 from pprint import pprint
 from time import sleep
 
-sys.path.append(os.path.dirname(__file__))
-from path_config import *
+sys.path.append(os.path.dirname(__file__)+'/../..')
+from lib.config import *
 from urls import *
 
 # from tour_helloworld import *
 
-from step_helloworld import *
-from assert_helloworld import *
-from check_helloworld import *
+from lib.steps.step_helloworld import *
+from lib.asserts.assert_helloworld import *
+from lib.checks.check_helloworld import *
 
 def test_helloworld(json_metadata):
   step_helloworld(json_metadata)

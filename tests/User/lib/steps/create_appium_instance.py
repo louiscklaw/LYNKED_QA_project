@@ -1,3 +1,4 @@
+from lib.steps.dismiss_jp_translation import dismiss_jp_translation_in_chrome_browser
 import unittest
 import os
 import copy
@@ -37,12 +38,10 @@ def create_appium_instance(json_metadata):
   driver.find_element_by_id("com.android.chrome:id/negative_button").click()
   sleep(1)
 
-
   driver.get('http://www.example.com')
+
   sleep(15)
-
   driver.switch_to.context("WEBVIEW_chrome")
-
 
   getScreenShot(driver, '{}/after_example_com_screen.png'.format(SCREENCAPTURE_DIR))
 
@@ -50,4 +49,6 @@ def create_appium_instance(json_metadata):
   sleep(1)
 
   assert 'Example Domain'==ele_h1.text
+
+
   return driver

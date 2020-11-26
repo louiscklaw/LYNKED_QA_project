@@ -1,3 +1,4 @@
+from lib.steps.dismiss_jp_translation import dismiss_jp_translation_in_chrome_browser
 import unittest
 import os
 import copy
@@ -36,9 +37,15 @@ class AndroidMobileWebTest(unittest.TestCase):
     driver.find_element_by_id("com.android.chrome:id/negative_button").click()
     sleep(1)
 
+    driver.get('http://mcdonalds.co.jp')
+    # dismiss translate japanese button
+    sleep(10)
 
     driver.get('http://menymeny.com/food/%E3%82%84%E3%81%8D%E3%81%A8%E3%82%8A/')
     sleep(10)
+
+    # NOTES: dismiss japanese auto translation
+    # dismiss_jp_translation_in_chrome_browser(driver)
 
     driver.switch_to.context("WEBVIEW_chrome")
 

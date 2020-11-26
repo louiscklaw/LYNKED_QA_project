@@ -1,5 +1,5 @@
 
-from get_current_test import *
+from lib.utils.get_current_test import *
 from time import sleep
 
 def close_appium_session(browser, calling_func_name):

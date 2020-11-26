@@ -21,3 +21,5 @@ sys.path.append(TICKETS_DIR)
 sys.path.append(CHECKS_DIR)
 sys.path.append(PAGES_DIR)
 sys.path.append(UTILS_DIR)
+
+assert False, 'hello fail'

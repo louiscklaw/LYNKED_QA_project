@@ -1,13 +1,12 @@
-import line_up_page
-import food_menu
-import line_up_confirmation_dialogue
-import item_add_page
-import cart_page
+import lib.pages.line_up_page as line_up_page
+import lib.pages.food_menu as food_menu
+import lib.pages.line_up_confirmation_dialogue as line_up_confirmation_dialogue
+import lib.pages.item_add_page as item_add_page
+import lib.pages.cart_page as cart_page
 
-
-from config import *
+from lib.config import *
 from time import sleep
-from assert_check_point import assertCheckPoint
+from lib.asserts.assert_check_point import *
 
 def run_check(json_metadata, browser):
   ERR_MSG_FIRST_TIME_LANDING_NOT_FOUND='first time landing not found'
