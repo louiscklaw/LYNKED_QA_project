@@ -11,10 +11,10 @@ from urls import *
 from Auto_Reload.Functional.test_TID_003 import tour_TID_003 as tour_TID_003
 import lib.checks.check_TID_006 as check_TID_006
 
-def test_TID_006(json_metadata):
+def tour_TID_006(json_metadata, username):
   browser = tour_TID_003(json_metadata)
 
   # check result
-  check_TID_006.run_check(json_metadata, browser)
+  check_TID_006.run_check(json_metadata, browser, username)
 
   return browser

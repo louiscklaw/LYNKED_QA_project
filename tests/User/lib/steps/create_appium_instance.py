@@ -1,4 +1,3 @@
-from lib.steps.dismiss_jp_translation import dismiss_jp_translation_in_chrome_browser
 import unittest
 import os
 import copy
@@ -9,6 +8,8 @@ import base64
 from time import sleep
 
 from appium import webdriver
+
+from lib.steps.goto_chrome_setting_language_and_disable_auto_translate import gotoChromeSettingLanguageAndDisableAutoTranslate
 
 SCREENCAPTURE_DIR='/home/logic/_workspace/LYNKED_QA_project/tests/User/reports/assets'
 
@@ -39,6 +40,8 @@ def create_appium_instance(json_metadata):
   sleep(1)
 
   driver.get('http://www.example.com')
+
+  gotoChromeSettingLanguageAndDisableAutoTranslate(driver)
 
   sleep(15)
   driver.switch_to.context("WEBVIEW_chrome")

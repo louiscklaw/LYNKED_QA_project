@@ -1,0 +1,28 @@
+
+from time import sleep
+
+# KEYCODE_DPAD_DOWN=20
+from lib.keycode import *
+
+def gotoChromeSettingLanguageAndDisableAutoTranslate(driver):
+  driver.switch_to.context("NATIVE_APP")
+
+  driver.find_element_by_xpath('//android.widget.ImageButton[@content-desc="More options"]').click()
+  sleep(0.1)
+
+
+  driver.find_element_by_xpath('//android.widget.TextView[@content-desc="Settings"]').click()
+  sleep(0.1)
+
+  for i in range(0,12+1):
+    driver.press_keycode(KEYCODE_DPAD_DOWN)
+
+  driver.press_keycode(KEYCODE_ENTER)
+
+  driver.find_element_by_id('com.android.chrome:id/switchWidget').click()
+
+  # back to chrome main screen
+  driver.press_keycode(KEYCODE_BACK)
+  driver.press_keycode(KEYCODE_BACK)
+
+  driver.switch_to.context("WEBVIEW_chrome")
