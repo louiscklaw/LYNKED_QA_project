@@ -43,13 +43,18 @@ def gotoChromeSettingLanguageAndDisableAutoTranslate(driver, device_type=DEVICE_
 
     for i in range(0,9+1):
       driver.press_keycode(KEYCODE_DPAD_DOWN)
+      sleep(0.2)
 
     driver.press_keycode(KEYCODE_ENTER)
+    sleep(0.2)
 
     driver.find_element_by_xpath('//android.widget.LinearLayout[1]').click()
 
     # back to chrome main screen
     driver.press_keycode(KEYCODE_BACK)
+    sleep(0.2)
+
     driver.press_keycode(KEYCODE_BACK)
+    sleep(0.2)
 
     driver.switch_to.context("WEBVIEW_chrome")

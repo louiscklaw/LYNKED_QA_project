@@ -27,18 +27,21 @@ def createClientDevice(json_metadata):
   return create_appium_instance(json_metadata, driver)
 
 def createRestaurantDevice(json_metadata):
-  driver = connectToAppium(json_metadata, 5723)
+  driver = connectToAppium(json_metadata, 5723, 9201, 8201, 8001)
   gotoChromeSettingLanguageAndDisableAutoTranslate(driver, DEVICE_TABLET)
   return create_appium_instance(json_metadata, driver, 5723)
 
-def connectToAppium(json_metadata,appium_port=4723):
+def connectToAppium(json_metadata,appium_port=4723, mjpegServerPort=9200, systemPort=8200, chromedriverPort=8000):
   desired_caps = {
       "platformName": "Android",
       "appPackage": "com.android.chrome",
       "appActivity": "com.google.android.apps.chrome.Main",
-      "fastReset":"true",
-      "clearSystemFiles":"true",
-      "disableWindowAnimation":"true"
+      "fastReset":True,
+      "clearSystemFiles":True,
+      "disableWindowAnimation":True,
+      "newCommandTimeout": 120,
+      "mjpegServerPort": mjpegServerPort,
+      "systemPort": systemPort
   }
 
   driver = webdriver.Remote('http://127.0.0.1:{}/wd/hub'.format(appium_port), desired_caps)

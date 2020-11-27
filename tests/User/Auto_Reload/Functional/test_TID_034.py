@@ -18,7 +18,7 @@ def test_TID_034(json_metadata):
   client_browser = tour_TID_006(json_metadata)
 
   # TODO: resume
-  # check_TID_034.run_check(json_metadata, restaurant_manage_browser, client_browser)
+  check_TID_034.run_check(json_metadata, restaurant_manage_browser, client_browser)
 
   return (restaurant_manage_browser, client_browser)
 
