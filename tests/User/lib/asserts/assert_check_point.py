@@ -5,11 +5,13 @@ import base64
 import lib.config as config
 
 def takeScreenshot(driver, sc_filename):
+  try:
+    img_data = driver.get_screenshot_as_base64()
+    with open(sc_filename, "wb") as fh:
+      fh.write(base64.urlsafe_b64decode(img_data))
 
-  img_data = driver.get_screenshot_as_base64()
-  with open(sc_filename, "wb") as fh:
-    fh.write(base64.urlsafe_b64decode(img_data))
-
+  except Exception as e:
+    assert False, "takeScreenshot: {}".format(sc_filename)
     # driver.save_screenshot(sc_filename)
 
 def getActualScreenshotPath(test_number):

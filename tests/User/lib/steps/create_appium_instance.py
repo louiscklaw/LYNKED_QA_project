@@ -35,7 +35,10 @@ def connectToAppium(json_metadata,appium_port=4723):
   desired_caps = {
       "platformName": "Android",
       "appPackage": "com.android.chrome",
-      "appActivity": "com.google.android.apps.chrome.Main"
+      "appActivity": "com.google.android.apps.chrome.Main",
+      "fastReset":"true",
+      "clearSystemFiles":"true",
+      "disableWindowAnimation":"true"
   }
 
   driver = webdriver.Remote('http://127.0.0.1:{}/wd/hub'.format(appium_port), desired_caps)

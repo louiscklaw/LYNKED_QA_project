@@ -15,7 +15,7 @@ from assert_check_point import assertCheckPoint
 
 from stubs.server.assign_table.assign_table_by_name import assignTableByName
 
-import restaurant_manage.admin_page
+import lib.pages.restaurant_manage.admin_page as admin_page
 
 def run_check(json_metadata, r_browser, c_browser):
   TEST_ERR_MSG='test failed at TID_035'
@@ -25,7 +25,7 @@ def run_check(json_metadata, r_browser, c_browser):
 
   assertCheckPoint(r_browser, 'TID_035_3', TEST_ERR_MSG)
 
-  admin_page_with_site_nav_po = restaurant_manage.admin_page.Main(r_browser)
+  admin_page_with_site_nav_po = admin_page.Main(r_browser)
   admin_page_with_site_nav_po.tapUnassignedUserTable()
 
   assertCheckPoint(r_browser, 'TID_035_3', TEST_ERR_MSG)

@@ -15,7 +15,7 @@ from assert_check_point import assertCheckPoint
 
 from stubs.server.assign_table.assign_table_by_name import assignTableByName
 
-import restaurant_manage.admin_page
+import lib.pages.restaurant_manage.admin_page as admin_page
 
 def run_check(json_metadata, browser):
   TEST_ERR_MSG='test failed at TID_047'

@@ -11,13 +11,14 @@ from Auto_Reload.Functional.test_TID_006 import tour_TID_006 as tour_TID_006
 
 import lib.checks.check_TID_034 as check_TID_034
 
-def tour_TID_034(json_metadata):
+def test_TID_034(json_metadata):
   # clear before test
 
   restaurant_manage_browser = tour_TID_029(json_metadata)
   client_browser = tour_TID_006(json_metadata)
 
-  check_TID_034.run_check(json_metadata, restaurant_manage_browser, client_browser)
+  # TODO: resume
+  # check_TID_034.run_check(json_metadata, restaurant_manage_browser, client_browser)
 
   return (restaurant_manage_browser, client_browser)
 

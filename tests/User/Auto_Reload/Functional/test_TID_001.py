@@ -13,7 +13,7 @@ from lib.utils.get_current_test import *
 import lib.pages.line_up_page as line_up_page
 from lib.urls import *
 
-def test_TID_001(json_metadata):
+def tour_TID_001(json_metadata):
   browser=createClientDevice(json_metadata)
   browser.get(LINE_UP_PAGE)
 
