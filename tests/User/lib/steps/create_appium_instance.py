@@ -11,6 +11,8 @@ from appium import webdriver
 
 from lib.steps.goto_chrome_setting_language_and_disable_auto_translate import gotoChromeSettingLanguageAndDisableAutoTranslate
 
+from lib.steps.goto_chrome_setting_language_and_disable_auto_translate import DEVICE_MOBILE, DEVICE_TABLET
+
 SCREENCAPTURE_DIR='/home/logic/_workspace/LYNKED_QA_project/tests/User/reports/assets'
 
 def getScreenShot(driver, sc_filename):
@@ -19,14 +21,24 @@ def getScreenShot(driver, sc_filename):
     fh.write(base64.urlsafe_b64decode(img_data))
 
 
-def create_appium_instance(json_metadata):
+def createClientDevice(json_metadata):
+  driver = connectToAppium(json_metadata)
+  gotoChromeSettingLanguageAndDisableAutoTranslate(driver, DEVICE_MOBILE)
+  return create_appium_instance(json_metadata, driver)
+
+def createRestaurantDevice(json_metadata):
+  driver = connectToAppium(json_metadata, 5723)
+  gotoChromeSettingLanguageAndDisableAutoTranslate(driver, DEVICE_TABLET)
+  return create_appium_instance(json_metadata, driver, 5723)
+
+def connectToAppium(json_metadata,appium_port=4723):
   desired_caps = {
       "platformName": "Android",
       "appPackage": "com.android.chrome",
       "appActivity": "com.google.android.apps.chrome.Main"
   }
 
-  driver = webdriver.Remote('http://127.0.0.1:4723/wd/hub', desired_caps)
+  driver = webdriver.Remote('http://127.0.0.1:{}/wd/hub'.format(appium_port), desired_caps)
   sleep(3)
   getScreenShot(driver, '{}/example_com_screen.png'.format(SCREENCAPTURE_DIR))
 
@@ -41,8 +53,10 @@ def create_appium_instance(json_metadata):
 
   driver.get('http://www.example.com')
 
-  gotoChromeSettingLanguageAndDisableAutoTranslate(driver)
+  return driver
 
+
+def create_appium_instance(json_metadata, driver, appium_port=4723):
   sleep(15)
   driver.switch_to.context("WEBVIEW_chrome")
 
@@ -51,7 +65,7 @@ def create_appium_instance(json_metadata):
   ele_h1 = driver.find_element_by_xpath('/html/body/div/h1')
   sleep(1)
 
+  # NOTES: simple health check
   assert 'Example Domain'==ele_h1.text
-
 
   return driver
