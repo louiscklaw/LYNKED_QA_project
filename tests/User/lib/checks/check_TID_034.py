@@ -24,15 +24,15 @@ def run_check(json_metadata, r_browser, c_browser):
   assertCheckPoint(c_browser, 'TID_034_2', TEST_ERR_MSG)
 
   # sleep(0.5)
-  # admin_page_po = admin_page.Main(r_browser)
-  # admin_page_po.tapSiteNavigator()
+  admin_page_po = admin_page.Main(r_browser)
+  admin_page_po.tapSiteNavigator()
 
-  # assertCheckPoint(r_browser, 'TID_034_3', TEST_ERR_MSG)
+  assertCheckPoint(r_browser, 'TID_034_3', TEST_ERR_MSG)
 
   # sleep(0.5)
-  # admin_page_with_site_nav_po = admin_page.SiteNavigatorPopup(r_browser)
-  # admin_page_with_site_nav_po.tapSeatReservationManagmentButton()
+  admin_page_with_site_nav_po = admin_page.SiteNavigatorPopup(r_browser)
+  admin_page_with_site_nav_po.tapSeatReservationManagmentButton()
 
-  # assertCheckPoint(r_browser, 'TID_034_4', TEST_ERR_MSG)
+  assertCheckPoint(r_browser, 'TID_034_4', TEST_ERR_MSG)
 
   json_metadata['TID_034'] = 'passed'

@@ -16,8 +16,9 @@ import lib.checks.check_TID_013 as check_TID_013
 import lib.checks.check_TID_017 as check_TID_017
 import lib.checks.check_TID_031 as check_TID_031
 import lib.checks.check_TID_037 as check_TID_037
+import lib.checks.check_TID_039 as check_TID_039
 
-def tour_TID_039(json_metadata, table_num=37, food_quantity=5):
+def test_TID_039(json_metadata, table_num=37, food_quantity=5):
   # clear before test
 
   (r_browser, c_browser) = tour_TID_036(json_metadata, table_num)
@@ -43,5 +44,7 @@ def tour_TID_039(json_metadata, table_num=37, food_quantity=5):
 
   # perform check
   check_TID_037.run_check(json_metadata, r_browser, c_browser, table_num)
+
+  check_TID_039.run_check(json_metadata, r_browser)
 
   return (r_browser, c_browser)

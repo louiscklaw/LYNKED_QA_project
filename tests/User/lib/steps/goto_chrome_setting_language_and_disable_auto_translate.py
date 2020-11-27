@@ -54,7 +54,6 @@ def gotoChromeSettingLanguageAndDisableAutoTranslate(driver, device_type=DEVICE_
     driver.press_keycode(KEYCODE_BACK)
     sleep(0.2)
 
+    # NOTES: delete
     driver.press_keycode(KEYCODE_BACK)
     sleep(0.2)
-
-    driver.switch_to.context("WEBVIEW_chrome")

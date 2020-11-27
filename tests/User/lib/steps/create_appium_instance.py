@@ -24,11 +24,19 @@ def getScreenShot(driver, sc_filename):
 def createClientDevice(json_metadata):
   driver = connectToAppium(json_metadata)
   gotoChromeSettingLanguageAndDisableAutoTranslate(driver, DEVICE_MOBILE)
+
+  driver.get('http://www.example.com')
+  driver.switch_to.context("WEBVIEW_chrome")
+
   return create_appium_instance(json_metadata, driver)
 
 def createRestaurantDevice(json_metadata):
   driver = connectToAppium(json_metadata, 5723, 9201, 8201, 8001)
   gotoChromeSettingLanguageAndDisableAutoTranslate(driver, DEVICE_TABLET)
+
+  driver.get('http://www.example.com')
+  driver.switch_to.context("WEBVIEW_chrome")
+
   return create_appium_instance(json_metadata, driver, 5723)
 
 def connectToAppium(json_metadata,appium_port=4723, mjpegServerPort=9200, systemPort=8200, chromedriverPort=8000):
@@ -57,7 +65,7 @@ def connectToAppium(json_metadata,appium_port=4723, mjpegServerPort=9200, system
   driver.find_element_by_id("com.android.chrome:id/negative_button").click()
   sleep(1)
 
-  driver.get('http://www.example.com')
+
 
   return driver
 
