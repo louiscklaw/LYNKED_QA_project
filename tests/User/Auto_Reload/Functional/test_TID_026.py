@@ -14,7 +14,7 @@ from lib.steps.create_appium_instance import *
 import lib.checks.check_TID_026 as check_TID_026
 
 # from setupLocalChrome import *
-def test_TID_026(json_metadata):
+def tour_TID_026(json_metadata):
   r_browser=createRestaurantDevice(json_metadata)
 
   # restaurant_manage_browser = setupLocalChrome()

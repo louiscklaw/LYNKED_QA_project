@@ -103,7 +103,8 @@ sudo rm -rf /home/logic/_workspace/LYNKED_QA_project/_ref/docker-appium/video-ne
 
 # pipenv run pytest --maxfail=999 --json-report  --html=tests/User/reports/report.html -x tests/User/Auto_Reload/Functional
 # pipenv run pytest --maxfail=999 --json-report  --html=tests/User/reports/report.html -x tests/User/Auto_Reload/Functional/test_TID_001.py &
-pipenv run pytest --maxfail=999 --json-report  --html=tests/User/reports/report.html -x tests/User/Auto_Reload/Functional/test_TID_026.py &
+# pipenv run pytest --maxfail=999 --json-report  --html=tests/User/reports/report.html -x tests/User/Auto_Reload/Functional/test_TID_027.py
+pipenv run pytest --maxfail=999 --json-report  --html=tests/User/reports/report.html -x tests/User/Auto_Reload/Functional/test_TID_033.py
 # pipenv run pytest --maxfail=999 --json-report  --html=tests/User/reports/report.html -x tests/User/helloworlds
 
 
