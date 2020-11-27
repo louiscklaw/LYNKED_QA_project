@@ -1,7 +1,7 @@
 import random
 from pprint import pprint
 
-import please_take_seat_first_dialogue
+import lib.pages.please_take_seat_first_dialogue as please_take_seat_first_dialogue
 import lib.pages.line_up_page as line_up_page
 import lib.pages.food_menu as food_menu
 import lib.pages.line_up_confirmation_dialogue as line_up_confirmation_dialogue

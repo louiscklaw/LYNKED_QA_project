@@ -1,4 +1,4 @@
-import please_take_seat_first_dialogue
+import lib.pages.please_take_seat_first_dialogue as please_take_seat_first_dialogue
 import food_menu
 import cart_page
 # import item_add_page
