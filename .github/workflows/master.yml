@@ -34,7 +34,7 @@ jobs:
           export LC_ALL=C.UTF-8
           export LANG=C.UTF-8
           pipenv install pytest pytest-html
-          pipenv run pytest --maxfail=999 --json-report  --html=reports/functional/report.html -x tests/UI_test/functional/smoke_test_remote/test_TID_002.py
+          pipenv run pytest --maxfail=999 --json-report  --html=reports/functional/report.html -x tests/UI_test/functional/smoke_test_remote
 
           ls -l reports/functional/test_viewport
 
