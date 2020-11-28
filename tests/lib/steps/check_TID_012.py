@@ -22,6 +22,6 @@ def run_check(json_metadata, browser, food_idx=1):
   # sleep to let dialogue gone
   sleep(3)
 
-  assertCheckPoint(browser, 'TID_012_2_{}'.format(food_idx), TEST_ERR_MSG)
+  assertCheckPoint(browser, 'TID_012_2_{}'.format(food_idx), TEST_ERR_MSG, 0.06)
 
   json_metadata['TID_012'] = 'passed'

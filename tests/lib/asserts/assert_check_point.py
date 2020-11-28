@@ -1,11 +1,18 @@
-from assert_image import assertSameImage
 from time import sleep
+from random import randrange
+
+from assert_image import assertSameImage
 
 def takeScreenshot(driver, sc_filename):
     driver.save_screenshot(sc_filename)
 
+def getRandomString():
+  return randrange(1,100)
+
 def getActualScreenshotPath(test_number):
-  return 'tests/UI_test/functional/smoke_test_remote_parallel/actual/{}_sc.png'.format(test_number)
+  random_string = getRandomString()
+
+  return 'tests/UI_test/functional/smoke_test_remote_parallel/actual/{}_sc_{}.png'.format(test_number, random_string)
 
 def getExpectedScreenshotPath(test_number):
   return 'tests/UI_test/functional/smoke_test_remote_parallel/expected/{}_sc.png'.format(test_number)
