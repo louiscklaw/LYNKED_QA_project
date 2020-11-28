@@ -23,7 +23,7 @@ def run_check(json_metadata, r_browser, c_browser, assign_table='let say any tab
 
   assertCheckPoint(r_browser, 'TID_036_3', TEST_ERR_MSG)
 
-  sleep(10)
+  sleep(15)
 
   assertCheckPoint(c_browser, 'TID_036_4', TEST_ERR_MSG)
 
