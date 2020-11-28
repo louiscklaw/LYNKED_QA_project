@@ -1,0 +1,7 @@
+#!/usr/bin/env bash
+
+set -ex
+
+# PATH=$PATH:/home/logic/_workspace/LYNKED_QA_project/drivers/chrome/86
+
+pipenv run pytest ./test_main.py
