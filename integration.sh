@@ -11,12 +11,12 @@ mkdir -p reports/UI_test/functional/test_happyflow_1/result
 
 pipenv sync
 
-  # --workers 14 \
 pipenv run pytest \
+  --workers 14 \
   --maxfail=999 \
   --json-report  \
   --html=reports/functional/report.html \
-  -x tests/UI_test/functional/smoke_test_remote
+  -x tests/UI_test/functional/smoke_test_remote_parallel
 
 
 # pipenv run pytest --maxfail=999 --json-report  --html=reports/functional/report.html -x tests/UI_test/functional/smoke_test/test_TID_004.py &

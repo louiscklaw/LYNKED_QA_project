@@ -17,5 +17,5 @@ def assertCheckPoint(driver ,check_point_name, error_message, fail_threshold=0.0
 
   takeScreenshot(driver, actual_screenshot_path)
 
-  # if make_asserts:
-  #   assertSameImage(expected_screenshot_path, actual_screenshot_path,fail_threshold,  error_message)
+  if make_asserts:
+    assertSameImage(expected_screenshot_path, actual_screenshot_path,fail_threshold,  error_message)
