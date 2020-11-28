@@ -47,7 +47,7 @@ import food_menu
 import line_up_confirmation_dialogue
 import item_add_page
 import cart_page
-from setupRemoteChrome import *
+
 
 from pages.config import *
 
@@ -94,7 +94,7 @@ def setupLocalChrome():
 
 def test_happyflow_1_chrome_first_time_arrive_line_up_page(json_metadata):
 
-  browser = setupRemoteChrome()
+  browser = setupLocalChrome()
 
   # pre condition
   # get to lineup page

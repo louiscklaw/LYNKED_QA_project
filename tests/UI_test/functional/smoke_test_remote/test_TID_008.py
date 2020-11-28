@@ -10,9 +10,11 @@ from steps import *
 from pages.config import *
 from jp import *
 
-from test_TID_006 import *
+from test_TID_006_1 import *
 
-def test_TID_008(json_metadata):
+
+# FIXME:
+def tour_TID_008(json_metadata):
 
   browser = tour_TID_006_1(json_metadata)
 

@@ -13,6 +13,10 @@ from jp import *
 
 from test_TID_003_1 import *
 
+FOOD_MENU_PAGE='http://menymeny.com/food/やきとり/'
+MAIN_MENU_PAGE=FOOD_MENU_PAGE
+
+# TODO: need to clear flow
 def test_TID_005(json_metadata):
 
   browser = tour_TID_003_1(json_metadata)
