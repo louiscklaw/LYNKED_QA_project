@@ -28,9 +28,4 @@ set -ex
 # pipenv run pytest --co -k test
 # pipenv run pytest --maxfail=999 --json-report  --html=reports/functional/report.html -x tests/UI_test/functional/smoke_test
 
-pipenv run pytest --maxfail=999 --json-report  --html=reports/functional/report.html -x tests/UI_test/functional/smoke_test_remote/test_TID_004.py &
-
-pipenv run pytest --maxfail=999 --json-report  --html=reports/functional/report.html -x tests/UI_test/functional/smoke_test_remote/test_TID_005.py &
-
-
-wait
+pipenv run pytest --maxfail=999 --json-report  --html=reports/functional/report.html -x tests/UI_test/functional/smoke_test_remote_parallel/test_TID_019.py

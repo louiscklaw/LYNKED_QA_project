@@ -19,6 +19,9 @@ def run_check(json_metadata, browser, food_idx=1):
   assertCheckPoint(browser, 'TID_012_1_{}'.format(food_idx), TEST_ERR_MSG)
   item_add_page_po.tapAddIntoCartButton()
 
-  assertCheckPoint(browser, 'TID_012_2', TEST_ERR_MSG)
+  # sleep to let dialogue gone
+  sleep(3)
+
+  assertCheckPoint(browser, 'TID_012_2_{}'.format(food_idx), TEST_ERR_MSG)
 
   json_metadata['TID_012'] = 'passed'

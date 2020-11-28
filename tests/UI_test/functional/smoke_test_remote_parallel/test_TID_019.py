@@ -92,9 +92,11 @@ def setupLocalChrome():
   browser = webdriver.Chrome('drivers/chrome/86/chromedriver', desired_capabilities=caps)
   return browser
 
-def test_happyflow_1_chrome_first_time_arrive_line_up_page(json_metadata):
+from setupRemoteChrome import *
 
-  browser = setupLocalChrome()
+def test_TID_019(json_metadata):
+
+  browser = setupRemoteChrome()
 
   # pre condition
   # get to lineup page

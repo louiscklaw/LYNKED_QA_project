@@ -6,6 +6,7 @@ def assertSameImage(img_expected, img_actual,image_test_threshold=0.05, error_ms
   ''' exception if different image '''
   img_diff_result = diff(img_expected, img_actual)
   verdict = img_diff_result < image_test_threshold
+  check_point_name = os.path.basename(img_actual).replace('.png','')
   DEBUG_MSG = "debug: file: {}, threshold {}, diff result {}, verdict {}".format(img_actual, image_test_threshold, img_diff_result, verdict)
   print(DEBUG_MSG)
-  assert verdict, error_msg
+  assert verdict, check_point_name+' : ' +error_msg

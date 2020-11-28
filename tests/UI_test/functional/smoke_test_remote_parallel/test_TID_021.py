@@ -64,6 +64,7 @@ SELENIUM_HUB_HOST='localhost'
 LINE_UP_PAGE='http://menymeny.com/food/%E3%82%84%E3%81%8D%E3%81%A8%E3%82%8A/?do_lineup'
 FOOD_MENU_PAGE='http://menymeny.com/food/やきとり/'
 
+from setupRemoteChrome import *
 
 def takeScreenshot(driver, sc_filename):
     driver.save_screenshot(sc_filename)
@@ -91,7 +92,7 @@ def setupLocalChrome():
 
 def test_happyflow_1_chrome_first_time_arrive_line_up_page(json_metadata):
 
-  browser = setupLocalChrome()
+  browser = setupRemoteChrome()
 
   # pre condition
   # get to lineup page
