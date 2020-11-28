@@ -10,7 +10,7 @@ reports/**/*.png
 diff_img.png
 .report.json
 _tickets
-tests/UI_test/functional/smoke_test/actual
+**/actual
 
 # NODE SPECIFIC
 .env

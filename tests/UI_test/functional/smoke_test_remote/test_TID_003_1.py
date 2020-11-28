@@ -10,11 +10,11 @@ from steps import *
 from pages.config import *
 from jp import *
 
-from test_TID_002 import *
+from test_TID_001_1 import *
 
 def tour_TID_003_1(json_metadata):
 
-  browser = tour_TID_001(json_metadata)
+  browser = tour_TID_001_1(json_metadata)
 
   # check result
   check_TID_003.run_check(json_metadata, browser)
