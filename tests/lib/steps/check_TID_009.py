@@ -17,7 +17,7 @@ def run_check(json_metadata, browser, food_item_idx=1):
   food_menu_po = food_menu.Main(browser)
   food_menu_po.tapFoodItemByIdx(food_item_idx)
 
-  assertCheckPoint(browser, 'TID_009_2', TEST_ERR_MSG)
+  assertCheckPoint(browser, 'TID_009_2_{}'.format(food_item_idx), TEST_ERR_MSG)
   # assertSameImage(expected_screenshot_path, actual_screenshot_path,0.1,  TEST_ERR_MSG)
 
   json_metadata['TID_009'] = 'passed'

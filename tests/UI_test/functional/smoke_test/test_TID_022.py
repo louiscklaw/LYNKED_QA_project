@@ -109,7 +109,7 @@ def test_happyflow_1_chrome_first_time_arrive_line_up_page(json_metadata):
   # the update of line up info appears here
   for i in range(1,4+1):
     check_TID_009.run_check(json_metadata, browser, i)
-    check_TID_012.run_check(json_metadata, browser)
+    check_TID_012.run_check(json_metadata, browser, i)
 
   # At food menu page, click any of the food
 
