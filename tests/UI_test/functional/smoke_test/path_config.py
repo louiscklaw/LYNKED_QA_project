@@ -15,6 +15,8 @@ LIB_STEPS_DIR=os.path.abspath(LIB_DIR+'/steps')
 LIB_STUBS_DIR=os.path.abspath(LIB_DIR+'/stubs')
 LIB_STUBS_SERVER_DIR=os.path.abspath(LIB_STUBS_DIR+'/server')
 
+# EXPECTED_RESULT_PATH=os.path.abspath(TEST_DIR+'/expected')
+# ACTUAL_PATH=os.path.abspath(TEST_DIR+'/actual')
 
 sys.path.append(LIB_DIR)
 sys.path.append(LIB_PO_DIR)
