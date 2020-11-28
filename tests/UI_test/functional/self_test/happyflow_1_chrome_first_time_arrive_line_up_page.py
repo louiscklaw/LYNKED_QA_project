@@ -81,13 +81,15 @@ def setupLocalChrome():
   browser = webdriver.Chrome('drivers/chrome/86/chromedriver', desired_capabilities=caps)
   return browser
 
-def test_happyflow_1_chrome_first_time_arrive_line_up_page(json_metadata):
+from setupRemoteChrome import *
+
+def test_remote_chrome(json_metadata):
   TEST_USER_NAME='louis_finger_print_1'
   TID_006_USERNAME = 'TID_006'
   TID_008_USERNAME = 'TID_008'
   TID_020_USERNAME = TID_006_USERNAME+TID_008_USERNAME
 
-  browser = setupLocalChrome()
+  browser = setupRemoteChrome()
 
   # # CATEGORY - USER, COMPONENT - CART, TEST TYPE - FUNCTIONAL
   # check_TID_001.run_check(json_metadata, browser)
