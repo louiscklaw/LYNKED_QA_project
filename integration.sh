@@ -16,7 +16,7 @@ pipenv run pytest \
   --maxfail=999 \
   --json-report  \
   --html=reports/functional/report.html \
-  -x tests/UI_test/functional/smoke_test
+  -x tests/UI_test/functional/smoke_test_remote
 
 
 # pipenv run pytest --maxfail=999 --json-report  --html=reports/functional/report.html -x tests/UI_test/functional/smoke_test/test_TID_004.py &
