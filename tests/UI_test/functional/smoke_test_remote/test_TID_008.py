@@ -12,7 +12,7 @@ from jp import *
 
 from test_TID_006 import *
 
-def tour_TID_008(json_metadata):
+def test_TID_008(json_metadata):
 
   browser = tour_TID_006_1(json_metadata)
 
