@@ -38,8 +38,6 @@ from jp import *
 
 from stubs.server.assign_table.assign_table_by_name import assignTableByName
 
-from test_assign_all_table import *
-
 SELENIUM_HUB_HOST='localhost'
 
 # todo: factorize me
@@ -50,6 +48,8 @@ FOOD_MENU_PAGE='http://menymeny.com/food/やきとり/'
 from setupLocalChrome import *
 
 from test_TID_028 import *
+
+from tour_clear_all_table import *
 
 def tour_TID_029(json_metadata):
   tour_clear_all_table(json_metadata)

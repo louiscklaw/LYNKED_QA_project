@@ -11,7 +11,7 @@ jobs:
 
       - run: |
           cd $GITHUB_WORKSPACE/_ref/docker-selenium
-            docker-compose -f docker-compose-v3.yml up -d  --scale chrome_1=5
+            docker-compose -f docker-compose-v3.yml up -d  --scale chrome_1=20
             echo 'sleep a while to let docker steady'
             sleep 30
 
@@ -34,7 +34,12 @@ jobs:
           export LC_ALL=C.UTF-8
           export LANG=C.UTF-8
           pipenv install pytest pytest-html
-          pipenv run pytest --maxfail=999 --json-report  --html=reports/functional/report.html -x tests/UI_test/functional/smoke_test_remote_parallel
+          pipenv run pytest \
+            --workers 10 \
+            --maxfail=999 \
+            --json-report \
+            --html=reports/functional/report.html \
+            -x tests/UI_test/functional/smoke_test_remote_parallel
 
           ls -l reports/functional/test_viewport
 

@@ -16,7 +16,6 @@ from urls import *
 from setupLocalChrome import *
 
 from test_TID_035 import *
-from test_assign_all_table import *
 
 def tour_TID_036(json_metadata, table_num='TID_036'):
   # clear before test

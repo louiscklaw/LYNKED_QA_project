@@ -32,7 +32,7 @@ def run_check(json_metadata, browser, add_food_item_idx=2):
 
   item_add_page_po.tapAddIntoCartButton()
   sleep(5)
-  assertCheckPoint(browser, 'TID_016_4', TEST_ERR_MSG)
+  assertCheckPoint(browser, 'TID_016_4', TEST_ERR_MSG, 0.055)
 
 
   food_menu_po.tapCartButton()

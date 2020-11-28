@@ -19,7 +19,6 @@ from setupLocalChrome import *
 
 from test_TID_029 import *
 from test_TID_006 import *
-from test_assign_all_table import *
 
 
 def tour_TID_034(json_metadata):

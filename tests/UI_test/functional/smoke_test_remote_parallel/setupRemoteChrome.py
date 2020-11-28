@@ -1,12 +1,12 @@
 from selenium import webdriver
 from selenium.webdriver.chrome.options import Options
 
-def setupRemoteChrome():
+def setupRemoteChrome(device_simulation="Nexus 5"):
   caps = webdriver.DesiredCapabilities.CHROME.copy()
 
   selenium_url = 'http://{}:4444/wd/hub'.format('localhost')
 
-  mobile_emulation = { "deviceName": "Nexus 5" }
+  mobile_emulation = { "deviceName": device_simulation }
   chrome_options = webdriver.ChromeOptions()
   chrome_options.add_experimental_option("mobileEmulation", mobile_emulation)
   chrome_options.add_experimental_option('w3c', False)

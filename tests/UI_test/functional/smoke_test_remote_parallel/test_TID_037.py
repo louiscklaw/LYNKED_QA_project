@@ -17,7 +17,6 @@ from setupLocalChrome import *
 
 from test_TID_036 import *
 from check_TID_009 import *
-from test_assign_all_table import *
 
 import table_assigned_dialogue
 

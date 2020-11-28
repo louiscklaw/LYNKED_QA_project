@@ -1,3 +1,5 @@
+import os,sys
+
 from time import sleep
 from random import randrange
 
@@ -11,13 +13,13 @@ def getRandomString():
 
 def getActualScreenshotPath(test_number):
   random_string = getRandomString()
-
+  # return 'tests/UI_test/functional/smoke_test_remote_parallel/actual/{}_sc.png'.format(test_number)
   return 'tests/UI_test/functional/smoke_test_remote_parallel/actual/{}_sc_{}.png'.format(test_number, random_string)
 
 def getExpectedScreenshotPath(test_number):
   return 'tests/UI_test/functional/smoke_test_remote_parallel/expected/{}_sc.png'.format(test_number)
 
-def assertCheckPoint(driver ,check_point_name, error_message, fail_threshold=0.05, sleep_s=0.5, make_asserts=True):
+def assertCheckPoint(driver ,check_point_name, error_message, fail_threshold=0.054, sleep_s=0.5, make_asserts=True):
   sleep(sleep_s)
   actual_screenshot_path=getActualScreenshotPath(check_point_name)
   expected_screenshot_path=getExpectedScreenshotPath(check_point_name)
@@ -26,3 +28,5 @@ def assertCheckPoint(driver ,check_point_name, error_message, fail_threshold=0.0
 
   if make_asserts:
     assertSameImage(expected_screenshot_path, actual_screenshot_path,fail_threshold,  error_message)
+
+  os.remove(actual_screenshot_path)
