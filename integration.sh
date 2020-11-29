@@ -13,8 +13,8 @@ rm -rf /home/logic/_del/LYNKED_QA_project-local-chrome/tests/UI_test/functional/
 
 pipenv sync
 
+# --workers 10 \
 pipenv run pytest \
-  --workers 10 \
   --maxfail=999 \
   --json-report  \
   --html=reports/functional/report.html \
